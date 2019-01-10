@@ -1,0 +1,282 @@
+.row-flex {
+	
+	display: flex;
+	flex-wrap: wrap; // Because of the margin-clearing :before and :after elements
+	margin: 0 auto;
+
+
+	> * {
+	
+			flex-grow: 1; // Equal width
+			width: 1%;
+			display: flex; // For vertical alignment
+			flex-direction: column;
+			padding: 3em 1em;
+
+		}
+		
+	> * > * > * {
+		
+		max-width: 100%;
+
+	}
+	
+	> * > * > img {
+		
+		display: block;
+		margin: 0 auto;		
+
+	}
+	
+	&.contain {
+		
+		max-width: 1036px;
+		
+	}
+	
+	&.stacked > * {
+		
+		width: 100%;
+		
+	}
+	
+}
+
+@media (max-width: 599.9px) {
+	
+	.row-flex > * {
+		
+		width: 100%;
+
+	}
+	
+}
+
+.row-flex:before, .row-flex:after { // Clear margins before/after a row
+	
+	content: '';
+	display: table;
+	width: 100%;
+
+}
+
+.no-padding .row-flex > * {
+	
+	padding: 0;
+
+}
+
+// Alignment classes
+
+.row-flex > .align-middle {
+	
+	justify-content: center;
+
+}
+
+.row-flex > .align-bottom {
+	
+	justify-content: flex-end;
+
+}
+
+.row-flex > .align-center {
+	
+	text-align: center;
+
+}
+
+.row-flex > .align-right {
+	
+	text-align: right; // Old browsers
+	text-align: end; // RTL support for current browsers
+
+}
+
+.text-image {
+	
+	background-size: cover;
+	background-position: center center;
+	color: #646466;
+	
+	&:not(.fixed-bg) .fixed-bg--image {
+		
+		display: none;
+	
+	}
+	
+	--bg: #fff;
+	background-color: var(--bg);
+	color: #333;
+
+	&.transparent {
+		
+		background-color: transparent;
+		overflow: hidden;
+		
+		.row-flex {
+			
+			box-shadow: 0 0 0 50vw var(--bg);
+			
+			> *:not(.transparent-circle-column), > .transparent-circle-column > :not(.transparent-circle) {
+			
+				background: var(--bg);
+	
+			}
+			
+			> .transparent-circle-column {
+				
+				padding: 0;
+				border: 1em solid var(--bg);
+				
+				.transparent-circle {
+					
+					position: relative;
+					overflow: hidden;
+					
+					img {
+						
+						display: inline-block;
+						vertical-align: middle;
+						position: absolute;
+						max-width: calc(100% - 2em);
+						max-height: calc(100% - 2em);
+						object-fit: contain;
+						top: 50%;
+						left: 50%;
+						transform: translate3d(-50%,-50%,0);
+						z-index: 1;
+
+					}
+					
+					&:before {
+					
+						content: '';
+						display: inline-block;
+						padding-bottom: 100%;
+						vertical-align: middle;
+						width: 0;
+					
+					}
+					
+					&:after {
+						
+						content: '';
+						position: absolute;
+						top: 0;
+						right: 0;
+						bottom: 0;
+						left: 0;
+						border-radius: 50%;
+						box-shadow: 0 0 0 20em var(--bg);
+						z-index: 0;
+						
+					}
+					
+				}
+				
+			}
+		
+		}
+		
+	}
+	
+	&.white {
+		
+		--bg: #fff;
+
+	}
+	
+	&.light {
+		
+		--bg: #ededef;
+		
+	}
+
+	&.dark {
+		
+		--bg: #544c64;
+		color: #d1d3d4;
+		
+	}
+
+}
+
+@supports (clip: rect(auto, auto, auto, auto)) {
+
+	.fixed-bg {
+
+	    will-change: scroll;
+	    background-size: 0;
+	    position: relative;
+
+		.fixed-bg--image {
+
+			position: absolute;
+			background-size: 0;
+			z-index: -1;
+			clip: rect(auto, auto, auto, auto);
+			
+			&, &:before {
+				
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-image: inherit;
+				
+			}
+
+			&:before {
+	
+				content: '';
+				position: fixed;
+				background-size: cover;
+				background-position: center center;
+				height: 100vh; // Mobile browser resize when hiding/showing toolbars
+				transform: translate3d(0,0,0); // Force refresh while scrolling (iPad), fix missing image parts on (macOS Safari)
+	
+			}
+		
+		}
+		
+	}
+
+}
+
+@supports (-ms-ime-align:auto) { // Disable jumpy Edge
+
+	.fixed-bg {
+
+		background-size: cover;
+
+		.n-fixed-bg--image {
+
+			display: none;
+
+		}
+		
+	}
+
+}
+
+.text-image.white-box {
+	
+	.text {
+		
+		width: 460px;
+		max-width: 100%;
+		display: inline-block;
+		background: #fff;
+		color: #333;
+		padding: 1.5em;
+	
+		> :first-child {
+		
+			margin-top: 0;
+		
+		}
+
+	}
+
+}
