@@ -202,6 +202,17 @@
 
 }
 
+.two-text-image .text-image {
+	
+	&, &.white, &.light, &.dark {
+		
+		background-color: transparent;
+
+	}
+	
+	
+}
+
 @supports (clip: rect(auto, auto, auto, auto)) {
 
 	.fixed-bg {
