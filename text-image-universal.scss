@@ -99,6 +99,12 @@
 	background-position: center center;
 	color: #646466;
 	
+	.row-flex > .col1 {
+		
+		width: 100%;
+
+	}
+	
 	&:not(.fixed-bg) .fixed-bg--image {
 		
 		display: none;
