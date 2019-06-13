@@ -187,23 +187,27 @@
 		
 	}
 	
-	&.white {
-		
-		--bg: #fff;
-
-	}
+	&:not(.fixed-bg) {
 	
-	&.light {
+		&.white {
+			
+			--bg: #fff;
+	
+		}
 		
-		--bg: #ededef;
-		
-	}
-
-	&.dark {
-		
-		--bg: #544c64;
-		color: #d1d3d4;
-		
+		&.light {
+			
+			--bg: #ededef;
+			
+		}
+	
+		&.dark {
+			
+			--bg: #544c64;
+			color: #d1d3d4;
+			
+		}
+	
 	}
 
 }
@@ -221,11 +225,12 @@
 
 @supports (clip: rect(auto, auto, auto, auto)) {
 
-	.fixed-bg {
+	.text-image.fixed-bg {
 
 	    will-change: scroll;
 	    background-size: 0;
 	    position: relative;
+	    --bg: transparent;
 
 		.fixed-bg--image {
 
