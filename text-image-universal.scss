@@ -11,7 +11,7 @@
 			width: 1%;
 			display: flex; // For vertical alignment
 			flex-direction: column;
-			padding: 3em 1em;
+			padding: 1em;
 
 		}
 		
@@ -26,18 +26,6 @@
 		display: block;
 		margin: 0 auto;		
 
-	}
-	
-	&.contain {
-		
-		max-width: 1036px;
-		
-	}
-	
-	&.stacked > * {
-		
-		width: 100%;
-		
 	}
 	
 }
@@ -115,6 +103,24 @@
 	background-color: var(--bg);
 	color: #333;
 
+	&.contain .row-flex {
+		
+		max-width: 1036px;
+		
+	}
+	
+	&.stacked .row-flex > * {
+		
+		width: 100%;
+		
+	}
+	
+	&.small {
+		
+		font-size: small;
+		
+	}
+	
 	&.transparent {
 		
 		background-color: transparent;
