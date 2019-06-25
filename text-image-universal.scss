@@ -215,7 +215,7 @@
 		}
 	
 	}
-
+	
 }
 
 .two-text-image .text-image {
@@ -305,6 +305,56 @@
 		
 		}
 
+	}
+
+}
+
+@media (min-width: 600px) {
+	
+	.text-image.checkerboard ~ .checkerboard {
+		
+		.row-flex > * {
+			
+			order: 1;
+			
+			&:first-child {
+				
+				order: 2;
+
+			}
+			
+		}
+		
+		~ .checkerboard {
+			
+			.row-flex > * {
+		
+				order: 3;
+		
+			}			
+			
+			~ .checkerboard {
+				
+				.row-flex > * {
+			
+					order: 1;
+			
+				}			
+				
+				~ .checkerboard {
+					
+					.row-flex > * {
+				
+						order: 3;
+				
+					}			
+					
+				}
+
+			}
+		
+		}
+		
 	}
 
 }
