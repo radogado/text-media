@@ -1,3 +1,5 @@
+$page-width: 1036px;
+
 .row-flex {
 	
 	display: flex;
@@ -103,9 +105,15 @@
 	background-color: var(--bg);
 	color: #333;
 
+	&:not(.contain) .row-flex {
+		
+		max-width: none;
+		
+	}
+	
 	&.contain .row-flex {
 		
-		max-width: 1036px;
+		max-width: $page-width;
 		
 	}
 	
@@ -214,6 +222,60 @@
 			
 		}
 	
+	}
+	
+	&.stick-to-bottom {
+		
+		.row-flex > .image {
+			
+			padding-bottom: 0;
+			justify-content: flex-end;
+			
+		}
+		
+	}
+	
+	&.stick-to-top {
+		
+		.row-flex > .image {
+			
+			padding-top: 0;
+			justify-content: flex-start;
+			
+		}
+		
+	}
+	
+	&.stick-to-right {
+		
+		.row-flex > .image {
+			
+			padding-right: 0;
+			
+		}
+
+		.row-flex > .image > * > img {
+			
+			margin-right: 0;
+			
+		}
+		
+	}
+	
+	&.stick-to-left {
+		
+		.row-flex > .image {
+			
+			padding-left: 0;
+			
+		}
+		
+		.row-flex > .image > * > img {
+			
+			margin-left: 0;
+			
+		}
+		
 	}
 	
 }
