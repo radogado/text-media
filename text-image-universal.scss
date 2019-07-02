@@ -238,10 +238,15 @@ $page-width: 1036px;
 		&.dark {
 			
 			--bg: #544c64;
-			color: #d1d3d4;
 			
 		}
 	
+	}
+	
+	&.dark {
+		
+		color: #d1d3d4;
+		
 	}
 	
 	&.stick-to-bottom {
