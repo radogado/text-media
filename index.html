@@ -1,3 +1,7 @@
+<head>
+
+<meta name=viewport content="width=device-width,initial-scale=1.0,maximum-scale=5,user-scalable=yes">
+
 <title>Universal Text and Image</title>
 
 <style> /* Demo style */
@@ -39,18 +43,71 @@
 
 </style>
 
-<body>
+<!-- <link rel="styleSheet" href="text-image-universal.css" type="text/css" media="screen"> -->
+<link rel="styleSheet" href="../paysafe-marketing-skrill-typo3/typo3conf/ext/theme/Resources/Public/css/text-image-universal.css" type="text/css" media="screen">
 
-<link rel="styleSheet" href="text-image-universal.css" type="text/css" media="screen">
+</head>
+
+<body>
 
 <br>
 
 <h2>Universal Text and Image</h2>
 
+<div class="text-image dark">
+	
+	<div class="text-image--background">
+		
+		<img src="DSC00839.jpg" alt=1>
+	
+	</div>
+
+	<div class="row-flex">
+		
+		<div class="align-middle align-center">
+			
+			<div>
+			
+<!-- 				<img src=mobile-app-iphone-1.png alt=Image> -->
+
+				<picture style="--width: 160; --height: 335;">
+					
+					<img src="mobile-app-iphone-1.png" alt=1>
+				
+				</picture>
+				
+			</div>
+			
+		</div>
+
+		<div class="align-middle">
+			
+			<div>
+			
+				<div class="text">
+			
+					<h2>Headline</h2>
+						
+					<p>Paragraph</p>
+					
+					<p><a class="btn" href=#>CTA</a></p>
+				
+				</div>
+			
+			</div>
+			
+		</div>
+	
+	</div>
+
+</div>
+
+<h2>Old style: Universal Text and Image</h2>
+
 <div class="text-image dark" style="background-image: url(DSC00839.jpg);">
 	
 	<div class="fixed-bg--image"></div>
-	
+
 	<div class="row-flex">
 		
 		<div class="align-middle align-center">
@@ -86,6 +143,52 @@
 </div>
 
 <h3>Fixed Background</h3>
+
+<div class="text-image fixed-bg dark">
+	
+	<picture class="text-image--background">
+		
+		<source srcset="DSC00557-1024px.jpg" media="(max-width: 600px)">
+				
+		<img src="DSC00557.jpg" alt=1>
+	
+	</picture>
+	
+	<div class="row-flex">
+		
+		<div class="align-middle align-center">
+			
+			<div>
+			
+				<img src=mobile-app-iphone-1.png alt=Image>
+				
+			</div>
+			
+		</div>
+
+		<div class="align-middle">
+			
+			<div>
+				
+				<div class="text">
+			
+					<h2>Headline</h2>
+						
+					<p>Paragraph</p>
+					
+					<a class="btn" href=#>CTA</a>
+				
+				</div>
+			
+			</div>
+			
+		</div>
+	
+	</div>
+
+</div>
+
+<h3>Old style: Fixed Background</h3>
 
 <div class="text-image fixed-bg dark" style="background-image: url(DSC00839.jpg);">
 	
@@ -167,10 +270,14 @@
 
 <h3>Transparency</h3>
 
-<div class="text-image fixed-bg transparent contain" style="background-image: url(DSC00839.jpg); --bg: coral;">
+<div class="text-image fixed-bg transparent contain" style="--bg: coral;">
 	
-	<div class="fixed-bg--image"></div>
+	<picture class="text-image--background">
+		
+		<img src="DSC00839.jpg" alt=1>
 	
+	</picture>
+
 	<div class="row-flex">
 		
 		<div class="align-middle align-center transparent-circle-column">
@@ -182,8 +289,68 @@
 			</div>
 			
 			<div class="transparent-circle">
+				
+				<div>
+					
+					<img src=mobile-app-iphone-1.png alt=Image>
+				
+				</div>
+				
+			</div>
 			
-				<img src=mobile-app-iphone-1.png alt=Image>
+			<div>
+				
+				<p>Paragraph below</p>
+				
+			</div>
+
+		</div>
+
+		<div class="align-middle">
+			
+			<div>
+				
+				<div class="text">
+			
+					<h2>Headline</h2>
+						
+					<p>Paragraph</p>
+					
+					<a class="btn" href=#>CTA</a>
+				
+				</div>
+			
+			</div>
+			
+		</div>
+	
+	</div>
+
+</div>
+
+<h3>Old style: Transparency</h3>
+
+<div class="text-image fixed-bg transparent contain" style="--bg: coral; background-image: url(DSC00839.jpg);">
+	
+	<div class="fixed-bg--image"></div>
+
+	<div class="row-flex">
+		
+		<div class="align-middle align-center transparent-circle-column">
+			
+			<div>
+				
+				<p>Paragraph above</p>
+				
+			</div>
+			
+			<div class="transparent-circle">
+				
+				<div>
+					
+					<img src=mobile-app-iphone-1.png alt=Image>
+				
+				</div>
 				
 			</div>
 			
@@ -279,6 +446,100 @@
 
 			</div>
 			
+		</div>
+	
+	</div>
+
+</div>
+
+<h3>Multicol with transparency</h3>
+
+<div class="text-image fixed-bg transparent contain" style="--bg: coral;">
+	
+	<picture class="text-image--background">
+		
+		<img src="DSC00839.jpg" alt=1>
+	
+	</picture>
+
+	<div class="row-flex">
+		
+		<div class="align-center transparent-circle-column">
+			
+			<div>
+				
+				<p>Paragraph above</p>
+				
+			</div>
+			
+			<div class="transparent-circle">
+				
+				<div>
+			
+					<img src=mobile-app-iphone-1.png alt=Image>
+				
+				</div>
+				
+			</div>
+			
+			<div>
+				
+				<p>Paragraph below</p>
+				
+			</div>
+
+		</div>
+
+		<div class="align-center transparent-circle-column">
+			
+			<div>
+				
+				<p>Paragraph above</p>
+				
+			</div>
+			
+			<div class="transparent-circle">
+				
+				<div>
+			
+					<img src=mobile-app-iphone-1.png alt=Image>
+					
+				</div>
+				
+			</div>
+			
+			<div>
+				
+				<p>Paragraph below</p>
+				
+			</div>
+
+		</div>
+
+		<div class="align-center transparent-circle-column">
+			
+			<div>
+				
+				<p>Paragraph above</p>
+				
+			</div>
+			
+			<div class="transparent-circle">
+				
+				<div>
+			
+					<img src=mobile-app-iphone-1.png alt=Image>
+				
+				</div>
+				
+			</div>
+			
+			<div>
+				
+				<p>Paragraph below</p>
+				
+			</div>
+
 		</div>
 	
 	</div>
