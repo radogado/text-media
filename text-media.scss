@@ -1,0 +1,613 @@
+$page-width: 1036px;
+
+.row-flex {
+
+	display: flex;
+	flex-wrap: wrap; // Because of the margin-clearing :before and :after elements
+	margin: 0 auto;
+    width: 100%;
+    position: relative;
+
+	> * {
+
+			flex-grow: 1; // Equal width
+			width: 1%;
+			display: flex; // For vertical alignment
+			flex-direction: column;
+			padding: 1em;
+
+		}
+
+	> * > * > * {
+
+		max-width: 100%;
+
+	}
+
+	> * > * > img {
+
+		display: block;
+		margin: 0 auto;
+
+	}
+
+}
+
+@media (max-width: 599.9px) {
+
+	.row-flex > * {
+
+		width: 100%;
+
+	}
+
+}
+
+.row-flex:before, .row-flex:after { // Clear margins before/after a row
+
+	content: '';
+	display: table;
+	width: 100%;
+
+}
+
+.no-padding .row-flex > * {
+
+	padding: 0;
+
+}
+
+// Alignment classes
+
+.row-flex > .align-middle {
+
+	justify-content: center;
+	vertical-align: middle;
+
+}
+
+.row-flex > .align-bottom {
+
+	justify-content: flex-end;
+	vertical-align: bottom;
+
+}
+
+.row-flex > .align-center {
+
+	text-align: center;
+
+	ul {
+
+    	text-align: left;
+    	text-align: start;
+
+	}
+
+}
+
+.row-flex > .align-right {
+
+	text-align: right; // Old browsers
+	text-align: end; // RTL support for current browsers
+
+}
+
+.text-image {
+
+	background-size: cover;
+	background-position: center center;
+	color: #646466;
+
+	position: relative;
+
+	.row-flex > .col1 {
+
+		width: 100%;
+
+	}
+
+	&:not(.fixed-bg) .fixed-bg--image {
+
+		display: none;
+
+	}
+
+	--bg: #fff;
+	background-color: var(--bg);
+	color: #333;
+
+	&:not(.contain) .row-flex {
+
+		max-width: none;
+
+	}
+
+	&.contain .row-flex {
+
+		max-width: $page-width;
+
+	}
+
+	&.stacked .row-flex > * {
+
+		width: 100%;
+
+	}
+
+	&.small {
+
+		font-size: small;
+
+	}
+
+	.row-flex > .video > div {
+
+		padding-top: 56.25%;
+		position: relative;
+
+		> * {
+
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			width: 100% !important;
+			height: 100% !important;
+			border: 0;
+
+		}
+
+	}
+
+	&.transparent {
+
+		background-color: transparent;
+		overflow: hidden;
+
+		.row-flex {
+
+			box-shadow: 0 0 0 50vw var(--bg);
+// 		    border-right: 0.1px solid var(--bg);
+
+            > :last-child {
+
+                margin-right: -.1px; // Fix right-hand 1px gap
+
+            }
+
+			> *:not(.transparent-circle-column), > .transparent-circle-column > :not(.transparent-circle) {
+
+				background: var(--bg);
+
+			}
+
+			> .transparent-circle-column {
+
+				padding: 0;
+				border: 1em solid var(--bg);
+				overflow: hidden;
+
+				.transparent-circle {
+
+    				div {
+
+    					position: relative;
+    // 					overflow: hidden;
+                        max-width: 240px;
+                        max-width: var(--max-width, 240px);
+                        margin: 0 auto;
+
+                        &.square-image-mask {
+
+                            position: absolute;
+
+                        }
+
+    					img {
+
+    						display: inline-block;
+    						vertical-align: middle;
+    // 						position: absolute;
+    						max-width: calc(70% - 2em);
+    						max-height: calc(70% - 2em);
+    /*
+    						object-fit: contain;
+    						top: 50%;
+    						left: 50%;
+    						transform: translate3d(-50%,-50%,0);
+    */
+    						z-index: 1;
+
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate3d(-50%, -50%, 0);
+
+    					}
+
+    					&:before {
+
+    						content: '';
+    						display: inline-block;
+    						padding-bottom: 100%;
+    						vertical-align: middle;
+    						width: 0;
+
+    					}
+
+    					&:after {
+
+    						content: '';
+    						position: absolute;
+    						top: 0;
+    						right: 0;
+    						bottom: 0;
+    						left: 0;
+    						border-radius: 50%;
+    						box-shadow: 0 0 0 50vw var(--bg);
+    						z-index: 0;
+
+    					}
+
+					}
+
+				}
+
+				> *:not(.transparent-circle) {
+
+    				z-index: 1;
+
+				}
+
+			}
+
+		}
+
+	}
+
+	&:not(.fixed-bg) {
+
+		&.white {
+
+			--bg: #fff;
+
+		}
+
+		&.light {
+
+			--bg: #ededef;
+
+		}
+
+		&.dark {
+
+			--bg: #544c64;
+
+		}
+
+	}
+
+	&.dark {
+
+		color: #d1d3d4;
+
+	}
+
+	&.stick-to-bottom {
+
+		.row-flex > .image {
+
+			padding-bottom: 0;
+			justify-content: flex-end;
+
+		}
+
+	}
+
+	&.stick-to-top {
+
+		.row-flex > .image {
+
+			padding-top: 0;
+			justify-content: flex-start;
+
+		}
+
+	}
+
+	&.stick-to-right {
+
+		.row-flex > .image {
+
+			padding-right: 0;
+
+		}
+
+		.row-flex > .image > * > img {
+
+			margin-right: 0;
+
+		}
+
+	}
+
+	&.stick-to-left {
+
+		.row-flex > .image {
+
+			padding-left: 0;
+
+		}
+
+		.row-flex > .image > * > img {
+
+			margin-left: 0;
+
+		}
+
+	}
+
+}
+
+.two-text-image .text-image {
+
+	&, &.white, &.light, &.dark {
+
+		background-color: transparent;
+
+	}
+
+
+}
+
+@supports (clip: rect(auto, auto, auto, auto)) {
+
+    .text-image.fixed-bg {
+
+        will-change: scroll;
+        background-size: 0;
+        position: relative;
+        --bg: transparent;
+
+    	.fixed-bg--image {
+
+    		position: absolute;
+    		background-size: 0;
+    		z-index: -1;
+    		clip: rect(auto, auto, auto, auto);
+
+    		&, &:before {
+
+    			top: 0;
+    			left: 0;
+    			width: 100%;
+    			height: 100%;
+    			background-image: inherit;
+
+    		}
+
+    		&:before {
+
+    			content: '';
+    			position: fixed;
+    			background-size: cover;
+    			background-position: center center;
+    			height: 100vh; // Mobile browser resize when hiding/showing toolbars
+    			transform: translate3d(0,0,0); // Force refresh while scrolling (iPad), fix missing image parts on (macOS Safari)
+
+    		}
+
+    	}
+
+    }
+
+}
+
+.text-image .text-image--background {
+
+    img {
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+
+    }
+
+}
+
+@supports (object-fit: cover) {
+
+    .text-image.fixed-bg .text-image--background {
+
+        position: absolute;
+        clip: rect(auto, auto, auto, auto);
+        width: 100%;
+        height: 100%;
+
+        img {
+
+            position: fixed;
+            transform: translate3d(0,0,0); // iOS Safari
+
+        }
+
+    }
+
+    .text-image .text-image--background {
+
+        img {
+
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: none;
+
+        }
+
+    }
+
+}
+
+@supports (-ms-ime-align:auto) { // Disable jumpy Edge
+
+	.fixed-bg {
+
+		background-size: cover;
+
+		.n-fixed-bg--image {
+
+			display: none;
+
+		}
+
+	}
+
+}
+
+.text-image.white-box {
+
+	.text {
+
+        box-sizing: border-box;
+		width: 460px;
+		width: 100%;
+		max-width: 100%;
+		display: inline-block;
+		background: #fff;
+		color: #333;
+		padding: 1.5em;
+
+		> :first-child {
+
+			margin-top: 0;
+
+		}
+
+		h2 {
+
+    		color: #4f2455;
+
+		}
+
+		a[href]:not(.btn) {
+
+    		color: #439da6;
+
+		}
+
+	}
+
+}
+
+@media (min-width: 600px) {
+
+	.text-image.checkerboard ~ .checkerboard {
+
+		.row-flex > * { // #2
+
+			order: 1;
+
+			&:first-child {
+
+				order: 2;
+
+			}
+
+		}
+
+		~ .checkerboard {
+
+			.row-flex > * { // #3
+
+				order: 3;
+
+			}
+
+			~ .checkerboard {
+
+				.row-flex > * { // #4
+
+					order: 1;
+
+        			&:first-child {
+
+        				order: 2;
+
+        			}
+
+				}
+
+				~ .checkerboard {
+
+					.row-flex > * { // #5
+
+						order: 3;
+
+					}
+
+        			~ .checkerboard {
+
+        				.row-flex > * { // #6
+
+        					order: 1;
+
+                			&:first-child {
+
+                				order: 2;
+
+                			}
+
+        				}
+
+        				~ .checkerboard {
+
+        					.row-flex > * { // #7
+
+        						order: 3;
+
+        					}
+
+                			~ .checkerboard {
+
+                				.row-flex > * { // #8
+
+                					order: 1;
+
+                        			&:first-child {
+
+                        				order: 2;
+
+                        			}
+
+                				}
+
+                            }
+
+        				}
+
+        			}
+
+				}
+
+			}
+
+		}
+
+	}
+
+}
+
+// IE flex fixes
+
+_:-ms-lang(x), .row-flex { display: table; table-layout: fixed; }
+_:-ms-lang(x), .row-flex > * { display: table-cell; width: 100%; }
+_:-ms-lang(x), .text-image.stacked .row-flex { display: block; }
+_:-ms-lang(x), .text-image.stacked .row-flex > * { display: block; }
+_:-ms-lang(x), .text-image { overflow: hidden; }
+
+@import 'aspect-ratio';
