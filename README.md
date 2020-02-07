@@ -1,1 +1,1 @@
-# text-media
+# Text & Media layout component
