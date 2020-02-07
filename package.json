@@ -1,0 +1,19 @@
+{
+  "name": "text-media",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/radogado/text-media.git"
+  },
+  "author": "Radoslav Sharapanov <spacest@gmail.com> (http://github.com/radogado)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/radogado/text-media/issues"
+  },
+  "homepage": "https://github.com/radogado/text-media#readme"
+}
