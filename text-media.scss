@@ -31,6 +31,12 @@ $page-width: 1036px;
 
 	}
 
+	img {
+
+    	max-width: 100%;
+
+	}
+
 }
 
 @media (max-width: 599.9px) {
@@ -418,6 +424,27 @@ $page-width: 1036px;
 
 }
 
+
+.text-image--fallback-background {
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+}
+
+.text-image .text-image--background {
+
+    display: none;
+    visibility: hidden;
+
+}
+
 @supports (object-fit: cover) {
 
     .text-image.fixed-bg .text-image--background {
@@ -438,6 +465,9 @@ $page-width: 1036px;
 
     .text-image .text-image--background {
 
+        display: initial;
+        visibility: visible;
+
         img {
 
             top: 0;
@@ -448,6 +478,12 @@ $page-width: 1036px;
             transform: none;
 
         }
+
+    }
+
+    .text-image--fallback-background {
+
+        display: none;
 
     }
 
