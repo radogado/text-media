@@ -57,7 +57,7 @@ $page-width: 1036px;
 
 }
 
-.no-padding .row-flex > * {
+.no-padding .row-flex > *, .flush-image .row-flex > * {
 
 	padding: 0;
 
@@ -359,6 +359,19 @@ $page-width: 1036px;
 
 		}
 
+	}
+	
+	&.flush-image .row-flex > div:not(.image) > div {
+    	
+        display: flex;
+        justify-content: flex-end;    	
+        
+        > .text {
+            
+            width: 518px;
+
+        }
+    	
 	}
 
 }
