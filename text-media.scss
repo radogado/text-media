@@ -361,11 +361,15 @@ $page-width: 1036px;
 
 	}
 	
-	&.flush-image .row-flex > div:not(.image) > div {
+	&.flush-image .row-flex > div:not(.image):first-child > div {
     	
         display: flex;
         justify-content: flex-end;    	
         
+	}
+
+	&.flush-image.contain .row-flex > div:not(.image) > div {
+    	
         > .text {
             
             width: 518px;
