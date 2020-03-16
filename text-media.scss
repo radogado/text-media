@@ -360,23 +360,7 @@ $page-width: 1036px;
 		}
 
 	}
-	
-	&.flush-image .row-flex > div:not(.image):first-child > div {
-    	
-        display: flex;
-        justify-content: flex-end;    	
-        
-	}
 
-	&.flush-image .row-flex > div:not(.image) > div {
-    	
-        > .text {
-            
-            width: 518px;
-
-        }
-    	
-	}
 
 }
 
@@ -658,7 +642,92 @@ $page-width: 1036px;
 		}
 
 	}
+	
+	.text-image {
 
+		&.flush-image .image > div {
+	
+			height: 100%;
+			position: relative;
+	
+			picture {
+		
+				position: static;
+	
+				img {
+					
+					position: absolute;
+				    left: 0;
+				    height: 100%;
+				    object-fit: cover;
+				    object-position: left;
+					
+				}
+			
+			}
+		
+		}	
+	
+		&.flush-image .image:first-child > div {
+	
+			picture {
+		
+				img {
+					
+				    right: 0;
+				    object-position: right;
+					
+				}
+			
+			}
+		
+		}	
+	
+		&.flush-image .row-flex > div:not(.image):first-child > div {
+	    	
+	        display: flex;
+	        justify-content: flex-end;    	
+	        
+		}
+	
+		&.flush-image .row-flex > div:not(.image) > div {
+	    	
+	        > .text {
+	            
+	            width: 518px; // Half of contained width
+	
+	        }
+	    	
+		}
+	
+	}
+
+}
+
+
+@media (max-width: 599.9px) {
+
+	.text-image {
+
+		&.flush-image .image > div {
+	
+			picture {
+		
+				width: 100%;
+				min-height: calc(100vw * var(--height)/var(--width));
+				
+				img {
+					
+					width: 100%;
+					
+				}
+    			
+			}
+		
+		}
+	
+	}
+			
 }
 
 // IE flex fixes
