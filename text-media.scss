@@ -645,9 +645,8 @@ $page-width: 1036px;
 	
 	.text-image {
 
-		&.flush-image .image > div {
+		&.flush-image .image {
 	
-			height: 100%;
 			position: relative;
 	
 			picture {
@@ -658,6 +657,7 @@ $page-width: 1036px;
 					
 					position: absolute;
 				    left: 0;
+				    top: 0;
 				    height: 100%;
 				    object-fit: cover;
 				    object-position: left;

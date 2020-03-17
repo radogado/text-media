@@ -275,14 +275,14 @@
     order: 1; }
     .text-image.checkerboard ~ .checkerboard ~ .checkerboard ~ .checkerboard ~ .checkerboard ~ .checkerboard ~ .checkerboard ~ .checkerboard .row-flex > *:first-child {
       order: 2; }
-  .text-image.flush-image .image > div {
-    height: 100%;
+  .text-image.flush-image .image {
     position: relative; }
-    .text-image.flush-image .image > div picture {
+    .text-image.flush-image .image picture {
       position: static; }
-      .text-image.flush-image .image > div picture img {
+      .text-image.flush-image .image picture img {
         position: absolute;
         left: 0;
+        top: 0;
         height: 100%;
         object-fit: cover;
         object-position: left; }
