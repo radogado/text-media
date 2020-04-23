@@ -733,7 +733,7 @@ $page-width: 1036px;
 // IE flex fixes
 
 _:-ms-lang(x), .row-flex { display: table; table-layout: fixed; }
-_:-ms-lang(x), .row-flex > * { display: table-cell; width: 100%; }
+_:-ms-lang(x), .row-flex > * { display: table-cell; width: 100%; vertical-align: top; }
 _:-ms-lang(x), .text-image.stacked .row-flex { display: block; }
 _:-ms-lang(x), .text-image.stacked .row-flex > * { display: block; }
 _:-ms-lang(x), .text-image { overflow: hidden; }
