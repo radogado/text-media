@@ -282,11 +282,13 @@
         position: absolute;
         left: 0;
         top: 0;
+        right: auto;
         height: 100%;
         object-fit: cover;
         object-position: left; }
   .text-image.flush-image .image:first-child > div picture img {
     right: 0;
+    left: auto;
     object-position: right; }
   .text-image.flush-image .row-flex > div:not(.image):first-child > div {
     display: flex;

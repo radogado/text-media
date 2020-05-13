@@ -658,6 +658,7 @@ $page-width: 1036px;
 					position: absolute;
 				    left: 0;
 				    top: 0;
+				    right: auto;
 				    height: 100%;
 				    object-fit: cover;
 				    object-position: left;
@@ -675,6 +676,7 @@ $page-width: 1036px;
 				img {
 					
 				    right: 0;
+				    left: auto;
 				    object-position: right;
 					
 				}
