@@ -1,703 +1,510 @@
-<head>
-
-<meta name=viewport content="width=device-width,initial-scale=1.0,maximum-scale=5,user-scalable=yes">
-
-<title>Text & Media</title>
-
-<style> /* Demo style */
-
-	body {
-		
-		background: #000; 
-		margin: 0; 
-		color: #eee; 
-		font-family: 'Helvetica Neue', sans-serif;
-		
-		min-height: 150vh;
-		 
-	}
-	
-	body > h2, body > h3 {
-		
-		text-align: center;
-		
-	}
-	
-	a[href] {
-		
-		text-decoration: none;
-		font-weight: bold;
-		
-	}
-	
-	.btn {
-		
-		color: #333;
-		background: #ddd;
-		border-radius: 3px;
-		padding: .5em 1em;
-		display: inline-block;
-		
-		
-	}
-
-</style>
-
-<!-- <link rel="styleSheet" href="text-image-universal.css" type="text/css" media="screen"> -->
-<link rel="styleSheet" href="text-media.css" type="text/css" media="screen">
-<link rel="styleSheet" href="aspect-ratio.css" type="text/css" media="screen">
-
-</head>
-
-<body>
-
-<br>
-
-<h2>Text & Media</h2>
-
-<div class="text-image dark flush-image ">
-	
-	<div class="text-image--background">
-		
-		<img src="DSC00839.jpg" alt=1>
-	
-	</div>
-
-	<div class="row-flex">
-		
-		<div class="align-middle">
-			
-			<div>
-			
-<div class="text">
-			
-					<h2>Headline</h2>
-						
-					<p>Paragraph</p><p>Paragraph</p><p>Paragraph</p><p>Paragraph</p><p>Paragraph</p><p>Paragraph</p><p>Paragraph</p><p>Paragraph</p><p>Paragraph</p><p>Paragraph</p><p>Paragraph</p><p>Paragraph</p><p>Paragraph</p><p>Paragraph</p><p>Paragraph</p><p>Paragraph</p><p>Paragraph</p><p>Paragraph</p><p>Paragraph</p><p>Paragraph</p><p>Paragraph</p>
-					
-					<p><a class="btn" href="#">CTA</a></p>
-				
-				</div>			
-			</div>
-			
-		</div>
-	
-		<div class="align-middle align-left image">
-			
-			<div>
-			
-				<picture class="n-aspect" style="--width: 423; --height: 597;">
-					
-					<img src="mobile-app-iphone-1.png" alt=1 style="background: lightblue">
-				
-				</picture>
-				
-			</div>
-			
-		</div>
-
-	</div>
-
-</div>
-
-<div class="text-image dark flush-image ">
-	
-	<div class="text-image--background">
-		
-		<img src="DSC00839.jpg" alt=1>
-	
-	</div>
-
-	<div class="row-flex">
-	
-		<div class="align-middle align-right image">
-			
-			<div>
-			
-				<picture class="n-aspect" style="--width: 423; --height: 597;">
-					
-					<img src="mobile-app-iphone-1.png" alt=1 style="background: lightblue">
-				
-				</picture>
-				
-			</div>
-			
-		</div>
-		
-		<div class="align-middle">
-			
-			<div>
-			
-				<div class="text">
-			
-					<h2>Headline</h2>
-						
-					<p>Paragraph</p>
-					
-					<p><a class="btn" href=#>CTA</a></p>
-				
-				</div>
-			
-			</div>
-			
-		</div>
-
-	</div>
-
-</div>
-
-<h3>Fixed Background</h3>
-
-<div class="text-image fixed-bg dark">
-	
-	<picture class="text-image--background">
-		
-		<source srcset="DSC00557-1024px.jpg" media="(max-width: 600px)">
-				
-		<img src="DSC00557.jpg" alt=1>
-	
-	</picture>
-	
-	<div class="row-flex">
-		
-		<div class="align-middle align-center image">
-			
-			<div>
-			
-				<img src=mobile-app-iphone-1.png alt=Image>
-				
-			</div>
-			
-		</div>
-
-		<div class="align-middle">
-			
-			<div>
-				
-				<div class="text">
-			
-					<h2>Headline</h2>
-						
-					<p>Paragraph</p>
-					
-					<a class="btn" href=#>CTA</a>
-				
-				</div>
-			
-			</div>
-			
-		</div>
-	
-	</div>
-
-</div>
-
-<h3>White Box (contained width)</h3>
-
-<div class="text-image white-box dark contain">
-	
-	<div class="fixed-bg--image"></div>
-	
-	<div class="row-flex">
-		
-		<div class="align-middle align-center image">
-			
-			<div>
-			
-				<img src=mobile-app-iphone-1.png alt=Image>
-				
-			</div>
-			
-		</div>
-
-		<div class="align-middle">
-			
-			<div>
-			
-				<div class="text">
-			
-					<h2>Headline</h2>
-						
-					<p>Paragraph</p>
-					
-					<a class="btn" href=#>CTA</a>
-
-				</div>
-
-			</div>
-			
-		</div>
-	
-	</div>
-
-</div>
-
-<h3>Transparency</h3>
-
-<div class="text-image fixed-bg transparent contain" style="--bg: coral;">
-	
-	<picture class="text-image--background">
-		
-		<img src="DSC00839.jpg" alt=1>
-	
-	</picture>
-
-	<div class="row-flex">
-		
-		<div class="align-middle align-center transparent-circle-column">
-			
-			<div>
-				
-				<p>Paragraph above</p>
-				
-			</div>
-			
-			<div class="transparent-circle">
-				
-				<div>
-					
-					<img src=mobile-app-iphone-1.png alt=Image>
-				
-				</div>
-				
-			</div>
-			
-			<div>
-				
-				<p>Paragraph below</p>
-				
-			</div>
-
-		</div>
-
-		<div class="align-middle">
-			
-			<div>
-				
-				<div class="text">
-			
-					<h2>Headline</h2>
-						
-					<p>Paragraph</p>
-					
-					<a class="btn" href=#>CTA</a>
-				
-				</div>
-			
-			</div>
-			
-		</div>
-	
-	</div>
-
-</div>
-
-<h3>Multiple columns</h3>
-
-<div class="text-image contain">
-	
-	<div class="fixed-bg--image"></div>
-	
-	<div class="row-flex">
-		
-		<div class="align-middle align-center image">
-			
-			<div>
-			
-				<img src=mobile-app-iphone-1.png alt=Image>
-				
-			</div>
-			
-		</div>
-
-		<div class="align-middle">
-			
-			<div>
-			
-				<div class="text">
-			
-					<h2>Headline</h2>
-						
-					<p>Paragraph</p>
-					
-					<a class="btn" href=#>CTA</a>
-
-				</div>
-
-			</div>
-			
-		</div>
-
-		<div class="align-middle align-center image">
-			
-			<div>
-			
-				<img src=mobile-app-iphone-1.png alt=Image>
-				
-			</div>
-			
-		</div>
-
-		<div class="align-middle">
-			
-			<div>
-			
-				<div class="text">
-			
-					<h2>Headline</h2>
-						
-					<p>Paragraph</p>
-					
-					<a class="btn" href=#>CTA</a>
-
-				</div>
-
-			</div>
-			
-		</div>
-	
-	</div>
-
-</div>
-
-<h3>Multicol with transparency</h3>
-
-<div class="text-image fixed-bg transparent contain" style="--bg: coral;">
-	
-	<picture class="text-image--background">
-		
-		<img src="DSC00839.jpg" alt=1>
-	
-	</picture>
-
-	<div class="row-flex">
-		
-		<div class="align-center transparent-circle-column">
-			
-			<div>
-				
-				<p>Paragraph above</p>
-				
-			</div>
-			
-			<div class="transparent-circle">
-				
-				<div>
-			
-					<img src=mobile-app-iphone-1.png alt=Image>
-				
-				</div>
-				
-			</div>
-			
-			<div>
-				
-				<p>Paragraph below</p>
-				
-			</div>
-
-		</div>
-
-		<div class="align-center transparent-circle-column">
-			
-			<div>
-				
-				<p>Paragraph above</p>
-				
-			</div>
-			
-			<div class="transparent-circle">
-				
-				<div>
-			
-					<img src=mobile-app-iphone-1.png alt=Image>
-					
-				</div>
-				
-			</div>
-			
-			<div>
-				
-				<p>Paragraph below</p>
-				
-			</div>
-
-		</div>
-
-		<div class="align-center transparent-circle-column">
-			
-			<div>
-				
-				<p>Paragraph above</p>
-				
-			</div>
-			
-			<div class="transparent-circle">
-				
-				<div>
-			
-					<img src=mobile-app-iphone-1.png alt=Image>
-				
-				</div>
-				
-			</div>
-			
-			<div>
-				
-				<p>Paragraph below</p>
-				
-			</div>
-
-		</div>
-	
-	</div>
-
-</div>
-
-<h3>Next 3 have checkerboard pattern</h3>
-
-<h2>White, small text</h2>
-
-<div class="text-image white contain small checkerboard">
-	
-	<div class="fixed-bg--image"></div>
-	
-	<div class="row-flex">
-		
-		<div class="align-middle align-center image">
-			
-			<div>
-			
-				<img src=mobile-app-iphone-1.png alt=Image>
-				
-			</div>
-			
-		</div>
-
-		<div class="align-middle">
-			
-			<div>
-			
-				<div class="text">
-			
-					<h2>Headline</h2>
-						
-					<p>Paragraph</p>
-					
-					<a class="btn" href=#>CTA</a>
-				
-				</div>
-			
-			</div>
-			
-		</div>
-	
-	</div>
-
-</div>
-
-<h2>Light</h2>
-
-<div class="text-image light contain checkerboard">
-	
-	<div class="fixed-bg--image"></div>
-	
-	<div class="row-flex">
-		
-		<div class="align-middle align-center image">
-			
-			<div>
-			
-				<img src=mobile-app-iphone-1.png alt=Image>
-				
-			</div>
-			
-		</div>
-
-		<div class="align-middle">
-			
-			<div>
-			
-				<div class="text">
-			
-					<h2>Headline</h2>
-						
-					<p>Paragraph</p>
-					
-					<a class="btn" href=#>CTA</a>
-				
-				</div>
-			
-			</div>
-			
-		</div>
-	
-	</div>
-
-</div>
-
-<h2>Dark</h2>
-
-<div class="text-image dark contain checkerboard">
-	
-	<div class="fixed-bg--image"></div>
-	
-	<div class="row-flex">
-		
-		<div class="align-middle align-center image">
-			
-			<div>
-			
-				<img src=mobile-app-iphone-1.png alt=Image>
-				
-			</div>
-			
-		</div>
-
-		<div class="align-middle">
-			
-			<div>
-			
-				<div class="text">
-			
-					<h2>Headline</h2>
-						
-					<p>Paragraph</p>
-					
-					<a class="btn" href=#>CTA</a>
-				
-				</div>
-			
-			</div>
-			
-		</div>
-	
-	</div>
-
-</div>
-
-<h2>Stacked</h2>
-
-<div class="text-image dark contain stacked">
-	
-	<div class="fixed-bg--image"></div>
-	
-	<div class="row-flex">
-		
-		<div class="align-middle align-center image">
-			
-			<div>
-			
-				<img src=mobile-app-iphone-1.png alt=Image>
-				
-			</div>
-			
-		</div>
-
-		<div class="align-center">
-			
-			<div>
-			
-				<div class="text">
-			
-					<h2>Headline</h2>
-						
-					<p>Paragraph</p>
-					
-					<a class="btn" href=#>CTA</a>
-				
-				</div>
-			
-			</div>
-			
-		</div>
-	
-	</div>
-
-</div>
-
-<h2>Stick image to top/right/bottom/left</h2>
-
-<div class="text-image dark contain stick-to-bottom">
-	
-	<div class="fixed-bg--image"></div>
-	
-	<div class="row-flex">
-		
-		<div class="align-middle align-center image">
-			
-			<div>
-			
-				<img src=mobile-app-iphone-1.png alt=Image>
-				
-			</div>
-			
-		</div>
-
-		<div class="align-middle">
-			
-			<div>
-			
-				<div class="text">
-			
-					<h2>Headline</h2>
-						
-					<p>Paragraph</p>
-					
-					<a class="btn" href=#>CTA</a>
-				
-				</div>
-			
-			</div>
-			
-		</div>
-	
-	</div>
-
-</div>
-
-<h2>Video iframe embed</h2>
-
-<div class="text-image dark contain">
-	
-	<div class="fixed-bg--image"></div>
-	
-	<div class="row-flex">
-		
-		<div class="video align-middle align-center">
-			
-			<div>
-			
-				<iframe width="560" height="315" src="https://www.youtube.com/embed/E9yrF-tZ6Ns" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>				
-				
-			</div>
-			
-		</div>
-
-		<div class="align-middle">
-			
-			<div>
-			
-				<div class="text">
-			
-					<h2>Headline</h2>
-						
-					<p>Paragraph</p>
-					
-					<a class="btn" href=#>CTA</a>
-				
-				</div>
-			
-			</div>
-			
-		</div>
-	
-	</div>
-
-</div>
-
-<p></p>
-<p></p>
-<p></p>
-
-</body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1.0,maximum-scale=5,user-scalable=yes"
+    />
+
+    <title>Text & Media</title>
+
+    <style>
+      /* Demo style */
+
+      body {
+        background: #000;
+        margin: 0;
+        color: #eee;
+        font-family: "Helvetica Neue", sans-serif;
+
+        min-height: 150vh;
+      }
+
+      body > h2,
+      body > h3 {
+        text-align: center;
+      }
+
+      a[href] {
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .btn {
+        color: #333;
+        background: #ddd;
+        border-radius: 3px;
+        padding: 0.5em 1em;
+        display: inline-block;
+      }
+    </style>
+
+    <!-- <link rel="styleSheet" href="text-image-universal.css" type="text/css" media="screen"> -->
+    <link
+      rel="styleSheet"
+      href="text-media.css"
+      type="text/css"
+      media="screen"
+    />
+    <link
+      rel="styleSheet"
+      href="aspect-ratio.css"
+      type="text/css"
+      media="screen"
+    />
+  </head>
+
+  <body>
+    <br />
+
+    <h2>Text & Media</h2>
+
+    <div class="text-image dark flush-image">
+      <div class="text-image--background">
+        <img src="DSC00839.jpg" alt="1" />
+      </div>
+
+      <div class="row-flex">
+        <div class="align-middle">
+          <div>
+            <div class="text">
+              <h2>Headline</h2>
+
+              <p>Paragraph</p>
+              <p>Paragraph</p>
+              <p>Paragraph</p>
+              <p>Paragraph</p>
+              <p>Paragraph</p>
+              <p>Paragraph</p>
+              <p>Paragraph</p>
+              <p>Paragraph</p>
+              <p>Paragraph</p>
+              <p>Paragraph</p>
+              <p>Paragraph</p>
+              <p>Paragraph</p>
+              <p>Paragraph</p>
+              <p>Paragraph</p>
+              <p>Paragraph</p>
+              <p>Paragraph</p>
+              <p>Paragraph</p>
+              <p>Paragraph</p>
+              <p>Paragraph</p>
+              <p>Paragraph</p>
+              <p>Paragraph</p>
+
+              <p><a class="btn" href="#">CTA</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="align-middle align-left image">
+          <div>
+            <picture class="n-aspect" style="--width: 423; --height: 597">
+              <img
+                src="mobile-app-iphone-1.png"
+                alt="1"
+                style="background: lightblue"
+              />
+            </picture>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-image dark flush-image">
+      <div class="text-image--background">
+        <img src="DSC00839.jpg" alt="1" />
+      </div>
+
+      <div class="row-flex">
+        <div class="align-middle align-right image">
+          <div>
+            <picture class="n-aspect" style="--width: 423; --height: 597">
+              <img
+                src="mobile-app-iphone-1.png"
+                alt="1"
+                style="background: lightblue"
+              />
+            </picture>
+          </div>
+        </div>
+
+        <div class="align-middle">
+          <div>
+            <div class="text">
+              <h2>Headline</h2>
+
+              <p>Paragraph</p>
+
+              <p><a class="btn" href="#">CTA</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3>Fixed Background</h3>
+
+    <div class="text-image fixed-bg dark">
+      <picture class="text-image--background">
+        <source srcset="DSC00557-1024px.jpg" media="(max-width: 600px)" />
+
+        <img src="DSC00557.jpg" alt="1" />
+      </picture>
+
+      <div class="row-flex">
+        <div class="align-middle align-center image">
+          <div>
+            <img src="mobile-app-iphone-1.png" alt="Image" />
+          </div>
+        </div>
+
+        <div class="align-middle">
+          <div>
+            <div class="text">
+              <h2>Headline</h2>
+
+              <p>Paragraph</p>
+
+              <a class="btn" href="#">CTA</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3>White Box (contained width)</h3>
+
+    <div class="text-image white-box dark contain">
+      <div class="fixed-bg--image"></div>
+
+      <div class="row-flex">
+        <div class="align-middle align-center image">
+          <div>
+            <img src="mobile-app-iphone-1.png" alt="Image" />
+          </div>
+        </div>
+
+        <div class="align-middle">
+          <div>
+            <div class="text">
+              <h2>Headline</h2>
+
+              <p>Paragraph</p>
+
+              <a class="btn" href="#">CTA</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3>Transparency</h3>
+
+    <div class="text-image fixed-bg transparent contain" style="--bg: coral">
+      <picture class="text-image--background">
+        <img src="DSC00839.jpg" alt="1" />
+      </picture>
+
+      <div class="row-flex">
+        <div class="align-middle align-center transparent-circle-column">
+          <div>
+            <p>Paragraph above</p>
+          </div>
+
+          <div class="transparent-circle">
+            <div>
+              <img src="mobile-app-iphone-1.png" alt="Image" />
+            </div>
+          </div>
+
+          <div>
+            <p>Paragraph below</p>
+          </div>
+        </div>
+
+        <div class="align-middle">
+          <div>
+            <div class="text">
+              <h2>Headline</h2>
+
+              <p>Paragraph</p>
+
+              <a class="btn" href="#">CTA</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3>Multiple columns</h3>
+
+    <div class="text-image contain">
+      <div class="fixed-bg--image"></div>
+
+      <div class="row-flex">
+        <div class="align-middle align-center image">
+          <div>
+            <img src="mobile-app-iphone-1.png" alt="Image" />
+          </div>
+        </div>
+
+        <div class="align-middle">
+          <div>
+            <div class="text">
+              <h2>Headline</h2>
+
+              <p>Paragraph</p>
+
+              <a class="btn" href="#">CTA</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="align-middle align-center image">
+          <div>
+            <img src="mobile-app-iphone-1.png" alt="Image" />
+          </div>
+        </div>
+
+        <div class="align-middle">
+          <div>
+            <div class="text">
+              <h2>Headline</h2>
+
+              <p>Paragraph</p>
+
+              <a class="btn" href="#">CTA</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3>Multicol with transparency</h3>
+
+    <div class="text-image fixed-bg transparent contain" style="--bg: coral">
+      <picture class="text-image--background">
+        <img src="DSC00839.jpg" alt="1" />
+      </picture>
+
+      <div class="row-flex">
+        <div class="align-center transparent-circle-column">
+          <div>
+            <p>Paragraph above</p>
+          </div>
+
+          <div class="transparent-circle">
+            <div>
+              <img src="mobile-app-iphone-1.png" alt="Image" />
+            </div>
+          </div>
+
+          <div>
+            <p>Paragraph below</p>
+          </div>
+        </div>
+
+        <div class="align-center transparent-circle-column">
+          <div>
+            <p>Paragraph above</p>
+          </div>
+
+          <div class="transparent-circle">
+            <div>
+              <img src="mobile-app-iphone-1.png" alt="Image" />
+            </div>
+          </div>
+
+          <div>
+            <p>Paragraph below</p>
+          </div>
+        </div>
+
+        <div class="align-center transparent-circle-column">
+          <div>
+            <p>Paragraph above</p>
+          </div>
+
+          <div class="transparent-circle">
+            <div>
+              <img src="mobile-app-iphone-1.png" alt="Image" />
+            </div>
+          </div>
+
+          <div>
+            <p>Paragraph below</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3>Next 3 have checkerboard pattern</h3>
+
+    <h2>White, small text</h2>
+
+    <div class="text-image white contain small checkerboard">
+      <div class="fixed-bg--image"></div>
+
+      <div class="row-flex">
+        <div class="align-middle align-center image">
+          <div>
+            <img src="mobile-app-iphone-1.png" alt="Image" />
+          </div>
+        </div>
+
+        <div class="align-middle">
+          <div>
+            <div class="text">
+              <h2>Headline</h2>
+
+              <p>Paragraph</p>
+
+              <a class="btn" href="#">CTA</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2>Light</h2>
+
+    <div class="text-image light contain checkerboard">
+      <div class="fixed-bg--image"></div>
+
+      <div class="row-flex">
+        <div class="align-middle align-center image">
+          <div>
+            <img src="mobile-app-iphone-1.png" alt="Image" />
+          </div>
+        </div>
+
+        <div class="align-middle">
+          <div>
+            <div class="text">
+              <h2>Headline</h2>
+
+              <p>Paragraph</p>
+
+              <a class="btn" href="#">CTA</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2>Dark</h2>
+
+    <div class="text-image dark contain checkerboard">
+      <div class="fixed-bg--image"></div>
+
+      <div class="row-flex">
+        <div class="align-middle align-center image">
+          <div>
+            <img src="mobile-app-iphone-1.png" alt="Image" />
+          </div>
+        </div>
+
+        <div class="align-middle">
+          <div>
+            <div class="text">
+              <h2>Headline</h2>
+
+              <p>Paragraph</p>
+
+              <a class="btn" href="#">CTA</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2>Stacked</h2>
+
+    <div class="text-image dark contain stacked">
+      <div class="fixed-bg--image"></div>
+
+      <div class="row-flex">
+        <div class="align-middle align-center image">
+          <div>
+            <img src="mobile-app-iphone-1.png" alt="Image" />
+          </div>
+        </div>
+
+        <div class="align-center">
+          <div>
+            <div class="text">
+              <h2>Headline</h2>
+
+              <p>Paragraph</p>
+
+              <a class="btn" href="#">CTA</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2>Stick image to top/right/bottom/left</h2>
+
+    <div class="text-image dark contain stick-to-bottom">
+      <div class="fixed-bg--image"></div>
+
+      <div class="row-flex">
+        <div class="align-middle align-center image">
+          <div>
+            <img src="mobile-app-iphone-1.png" alt="Image" />
+          </div>
+        </div>
+
+        <div class="align-middle">
+          <div>
+            <div class="text">
+              <h2>Headline</h2>
+
+              <p>Paragraph</p>
+
+              <a class="btn" href="#">CTA</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2>Video iframe embed</h2>
+
+    <div class="text-image dark contain">
+      <div class="fixed-bg--image"></div>
+
+      <div class="row-flex">
+        <div class="video align-middle align-center">
+          <div>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/E9yrF-tZ6Ns"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+
+        <div class="align-middle">
+          <div>
+            <div class="text">
+              <h2>Headline</h2>
+
+              <p>Paragraph</p>
+
+              <a class="btn" href="#">CTA</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p></p>
+    <p></p>
+    <p></p>
+  </body>
+</html>
