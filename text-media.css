@@ -103,7 +103,7 @@
 .text-media.text-media--contain .row-flex {
   max-width: var(--page-width, 1036px);
 }
-.text-media.text-media__stacked .row-flex > * {
+.text-media.text-media--stacked .row-flex > * {
   width: 100%;
 }
 .text-media.text-media--small {

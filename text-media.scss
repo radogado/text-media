@@ -128,7 +128,7 @@ $breakpoint_tablet: 900px;
     max-width: var(--page-width, $page-width);
   }
 
-  &.text-media__stacked .row-flex > * {
+  &.text-media--stacked .row-flex > * {
     width: 100%;
   }
 
