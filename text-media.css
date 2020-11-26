@@ -303,7 +303,7 @@
 }
 @media (max-width: 600px) {
   .text-media.text-media--offset > .row-flex, .text-media.text-media--offset.text-media__offset-wide-text > .row-flex {
-    grid-template-rows: 1fr 2em auto;
+    grid-template-rows: 1fr 2em 1fr;
   }
   .text-media.text-media--offset > .row-flex .text-media__background .n-aspect:not(.text-media__video), .text-media.text-media--offset.text-media__offset-wide-text > .row-flex .text-media__background .n-aspect:not(.text-media__video) {
     display: flex;

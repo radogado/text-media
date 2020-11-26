@@ -402,7 +402,7 @@ $breakpoint_tablet: 900px;
     &.text-media--offset {
       > .row-flex,
       &.text-media__offset-wide-text > .row-flex {
-        grid-template-rows: 1fr 2em auto;
+        grid-template-rows: 1fr 2em 1fr;
 
         .text-media__background .n-aspect:not(.text-media__video) {
           display: flex;
