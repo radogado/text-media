@@ -1,0 +1,9 @@
+{
+  "actions" : {
+    "build" : {
+      "enabled" : true,
+      "script" : ".\/node_modules\/clean-css-cli\/bin\/cleancss -o text-media.min.css text-media.css"
+    }
+  },
+  "identifier" : "506FA3A0-D1D4-4A88-A290-79F7E7EB3EDF"
+}

@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/radogado/text-media/issues"
   },
-  "homepage": "https://github.com/radogado/text-media#readme"
+  "homepage": "https://github.com/radogado/text-media#readme",
+  "dependencies": {
+    "clean-css-cli": "^4.3.0"
+  }
 }
