@@ -57,8 +57,10 @@ $breakpoint_tablet: 900px;
   width: 100%;
 }
 
-.no-padding .row-flex > *,
-.text-media--flush-image .row-flex > .text-media__image {
+.no-padding .row-flex > *
+// ,
+// .text-media--flush-image .row-flex > .text-media__image
+{
   padding: 0;
 
   &.text-media__text > * > * {
@@ -124,9 +126,11 @@ $breakpoint_tablet: 900px;
   --color: #333;
   color: var(--color);
 
-  @media (prefers-color-scheme: dark) {
-    --color: #eee;
-    --bg: #333;
+  &:not([class*="theme-"]) {
+    @media (prefers-color-scheme: dark) {
+      --color: #eee;
+      --bg: #333;
+    }
   }
 
   &.text-media--contain {
@@ -419,16 +423,16 @@ $breakpoint_tablet: 900px;
         }
       }
     }
-    &.text-media--flush-image .text-media__image > div {
-      picture {
-        width: 100%;
-        min-height: calc(100vw * var(--height) / var(--width));
-
-        img {
-          width: 100%;
-        }
-      }
-    }
+    //     &.text-media--flush-image .text-media__image > div {
+    //       picture {
+    //         width: 100%;
+    //         min-height: calc(100vw * var(--height) / var(--width));
+    //
+    //         img {
+    //           width: 100%;
+    //         }
+    //       }
+    //     }
   }
   @supports (clip: rect(auto, auto, auto, auto)) {
     &.text-media--fixed-bg {
@@ -620,65 +624,61 @@ $breakpoint_tablet: 900px;
       }
     }
 
-    &.text-media--flush-image {
-      .text-media__image {
-        position: relative;
-
-        picture {
-          // position: static;
-
-          img {
-            position: absolute;
-            left: 0;
-            top: 0;
-            right: auto;
-            height: 100%;
-            object-fit: cover;
-            object-position: left;
-          }
-        }
-      }
-
-      .text-media__image:first-child > div {
-        picture {
-          img {
-            right: 0;
-            left: auto;
-            object-position: right;
-          }
-        }
-      }
-
-      .row-flex > div:not(.text-media__image):first-child > div {
-        display: flex;
-        justify-content: flex-end;
-      }
-
-      .row-flex > div.text-media__text:not(.text-media__image) > div > * {
-        width: calc(var(--page-width, $page-width) / 2);
-      }
-    }
+    //     &.text-media--flush-image {
+    //       .text-media__image {
+    //         position: relative;
+    //
+    //         picture {
+    //           img {
+    //             position: absolute;
+    //             left: 0;
+    //             top: 0;
+    //             right: auto;
+    //             height: 100%;
+    //             object-fit: cover;
+    //             object-position: left;
+    //           }
+    //         }
+    //       }
+    //
+    //       .text-media__image:first-child > div {
+    //         picture {
+    //           img {
+    //             right: 0;
+    //             left: auto;
+    //             object-position: right;
+    //           }
+    //         }
+    //       }
+    //
+    //       .row-flex > div:not(.text-media__image):first-child > div {
+    //         display: flex;
+    //         justify-content: flex-end;
+    //       }
+    //     }
   }
   .text-media__video,
   .text-media__video.n-aspect {
-    --width: 1920;
-    --height: 1080;
-    // background: lightgrey;
-    margin: 3em 3%;
-    width: calc(2 * var(--page-width) / 3);
-    max-width: 94%;
-    box-shadow: 0 0 10px 5px var(--color-purple-30);
-    padding: 0;
+    > div {
+      --width: 1920;
+      --height: 1080;
+      // background: lightgrey;
+      margin: 3em 3%;
+      width: calc(2 * var(--page-width) / 3);
+      max-width: 94%;
+      box-shadow: 0 0 10px 5px var(--color-purple-30);
+      padding: 0;
 
-    iframe {
-      width: 100% !important;
-      height: 100% !important;
-      position: absolute;
-      border: none;
-    }
+      iframe {
+        width: 100% !important;
+        height: 100% !important;
+        position: absolute;
+        border: none;
+      }
 
-    .text-media__video-preview {
-      padding: 1px;
+      .text-media__video-preview {
+        padding: 1px;
+      }
     }
   }
 

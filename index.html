@@ -10,75 +10,6 @@
 
     <title>Text & Media</title>
 
-    <style>
-      /* Demo style */
-
-      body {
-        background: #000;
-        margin: 0;
-        color: #eee;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-          Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans",
-          "Helvetica Neue", sans-serif;
-
-        min-height: 150vh;
-      }
-
-      body > h1,
-      body > h2,
-      body > h3 {
-        text-align: center;
-      }
-
-      a[href] {
-        text-decoration: none;
-        font-weight: bold;
-      }
-
-      .btn {
-        color: #333;
-        background: #ddd;
-        border-radius: 3px;
-        padding: 0.5em 1em;
-        display: inline-block;
-      }
-      pre {
-        overflow: auto;
-      }
-      code[class*="language-"] {
-        font-family: monospace !important;
-        line-height: 1.9 !important;
-        display: block;
-      }
-
-      .code {
-        position: relative;
-        margin: 1.5em auto;
-        display: inline-block;
-        max-width: 100%;
-
-        pre {
-          padding: 1em;
-          margin: 0.5em 0;
-        }
-
-        button.n-btn {
-          position: absolute;
-          bottom: 0.67em;
-          right: 0;
-          font-size: 0.75em;
-          margin: 0;
-          -webkit-appearance: none;
-          appearance: none;
-          background: lightcoral;
-          border: none;
-          cursor: pointer;
-          color: #fff;
-          font-weight: bold;
-        }
-      }
-    </style>
-
     <link
       rel="styleSheet"
       href="text-media.css"
@@ -87,11 +18,17 @@
     />
     <link
       rel="styleSheet"
-      href="prism.min.css"
+      href="demo/demo.css"
       type="text/css"
       media="screen"
     />
-    <script src="prism.js" defer></script>
+    <link
+      rel="styleSheet"
+      href="demo/prism.min.css"
+      type="text/css"
+      media="screen"
+    />
+    <script src="demo/prism.js" defer></script>
   </head>
 
   <body>
@@ -109,6 +46,23 @@
             <p>Paragraph</p>
 
             <p><a class="btn" href="#">CTA</a></p>
+
+            <div class="code">
+              <pre class="language-markup">
+<code class="language-markup">
+&lt;div class=&quot;text-media&quot;&gt;
+  &lt;div class=&quot;row-flex&quot;&gt;
+    &lt;div class=&quot;text-media__text&quot;&gt;
+      &lt;div&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;text-media__image&quot;&gt;
+      &lt;div&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+            </div>
           </div>
         </div>
 
@@ -120,32 +74,6 @@
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="code">
-      <pre
-        class="language-markup"
-      ><code class="language-markup">&lt;link rel="styleSheet" href="n-carousel.min.css"&gt;
-&lt;script src="n-carousel.min.js" type="module" async&gt;&lt;/script&gt;
-
-&lt;div class="n-carousel"&gt;
-&lt;div class="n-carousel__content"&gt;
-&lt;div&gt;&lt;div&gt;One&lt;/div&gt;&lt;/div&gt;
-&lt;div&gt;&lt;div&gt;Two&lt;/div&gt;&lt;/div&gt;
-&lt;div&gt;&lt;div&gt;Three&lt;/div&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;n-carousel__previous&quot;&gt;
-&lt;button&gt;&lt;span&gt;Previous&lt;/span&gt;&lt;/button&gt;
-&lt;/div&gt;
-&lt;div class=&quot;n-carousel__next&quot;&gt;
-&lt;button&gt;&lt;span&gt;Next&lt;/span&gt;&lt;/button&gt;
-&lt;/div&gt;
-&lt;div class=&quot;n-carousel__index&quot;&gt;
-&lt;button&gt;&lt;span&gt;1&lt;/span&gt;&lt;/button&gt;
-&lt;button&gt;&lt;span&gt;2&lt;/span&gt;&lt;/button&gt;
-&lt;button&gt;&lt;span&gt;3&lt;/span&gt;&lt;/button&gt;
-&lt;/div&gt;
-&lt;/div&gt;</code></pre>
     </div>
 
     <h3>Alignment options</h3>
@@ -184,28 +112,24 @@
             <h2>Headline</h2>
 
             <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
 
             <p><a class="btn" href="#">CTA</a></p>
+            <div class="code">
+              <pre class="language-markup">
+<code class="language-markup">
+&lt;div class=&quot;text-media&quot;&gt;
+&lt;div class=&quot;row-flex&quot;&gt;
+&lt;div class=&quot;text-media__text&quot;&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;text-media__image&quot;&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+            </div>
           </div>
         </div>
 
@@ -232,28 +156,25 @@
             <h2>Headline</h2>
 
             <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
 
             <p><a class="btn" href="#">CTA</a></p>
+
+            <div class="code">
+              <pre class="language-markup">
+<code class="language-markup">
+&lt;div class=&quot;text-media&quot;&gt;
+&lt;div class=&quot;row-flex&quot;&gt;
+&lt;div class=&quot;text-media__text&quot;&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;text-media__image&quot;&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+            </div>
           </div>
         </div>
 
@@ -290,28 +211,25 @@
             <h2>Headline</h2>
 
             <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
-            <p>Paragraph</p>
 
             <p><a class="btn" href="#">CTA</a></p>
+
+            <div class="code">
+              <pre class="language-markup">
+<code class="language-markup">
+&lt;div class=&quot;text-media&quot;&gt;
+&lt;div class=&quot;row-flex&quot;&gt;
+&lt;div class=&quot;text-media__text&quot;&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;text-media__image&quot;&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+            </div>
           </div>
         </div>
 
@@ -335,35 +253,7 @@
       </div>
     </div>
 
-    <h2>Flush image</h2>
-
-    <div class="text-media theme-dark text-media--flush-image">
-      <div class="text-media__background">
-        <img src="images/DSC00839.jpg" alt="1" />
-      </div>
-
-      <div class="row-flex">
-        <div class="align-bottom align-center text-media__image">
-          <div>
-            <picture class="n-aspect" style="--width: 423; --height: 386">
-              <img src="images/mobile-app-iphone-1-crop.png" alt="1" />
-            </picture>
-          </div>
-        </div>
-
-        <div class="align-middle text-media__text">
-          <div>
-            <h2>Headline</h2>
-
-            <p>Paragraph</p>
-
-            <p><a class="btn" href="#">CTA</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <h3>Fixed Background</h3>
+    <h2>Fixed Background</h2>
 
     <div class="text-media text-media--fixed-bg theme-dark">
       <picture class="text-media__background">
@@ -389,14 +279,31 @@
 
               <p>Paragraph</p>
 
-              <a class="btn" href="#">CTA</a>
+              <p><a class="btn" href="#">CTA</a></p>
+
+              <div class="code">
+                <pre class="language-markup">
+<code class="language-markup">
+&lt;div class=&quot;text-media&quot;&gt;
+&lt;div class=&quot;row-flex&quot;&gt;
+&lt;div class=&quot;text-media__text&quot;&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;text-media__image&quot;&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <h3>White box</h3>
+    <h2>White box</h2>
 
     <div class="text-media theme-dark text-media--contain">
       <div class="text-media__fixed-bg-image"></div>
@@ -415,14 +322,31 @@
 
               <p>Paragraph</p>
 
-              <a class="btn" href="#">CTA</a>
+              <p><a class="btn" href="#">CTA</a></p>
+
+              <div class="code">
+                <pre class="language-markup">
+<code class="language-markup">
+&lt;div class=&quot;text-media&quot;&gt;
+&lt;div class=&quot;row-flex&quot;&gt;
+&lt;div class=&quot;text-media__text&quot;&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;text-media__image&quot;&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <h3>Transparency</h3>
+    <h2>Transparency</h2>
 
     <div
       class="text-media text-media--fixed-bg text-media--transparent text-media--contain"
@@ -457,13 +381,30 @@
 
             <p>Paragraph</p>
 
-            <a class="btn" href="#">CTA</a>
+            <p><a class="btn" href="#">CTA</a></p>
+
+            <div class="code">
+              <pre class="language-markup">
+<code class="language-markup">
+&lt;div class=&quot;text-media&quot;&gt;
+&lt;div class=&quot;row-flex&quot;&gt;
+&lt;div class=&quot;text-media__text&quot;&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;text-media__image&quot;&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <h3>Multiple columns</h3>
+    <h2>Multiple columns</h2>
 
     <div class="text-media text-media--contain">
       <div class="text-media__fixed-bg-image"></div>
@@ -497,13 +438,30 @@
 
             <p>Paragraph</p>
 
-            <a class="btn" href="#">CTA</a>
+            <p><a class="btn" href="#">CTA</a></p>
+
+            <div class="code">
+              <pre class="language-markup">
+<code class="language-markup">
+&lt;div class=&quot;text-media&quot;&gt;
+&lt;div class=&quot;row-flex&quot;&gt;
+&lt;div class=&quot;text-media__text&quot;&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;text-media__image&quot;&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <h3>Multiple columns with transparency</h3>
+    <h2>Multiple columns with transparency</h2>
 
     <div
       class="text-media text-media--fixed-bg text-media--transparent text-media--contain"
@@ -558,13 +516,28 @@
           </div>
 
           <div>
-            <p>Paragraph below</p>
+            <div class="code">
+              <pre class="language-markup">
+<code class="language-markup">
+&lt;div class=&quot;text-media&quot;&gt;
+&lt;div class=&quot;row-flex&quot;&gt;
+&lt;div class=&quot;text-media__text&quot;&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;text-media__image&quot;&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <h3>Next 3 have checkerboard pattern</h3>
+    <h2>Next 3 have checkerboard pattern</h2>
 
     <h2>Small text</h2>
 
@@ -586,7 +559,24 @@
 
             <p>Paragraph</p>
 
-            <a class="btn" href="#">CTA</a>
+            <p><a class="btn" href="#">CTA</a></p>
+
+            <div class="code">
+              <pre class="language-markup">
+<code class="language-markup">
+&lt;div class=&quot;text-media&quot;&gt;
+&lt;div class=&quot;row-flex&quot;&gt;
+&lt;div class=&quot;text-media__text&quot;&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;text-media__image&quot;&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+            </div>
           </div>
         </div>
       </div>
@@ -612,7 +602,24 @@
 
             <p>Paragraph</p>
 
-            <a class="btn" href="#">CTA</a>
+            <p><a class="btn" href="#">CTA</a></p>
+
+            <div class="code">
+              <pre class="language-markup">
+<code class="language-markup">
+&lt;div class=&quot;text-media&quot;&gt;
+&lt;div class=&quot;row-flex&quot;&gt;
+&lt;div class=&quot;text-media__text&quot;&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;text-media__image&quot;&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+            </div>
           </div>
         </div>
       </div>
@@ -638,7 +645,24 @@
 
             <p>Paragraph</p>
 
-            <a class="btn" href="#">CTA</a>
+            <p><a class="btn" href="#">CTA</a></p>
+
+            <div class="code">
+              <pre class="language-markup">
+<code class="language-markup">
+&lt;div class=&quot;text-media&quot;&gt;
+&lt;div class=&quot;row-flex&quot;&gt;
+&lt;div class=&quot;text-media__text&quot;&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;text-media__image&quot;&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+            </div>
           </div>
         </div>
       </div>
@@ -662,23 +686,40 @@
 
             <p>Paragraph</p>
 
-            <a class="btn" href="#">CTA</a>
+            <p><a class="btn" href="#">CTA</a></p>
+
+            <div class="code">
+              <pre class="language-markup">
+<code class="language-markup">
+&lt;div class=&quot;text-media&quot;&gt;
+&lt;div class=&quot;row-flex&quot;&gt;
+&lt;div class=&quot;text-media__text&quot;&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;text-media__image&quot;&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <h2>Stick image to top/right/bottom/left (no spacing there)</h2>
+    <h2>Stick image to top/right/bottom/left</h2>
 
     <div
       class="text-media theme-dark text-media--contain text-media--stick-to-bottom"
     >
-      <div class="text-media__fixed-bg-image"></div>
-
       <div class="row-flex">
         <div class="align-middle align-center text-media__image">
           <div>
-            <img src="images/mobile-app-iphone-1.png" alt="Image" />
+            <picture class="n-aspect" style="--width: 423; --height: 386">
+              <img src="images/mobile-app-iphone-1-crop.png" alt="1" />
+            </picture>
           </div>
         </div>
 
@@ -688,7 +729,24 @@
 
             <p>Paragraph</p>
 
-            <a class="btn" href="#">CTA</a>
+            <p><a class="btn" href="#">CTA</a></p>
+
+            <div class="code">
+              <pre class="language-markup">
+<code class="language-markup">
+&lt;div class=&quot;text-media&quot;&gt;
+&lt;div class=&quot;row-flex&quot;&gt;
+&lt;div class=&quot;text-media__text&quot;&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;text-media__image&quot;&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+            </div>
           </div>
         </div>
       </div>
@@ -718,7 +776,24 @@
 
             <p>Paragraph</p>
 
-            <a class="btn" href="#">CTA</a>
+            <p><a class="btn" href="#">CTA</a></p>
+
+            <div class="code">
+              <pre class="language-markup">
+<code class="language-markup">
+&lt;div class=&quot;text-media&quot;&gt;
+&lt;div class=&quot;row-flex&quot;&gt;
+&lt;div class=&quot;text-media__text&quot;&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;text-media__image&quot;&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+            </div>
           </div>
         </div>
       </div>
@@ -732,15 +807,24 @@
       </div>
 
       <div class="row-flex">
-        <div class="text-media__video align-middle align-center">
+        <div class="text-media__text align-middle align-center">
           <div>
-            <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube-nocookie.com/embed/E9yrF-tZ6Ns"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
+            <div class="code">
+              <pre class="language-markup">
+<code class="language-markup">
+&lt;div class=&quot;text-media&quot;&gt;
+&lt;div class=&quot;row-flex&quot;&gt;
+&lt;div class=&quot;text-media__text&quot;&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;text-media__image&quot;&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+            </div>
           </div>
         </div>
 
@@ -765,16 +849,25 @@
       <div class="row-flex">
         <div class="text-media__text">
           <div>
-            <h2 class="">Get started with us</h2>
-            <p>Don’t worry if you’re new to crypto – we make it simple.</p>
-            <p>
-              Choose from a variety of options when funding your first
-              transaction – for example by credit card, bank transfer or a local
-              payment provider.&nbsp;<br /><br /><br />
-            </p>
-            <p>
-              <a href="#" target="_blank" class="btn">Learn more</a>
-            </p>
+            <h2 class="">Title</h2>
+            <p>Paragraph.</p>
+
+            <div class="code">
+              <pre class="language-markup">
+<code class="language-markup">
+&lt;div class=&quot;text-media&quot;&gt;
+&lt;div class=&quot;row-flex&quot;&gt;
+&lt;div class=&quot;text-media__text&quot;&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;text-media__image&quot;&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+            </div>
           </div>
         </div>
         <div class="text-media__image">
@@ -797,16 +890,25 @@
       <div class="row-flex">
         <div class="text-media__text">
           <div>
-            <h2 class="">Get started with us</h2>
-            <p>Don’t worry if you’re new to crypto – we make it simple.</p>
-            <p>
-              Choose from a variety of options when funding your first
-              transaction – for example by credit card, bank transfer or a local
-              payment provider.&nbsp;<br /><br /><br />
-            </p>
-            <p>
-              <a href="#" target="_blank" class="btn">Learn more</a>
-            </p>
+            <h2 class="">Title</h2>
+            <p>Paragraph.</p>
+
+            <div class="code">
+              <pre class="language-markup">
+<code class="language-markup">
+&lt;div class=&quot;text-media&quot;&gt;
+&lt;div class=&quot;row-flex&quot;&gt;
+&lt;div class=&quot;text-media__text&quot;&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;text-media__image&quot;&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+            </div>
           </div>
         </div>
         <div class="text-media__image">
@@ -838,16 +940,25 @@
         </div>
         <div class="text-media__text">
           <div>
-            <h2 class="">Get started with us</h2>
-            <p>Don’t worry if you’re new to crypto – we make it simple.</p>
-            <p>
-              Choose from a variety of options when funding your first
-              transaction – for example by credit card, bank transfer or a local
-              payment provider.&nbsp;<br /><br /><br />
-            </p>
-            <p>
-              <a href="#" target="_blank" class="btn">Learn more</a>
-            </p>
+            <h2 class="">Title</h2>
+            <p>Paragraph.</p>
+
+            <div class="code">
+              <pre class="language-markup">
+<code class="language-markup">
+&lt;div class=&quot;text-media&quot;&gt;
+&lt;div class=&quot;row-flex&quot;&gt;
+&lt;div class=&quot;text-media__text&quot;&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;text-media__image&quot;&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+            </div>
           </div>
         </div>
       </div>
@@ -858,10 +969,28 @@
     <p></p>
     <h2>Resources</h2>
 
-    <h2><a href="https://github.com/radogado/text-media">GitHub</a></h2>
-    <h2>
-      <a href="https://www.npmjs.com/package/text-media">npm i text-media</a>
-    </h2>
+    <div class="text-media text-media--contain theme-white">
+      <div class="row-flex">
+        <div class="align-middle text-media__text text-media--white-box">
+          <div>
+            <div>
+              <p><a href="https://github.com/radogado/text-media">GitHub</a></p>
+              <p>
+                <a href="https://www.npmjs.com/package/text-media"
+                  >npm i text-media</a
+                >
+              </p>
+
+              <p>
+                Usage: add
+                <a href="text-media.min.css"><b>text-media.min.css</b></a> to
+                your page.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script>
       function copyButton(el, target, echo) {
