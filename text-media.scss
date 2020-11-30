@@ -2,6 +2,8 @@ $page-width: 1036px;
 $breakpoint_mobile: 600px;
 $breakpoint_tablet: 900px;
 
+@import "aspect-ratio";
+
 .row-flex {
   display: flex;
   flex-wrap: wrap; // Because of the margin-clearing :before and :after elements
@@ -56,7 +58,7 @@ $breakpoint_tablet: 900px;
 }
 
 .no-padding .row-flex > *,
-.text-media--flush-image .row-flex > * {
+.text-media--flush-image .row-flex > .text-media__image {
   padding: 0;
 
   &.text-media__text > * > * {
@@ -90,10 +92,9 @@ $breakpoint_tablet: 900px;
 }
 
 .text-media {
+  --page-width: 1280px;
   background-size: cover;
   background-position: center center;
-  color: #646466;
-
   position: relative;
 
   .row-flex > .col1 {
@@ -118,9 +119,15 @@ $breakpoint_tablet: 900px;
     display: none;
   }
 
-  --bg: #fff;
+  --bg: #eee;
   background-color: var(--bg);
-  color: #333;
+  --color: #333;
+  color: var(--color);
+
+  @media (prefers-color-scheme: dark) {
+    --color: #eee;
+    --bg: #333;
+  }
 
   &.text-media--contain {
     max-width: var(--page-width, $page-width);
@@ -618,7 +625,7 @@ $breakpoint_tablet: 900px;
         position: relative;
 
         picture {
-          position: static;
+          // position: static;
 
           img {
             position: absolute;
@@ -648,7 +655,6 @@ $breakpoint_tablet: 900px;
       }
 
       .row-flex > div.text-media__text:not(.text-media__image) > div > * {
-        width: $page-width/2; // Half of contained width
         width: calc(var(--page-width, $page-width) / 2);
       }
     }

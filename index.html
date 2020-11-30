@@ -24,6 +24,7 @@
         min-height: 150vh;
       }
 
+      body > h1,
       body > h2,
       body > h3 {
         text-align: center;
@@ -41,6 +42,41 @@
         padding: 0.5em 1em;
         display: inline-block;
       }
+      pre {
+        overflow: auto;
+      }
+      code[class*="language-"] {
+        font-family: monospace !important;
+        line-height: 1.9 !important;
+        display: block;
+      }
+
+      .code {
+        position: relative;
+        margin: 1.5em auto;
+        display: inline-block;
+        max-width: 100%;
+
+        pre {
+          padding: 1em;
+          margin: 0.5em 0;
+        }
+
+        button.n-btn {
+          position: absolute;
+          bottom: 0.67em;
+          right: 0;
+          font-size: 0.75em;
+          margin: 0;
+          -webkit-appearance: none;
+          appearance: none;
+          background: lightcoral;
+          border: none;
+          cursor: pointer;
+          color: #fff;
+          font-weight: bold;
+        }
+      }
     </style>
 
     <link
@@ -51,17 +87,19 @@
     />
     <link
       rel="styleSheet"
-      href="aspect-ratio.css"
+      href="prism.min.css"
       type="text/css"
       media="screen"
     />
+    <script src="prism.js" defer></script>
   </head>
 
   <body>
     <br />
 
-    <h2>Text & Media</h2>
+    <h1>Text & Media</h1>
 
+    <h2>Default</h2>
     <div class="text-media">
       <div class="row-flex">
         <div class="text-media__text">
@@ -82,6 +120,32 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="code">
+      <pre
+        class="language-markup"
+      ><code class="language-markup">&lt;link rel="styleSheet" href="n-carousel.min.css"&gt;
+&lt;script src="n-carousel.min.js" type="module" async&gt;&lt;/script&gt;
+
+&lt;div class="n-carousel"&gt;
+&lt;div class="n-carousel__content"&gt;
+&lt;div&gt;&lt;div&gt;One&lt;/div&gt;&lt;/div&gt;
+&lt;div&gt;&lt;div&gt;Two&lt;/div&gt;&lt;/div&gt;
+&lt;div&gt;&lt;div&gt;Three&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;n-carousel__previous&quot;&gt;
+&lt;button&gt;&lt;span&gt;Previous&lt;/span&gt;&lt;/button&gt;
+&lt;/div&gt;
+&lt;div class=&quot;n-carousel__next&quot;&gt;
+&lt;button&gt;&lt;span&gt;Next&lt;/span&gt;&lt;/button&gt;
+&lt;/div&gt;
+&lt;div class=&quot;n-carousel__index&quot;&gt;
+&lt;button&gt;&lt;span&gt;1&lt;/span&gt;&lt;/button&gt;
+&lt;button&gt;&lt;span&gt;2&lt;/span&gt;&lt;/button&gt;
+&lt;button&gt;&lt;span&gt;3&lt;/span&gt;&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;</code></pre>
     </div>
 
     <h3>Alignment options</h3>
@@ -203,6 +267,16 @@
       </div>
     </div>
 
+    <div class="text-media text-media--contain">
+      <div class="row-flex">
+        <div class="align-middle text-media__text">
+          <div>
+            <p>Container width specified by <b>--page-width</b>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <h2>Limited</h2>
 
     <div class="text-media theme-dark text-media--limit">
@@ -251,6 +325,16 @@
       </div>
     </div>
 
+    <div class="text-media text-media--contain">
+      <div class="row-flex">
+        <div class="align-middle text-media__text">
+          <div>
+            <p>Width limit specified by <b>--page-width</b>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <h2>Flush image</h2>
 
     <div class="text-media theme-dark text-media--flush-image">
@@ -259,10 +343,10 @@
       </div>
 
       <div class="row-flex">
-        <div class="align-middle align-right text-media__image">
+        <div class="align-bottom align-center text-media__image">
           <div>
-            <picture class="n-aspect" style="--width: 423; --height: 597">
-              <img src="images/mobile-app-iphone-1.png" alt="1" />
+            <picture class="n-aspect" style="--width: 423; --height: 386">
+              <img src="images/mobile-app-iphone-1-crop.png" alt="1" />
             </picture>
           </div>
         </div>
@@ -485,7 +569,7 @@
     <h2>Small text</h2>
 
     <div
-      class="text-media text-media--contain text-media--small text-media--checkerboard"
+      class="text-media text-media--contain text-media--small text-media--checkerboard theme-white"
     >
       <div class="text-media__fixed-bg-image"></div>
 
@@ -769,13 +853,37 @@
       </div>
     </div>
 
+    <p><br /><br /></p>
     <p></p>
     <p></p>
-    <p></p>
+    <h2>Resources</h2>
 
     <h2><a href="https://github.com/radogado/text-media">GitHub</a></h2>
     <h2>
       <a href="https://www.npmjs.com/package/text-media">npm i text-media</a>
     </h2>
+
+    <script>
+      function copyButton(el, target, echo) {
+        el.addEventListener("click", (event) => {
+          window.getSelection().removeAllRanges(); // Clear previous clipboard
+          var range = document.createRange();
+          range.selectNode(target);
+          window.getSelection().addRange(range);
+
+          try {
+            document.execCommand("copy");
+          } catch (err) {}
+        });
+      }
+
+      document.querySelectorAll(".code").forEach(function (el) {
+        el.insertAdjacentHTML(
+          "beforeend",
+          "<button class='n-btn'>Copy</button>"
+        );
+        copyButton(el.querySelector("button"), el.querySelector("pre"));
+      });
+    </script>
   </body>
 </html>
