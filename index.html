@@ -103,7 +103,9 @@
 
     <div class="text-media theme-dark">
       <div class="text-media__background">
-        <img src="images/DSC00839.jpg" alt="1" />
+        <picture>
+          <img src="images/DSC00839.jpg" alt="1" />
+        </picture>
       </div>
 
       <div class="row-flex">
@@ -118,17 +120,22 @@
               <pre class="language-markup">
 <code class="language-markup">
 &lt;div class=&quot;text-media&quot;&gt;
-&lt;div class=&quot;row-flex&quot;&gt;
-&lt;div class=&quot;text-media__text&quot;&gt;
-&lt;div&gt;&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;text-media__image&quot;&gt;
-&lt;div&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
+  &lt;div class=&quot;text-media__background&quot;&gt;
+    &lt;picture&gt;
+      &lt;img src=&quot;&quot; alt=&quot;&quot; /&gt;
+    &lt;/picture&gt;
+  &lt;/div&gt;
+  
+  &lt;div class=&quot;row-flex&quot;&gt;
+    &lt;div class=&quot;text-media__text&quot;&gt;
+      &lt;div&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  
+    &lt;div class=&quot;text-media__image&quot;&gt;
+      &lt;div&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
             </div>
           </div>
         </div>
@@ -162,16 +169,16 @@
             <div class="code">
               <pre class="language-markup">
 <code class="language-markup">
-&lt;div class=&quot;text-media&quot;&gt;
-&lt;div class=&quot;row-flex&quot;&gt;
-&lt;div class=&quot;text-media__text&quot;&gt;
-&lt;div&gt;&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;text-media__image&quot;&gt;
-&lt;div&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+&lt;div class=&quot;text-media text-media--contain&quot;&gt;
+  &lt;div class=&quot;row-flex&quot;&gt;
+    &lt;div class=&quot;text-media__text&quot;&gt;
+      &lt;div&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  
+    &lt;div class=&quot;text-media__image&quot;&gt;
+      &lt;div&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
             </div>
@@ -217,16 +224,16 @@
             <div class="code">
               <pre class="language-markup">
 <code class="language-markup">
-&lt;div class=&quot;text-media&quot;&gt;
-&lt;div class=&quot;row-flex&quot;&gt;
-&lt;div class=&quot;text-media__text&quot;&gt;
-&lt;div&gt;&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;text-media__image&quot;&gt;
-&lt;div&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+&lt;div class=&quot;text-media text-media--limit&quot;&gt;
+  &lt;div class=&quot;row-flex&quot;&gt;
+    &lt;div class=&quot;text-media__text&quot;&gt;
+      &lt;div&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  
+    &lt;div class=&quot;text-media__image&quot;&gt;
+      &lt;div&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
             </div>
@@ -284,16 +291,20 @@
               <div class="code">
                 <pre class="language-markup">
 <code class="language-markup">
-&lt;div class=&quot;text-media&quot;&gt;
-&lt;div class=&quot;row-flex&quot;&gt;
-&lt;div class=&quot;text-media__text&quot;&gt;
-&lt;div&gt;&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;text-media__image&quot;&gt;
-&lt;div&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+&lt;div class=&quot;text-media text-media--fixed-bg&quot;&gt;
+  &lt;picture class=&quot;text-media__background&quot;&gt;
+    &lt;img src=&quot;&quot; alt=&quot;&quot; /&gt;
+  &lt;/picture&gt;
+  
+  &lt;div class=&quot;row-flex&quot;&gt;
+    &lt;div class=&quot;text-media__text&quot;&gt;
+      &lt;div&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  
+    &lt;div class=&quot;text-media__image&quot;&gt;
+      &lt;div&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
               </div>
@@ -328,15 +339,18 @@
                 <pre class="language-markup">
 <code class="language-markup">
 &lt;div class=&quot;text-media&quot;&gt;
-&lt;div class=&quot;row-flex&quot;&gt;
-&lt;div class=&quot;text-media__text&quot;&gt;
-&lt;div&gt;&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;text-media__image&quot;&gt;
-&lt;div&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+  &lt;div class=&quot;row-flex&quot;&gt;
+    &lt;div class=&quot;text-media__text text-media--white-box&quot;&gt;
+      &lt;div&gt;
+        &lt;div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  
+    &lt;div class=&quot;text-media__image&quot;&gt;
+      &lt;div&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
               </div>
@@ -386,18 +400,25 @@
             <div class="code">
               <pre class="language-markup">
 <code class="language-markup">
-&lt;div class=&quot;text-media&quot;&gt;
-&lt;div class=&quot;row-flex&quot;&gt;
-&lt;div class=&quot;text-media__text&quot;&gt;
-&lt;div&gt;&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;text-media__image&quot;&gt;
-&lt;div&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
+&lt;div class=&quot;text-media text-media--fixed-bg text-media--transparent&quot;&gt;
+  &lt;picture class=&quot;text-media__background&quot;&gt;
+    &lt;img src=&quot;&quot; alt=&quot;1&quot; /&gt;
+  &lt;/picture&gt;
+  
+  &lt;div class=&quot;row-flex&quot;&gt;
+    &lt;div class=&quot;text-media__transparent-circle-column&quot;&gt;
+  
+      &lt;div class=&quot;text-media__transparent-circle&quot;&gt;
+        &lt;div&gt;&lt;/div&gt;
+      &lt;/div&gt;
+  
+    &lt;/div&gt;
+  
+    &lt;div class=&quot;text-media__text&quot;&gt;
+      &lt;div&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
             </div>
           </div>
         </div>
