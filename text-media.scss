@@ -21,6 +21,17 @@ $breakpoint_tablet: 900px;
     padding: 1em;
     position: relative;
     box-sizing: border-box;
+
+    > * {
+      max-width: 100%;
+      z-index: 1;
+      word-break: break-word;
+    }
+
+    > img {
+      display: block;
+      margin: 0 auto;
+    }
   }
 
   @media (max-width: $breakpoint_mobile) {
@@ -35,17 +46,6 @@ $breakpoint_tablet: 900px;
     &.text-media__text > * > * {
       padding: 1em;
     }
-  }
-
-  > * > * {
-    max-width: 100%;
-    z-index: 1;
-    word-break: break-all;
-  }
-
-  > * > img {
-    display: block;
-    margin: 0 auto;
   }
 
   img {
@@ -86,16 +86,14 @@ $breakpoint_tablet: 900px;
   }
 
   @media (min-width: $breakpoint_mobile) {
-    > {
-      .col3 {
-        width: calc(1 / 3 * 100%);
-        flex-grow: 0;
-      }
+    > .col3 {
+      width: calc(1 / 3 * 100%);
+      flex-grow: 0;
+    }
 
-      .col23 {
-        width: calc(2 / 3 * 100%);
-        flex-grow: 0;
-      }
+    > .col23 {
+      width: calc(2 / 3 * 100%);
+      flex-grow: 0;
     }
   }
 
@@ -104,14 +102,18 @@ $breakpoint_tablet: 900px;
   }
 
   --bg: #eee;
-  background-color: var(--bg);
   --color: #333;
+
+  --bg-dark-mode: #333;
+  --color-dark-mode: #eee;
+
+  background-color: var(--bg);
   color: var(--color);
 
   &:not([class*="theme-"]) {
     @media (prefers-color-scheme: dark) {
-      --color: #eee;
-      --bg: #333;
+      --color: var(--color-dark-mode);
+      --bg: var(--bg-dark-mode);
     }
   }
 
@@ -550,69 +552,65 @@ $breakpoint_tablet: 900px;
   }
 
   @media (min-width: $breakpoint_mobile) {
-    &.text-media--checkerboard ~ .text-media--checkerboard {
-      > .text-media__image,
-      .text-media__text {
-        // #2
-
-        order: 1;
-
-        &:first-child {
-          order: 2;
-        }
+    &.text-media--checkerboard {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      > * {
+        width: auto;
+        grid-row: 1;
       }
-
       ~ .text-media--checkerboard {
-        > * {
-          // #3
-
-          order: 3;
+        > :last-child {
+          grid-column: 1;
         }
-
         ~ .text-media--checkerboard {
-          > * {
-            // #4
-
-            order: 1;
-
-            &:first-child {
-              order: 2;
-            }
+          > :last-child {
+            grid-column: initial;
           }
-
           ~ .text-media--checkerboard {
-            > * {
-              // #5
-
-              order: 3;
+            > :last-child {
+              grid-column: 1;
             }
-
             ~ .text-media--checkerboard {
-              > * {
-                // #6
-
-                order: 1;
-
-                &:first-child {
-                  order: 2;
-                }
+              > :last-child {
+                grid-column: initial;
               }
-
               ~ .text-media--checkerboard {
-                > * {
-                  // #7
-
-                  order: 3;
+                > :last-child {
+                  grid-column: 1;
                 }
-
                 ~ .text-media--checkerboard {
-                  > * {
-                    // #8
-
-                    order: 1;
-
-                    &:first-child {
-                      order: 2;
+                  > :last-child {
+                    grid-column: initial;
+                  }
+                }
+                ~ .text-media--checkerboard {
+                  > :last-child {
+                    grid-column: 1;
+                  }
+                  ~ .text-media--checkerboard {
+                    > :last-child {
+                      grid-column: initial;
+                    }
+                  }
+                }
+                ~ .text-media--checkerboard {
+                  > :last-child {
+                    grid-column: 1;
+                  }
+                  ~ .text-media--checkerboard {
+                    > :last-child {
+                      grid-column: initial;
+                    }
+                  }
+                }
+                ~ .text-media--checkerboard {
+                  > :last-child {
+                    grid-column: 1;
+                  }
+                  ~ .text-media--checkerboard {
+                    > :last-child {
+                      grid-column: initial;
                     }
                   }
                 }

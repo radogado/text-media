@@ -50,14 +50,12 @@
             <pre class="language-markup">
 <code class="language-markup">
 &lt;div class=&quot;text-media&quot;&gt;
-  &lt;div class=&quot;row-flex&quot;&gt;
-    &lt;div class=&quot;text-media__text&quot;&gt;
-      &lt;div&gt;&lt;/div&gt;
-    &lt;/div&gt;
+  &lt;div class=&quot;text-media__text&quot;&gt;
+    &lt;div&gt;&lt;/div&gt;
+  &lt;/div&gt;
 
-    &lt;div class=&quot;text-media__image&quot;&gt;
-      &lt;div&gt;&lt;/div&gt;
-    &lt;/div&gt;
+  &lt;div class=&quot;text-media__image&quot;&gt;
+    &lt;div&gt;&lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
@@ -95,6 +93,35 @@
       </div>
     </div>
 
+    <h3>Color options</h3>
+
+    <div class="text-media text-media--limit">
+      <div class="text-media__text">
+        <div>
+          <p>By CSS variables:</p>
+          <div class="code">
+            <pre class="language-markup">
+<code class="language-markup">
+.text-media {
+  --bg: #eee;
+  --color: #333;
+  --bg-dark-mode: #333;
+  --color-dark-mode: #eee;
+}
+</code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="text-media__text">
+        <div>
+          <p>
+            Themes: <b>.theme-light</b>, <b>.theme-white</b>,
+            <b>.theme-dark</b>.
+          </p>
+        </div>
+      </div>
+    </div>
+
     <h2>With background image</h2>
 
     <div class="text-media theme-dark">
@@ -121,14 +148,12 @@
     &lt;/picture&gt;
   &lt;/div&gt;
   
-  &lt;div class=&quot;row-flex&quot;&gt;
-    &lt;div class=&quot;text-media__text&quot;&gt;
-      &lt;div&gt;&lt;/div&gt;
-    &lt;/div&gt;
-  
-    &lt;div class=&quot;text-media__image&quot;&gt;
-      &lt;div&gt;&lt;/div&gt;
-    &lt;/div&gt;
+  &lt;div class=&quot;text-media__text&quot;&gt;
+    &lt;div&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;text-media__image&quot;&gt;
+    &lt;div&gt;&lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
           </div>
@@ -163,14 +188,12 @@
             <pre class="language-markup">
 <code class="language-markup">
 &lt;div class=&quot;text-media text-media--contain&quot;&gt;
-  &lt;div class=&quot;row-flex&quot;&gt;
-    &lt;div class=&quot;text-media__text&quot;&gt;
-      &lt;div&gt;&lt;/div&gt;
-    &lt;/div&gt;
-  
-    &lt;div class=&quot;text-media__image&quot;&gt;
-      &lt;div&gt;&lt;/div&gt;
-    &lt;/div&gt;
+  &lt;div class=&quot;text-media__text&quot;&gt;
+    &lt;div&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;text-media__image&quot;&gt;
+    &lt;div&gt;&lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
@@ -214,7 +237,6 @@
             <pre class="language-markup">
 <code class="language-markup">
 &lt;div class=&quot;text-media text-media--limit&quot;&gt;
-  &lt;div class=&quot;row-flex&quot;&gt;
     &lt;div class=&quot;text-media__text&quot;&gt;
       &lt;div&gt;&lt;/div&gt;
     &lt;/div&gt;
@@ -222,7 +244,6 @@
     &lt;div class=&quot;text-media__image&quot;&gt;
       &lt;div&gt;&lt;/div&gt;
     &lt;/div&gt;
-  &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
           </div>
@@ -281,7 +302,6 @@
     &lt;img src=&quot;&quot; alt=&quot;&quot; /&gt;
   &lt;/picture&gt;
   
-  &lt;div class=&quot;row-flex&quot;&gt;
     &lt;div class=&quot;text-media__text&quot;&gt;
       &lt;div&gt;&lt;/div&gt;
     &lt;/div&gt;
@@ -289,7 +309,6 @@
     &lt;div class=&quot;text-media__image&quot;&gt;
       &lt;div&gt;&lt;/div&gt;
     &lt;/div&gt;
-  &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
             </div>
@@ -323,14 +342,12 @@
             <pre class="language-markup">
 <code class="language-markup">
 &lt;div class=&quot;text-media text-media--white-box&quot;&gt;
-  &lt;div class=&quot;row-flex&quot;&gt;
-    &lt;div class=&quot;text-media__text&quot;&gt;
-      &lt;div&gt;&lt;/div&gt;
-    &lt;/div&gt;
-  
-    &lt;div class=&quot;text-media__image&quot;&gt;
-      &lt;div&gt;&lt;/div&gt;
-    &lt;/div&gt;
+  &lt;div class=&quot;text-media__text&quot;&gt;
+    &lt;div&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;text-media__image&quot;&gt;
+    &lt;div&gt;&lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
@@ -383,18 +400,16 @@
     &lt;img src=&quot;&quot; alt=&quot;1&quot; /&gt;
   &lt;/picture&gt;
   
-  &lt;div class=&quot;row-flex&quot;&gt;
-    &lt;div class=&quot;text-media__transparent-circle-column&quot;&gt;
-  
-      &lt;div class=&quot;text-media__transparent-circle&quot;&gt;
-        &lt;div&gt;&lt;/div&gt;
-      &lt;/div&gt;
-  
-    &lt;/div&gt;
-  
-    &lt;div class=&quot;text-media__text&quot;&gt;
+  &lt;div class=&quot;text-media__transparent-circle-column&quot;&gt;
+
+    &lt;div class=&quot;text-media__transparent-circle&quot;&gt;
       &lt;div&gt;&lt;/div&gt;
     &lt;/div&gt;
+
+  &lt;/div&gt;
+
+  &lt;div class=&quot;text-media__text&quot;&gt;
+    &lt;div&gt;&lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
           </div>
@@ -441,23 +456,20 @@
             <pre class="language-markup">
 <code class="language-markup">
 &lt;div class=&quot;text-media&quot;&gt;
-  &lt;div class=&quot;row-flex&quot;&gt;
-    &lt;div class=&quot;text-media__image&quot;&gt;
-      &lt;div&gt;&lt;/div&gt;
-    &lt;/div&gt;
+  &lt;div class=&quot;text-media__image&quot;&gt;
+    &lt;div&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;text-media__text&quot;&gt;
+    &lt;div&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;text-media__image&quot;&gt;
+    &lt;div&gt;&lt;/div&gt;
+  &lt;/div&gt;
   
-    &lt;div class=&quot;text-media__text&quot;&gt;
-      &lt;div&gt;&lt;/div&gt;
-    &lt;/div&gt;
-
-    &lt;div class=&quot;text-media__image&quot;&gt;
-      &lt;div&gt;&lt;/div&gt;
-    &lt;/div&gt;
-    
-    &lt;div class=&quot;text-media__text&quot;&gt;
-      &lt;div&gt;&lt;/div&gt;
-    &lt;/div&gt;
-
+  &lt;div class=&quot;text-media__text&quot;&gt;
+    &lt;div&gt;&lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
@@ -523,16 +535,34 @@
           <div class="code">
             <pre class="language-markup">
 <code class="language-markup">
-&lt;div class=&quot;text-media&quot;&gt;
-&lt;div class=&quot;row-flex&quot;&gt;
-&lt;div class=&quot;text-media__text&quot;&gt;
-&lt;div&gt;&lt;/div&gt;
-&lt;/div&gt;
+&lt;div class=&quot;text-media text-media--fixed-bg text-media--transparent&quot;&gt;
+  &lt;picture class=&quot;text-media__background&quot;&gt;
+    &lt;img src=&quot;&quot; alt=&quot;1&quot; /&gt;
+  &lt;/picture&gt;
+  
+  &lt;div class=&quot;text-media__transparent-circle-column&quot;&gt;
+  
+    &lt;div class=&quot;text-media__transparent-circle&quot;&gt;
+      &lt;div&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  
+  &lt;/div&gt;
 
-&lt;div class=&quot;text-media__image&quot;&gt;
-&lt;div&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+  &lt;div class=&quot;text-media__transparent-circle-column&quot;&gt;
+  
+    &lt;div class=&quot;text-media__transparent-circle&quot;&gt;
+      &lt;div&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  
+  &lt;/div&gt;
+  
+  &lt;div class=&quot;text-media__transparent-circle-column&quot;&gt;
+  
+    &lt;div class=&quot;text-media__transparent-circle&quot;&gt;
+      &lt;div&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  
+  &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
           </div>
@@ -540,7 +570,7 @@
       </div>
     </div>
 
-    <h2>Next 3 have checkerboard pattern</h2>
+    <h2>Next 3 have checkerboard pattern (.text-media--checkerboard)</h2>
 
     <h2>Small text</h2>
 
@@ -566,16 +596,14 @@
           <div class="code">
             <pre class="language-markup">
 <code class="language-markup">
-&lt;div class=&quot;text-media&quot;&gt;
-&lt;div class=&quot;row-flex&quot;&gt;
-&lt;div class=&quot;text-media__text&quot;&gt;
-&lt;div&gt;&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;text-media__image&quot;&gt;
-&lt;div&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+&lt;div class=&quot;text-media text-media--small&quot;&gt;
+  &lt;div class=&quot;text-media__text&quot;&gt;
+    &lt;div&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;div class=&quot;text-media__image&quot;&gt;
+    &lt;div&gt;&lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
           </div>
@@ -607,16 +635,14 @@
           <div class="code">
             <pre class="language-markup">
 <code class="language-markup">
-&lt;div class=&quot;text-media&quot;&gt;
-&lt;div class=&quot;row-flex&quot;&gt;
-&lt;div class=&quot;text-media__text&quot;&gt;
-&lt;div&gt;&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;text-media__image&quot;&gt;
-&lt;div&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+&lt;div class=&quot;text-media theme-light&quot;&gt;
+  &lt;div class=&quot;text-media__text&quot;&gt;
+    &lt;div&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;div class=&quot;text-media__image&quot;&gt;
+    &lt;div&gt;&lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
           </div>
@@ -648,16 +674,14 @@
           <div class="code">
             <pre class="language-markup">
 <code class="language-markup">
-&lt;div class=&quot;text-media&quot;&gt;
-&lt;div class=&quot;row-flex&quot;&gt;
-&lt;div class=&quot;text-media__text&quot;&gt;
-&lt;div&gt;&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;text-media__image&quot;&gt;
-&lt;div&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+&lt;div class=&quot;text-media theme-dark&quot;&gt;
+  &lt;div class=&quot;text-media__text&quot;&gt;
+    &lt;div&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;div class=&quot;text-media__image&quot;&gt;
+    &lt;div&gt;&lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
           </div>
@@ -687,16 +711,14 @@
           <div class="code">
             <pre class="language-markup">
 <code class="language-markup">
-&lt;div class=&quot;text-media&quot;&gt;
-&lt;div class=&quot;row-flex&quot;&gt;
-&lt;div class=&quot;text-media__text&quot;&gt;
-&lt;div&gt;&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;text-media__image&quot;&gt;
-&lt;div&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+&lt;div class=&quot;text-media text-media--stacked&quot;&gt;
+  &lt;div class=&quot;text-media__text&quot;&gt;
+    &lt;div&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;div class=&quot;text-media__image&quot;&gt;
+    &lt;div&gt;&lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
           </div>
@@ -721,22 +743,22 @@
         <div>
           <h2>Headline</h2>
 
-          <p>Paragraph</p>
+          <p>
+            .text-media--stick-to-top<br />.text-media--stick-to-right<br />.text-media--stick-to-bottom<br />.text-media--stick-to-left<br />
+          </p>
 
           <p><a class="btn" href="#">CTA</a></p>
 
           <div class="code">
             <pre class="language-markup">
 <code class="language-markup">
-&lt;div class=&quot;text-media&quot;&gt;
-&lt;div class=&quot;row-flex&quot;&gt;
+&lt;div class=&quot;text-media text-media--stick-to-bottom&quot;&gt;
 &lt;div class=&quot;text-media__text&quot;&gt;
-&lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;text-media__image&quot;&gt;
-&lt;div&gt;&lt;/div&gt;
-&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
@@ -774,15 +796,15 @@
             <pre class="language-markup">
 <code class="language-markup">
 &lt;div class=&quot;text-media&quot;&gt;
-&lt;div class=&quot;row-flex&quot;&gt;
-&lt;div class=&quot;text-media__text&quot;&gt;
-&lt;div&gt;&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;text-media__image&quot;&gt;
-&lt;div&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+  &lt;div class=&quot;text-media__video&quot;&gt;
+    &lt;div&gt;
+      &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube-nocookie.com/embed/E9yrF-tZ6Ns&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;div class=&quot;text-media__text&quot;&gt;
+    &lt;div&gt;&lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
           </div>
@@ -803,15 +825,20 @@
             <pre class="language-markup">
 <code class="language-markup">
 &lt;div class=&quot;text-media&quot;&gt;
-&lt;div class=&quot;row-flex&quot;&gt;
-&lt;div class=&quot;text-media__text&quot;&gt;
-&lt;div&gt;&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;text-media__image&quot;&gt;
-&lt;div&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+  &lt;div class=&quot;text-media__text&quot;&gt;
+    &lt;div&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;div class=&quot;text-media__text&quot;&gt;
+    &lt;div&gt;
+      &lt;p&gt;Text&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;text-media__background&quot;&gt;
+      &lt;picture&gt;
+        &lt;img src=&quot;&quot; alt=&quot;&quot; /&gt;
+      &lt;/picture&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
           </div>
@@ -844,16 +871,20 @@
           <div class="code">
             <pre class="language-markup">
 <code class="language-markup">
-&lt;div class=&quot;text-media&quot;&gt;
-&lt;div class=&quot;row-flex&quot;&gt;
-&lt;div class=&quot;text-media__text&quot;&gt;
-&lt;div&gt;&lt;/div&gt;
-&lt;/div&gt;
+&lt;div class=&quot;text-media text-media--offset&quot;&gt;
+  &lt;div class=&quot;text-media__text&quot;&gt;
+    &lt;div&gt;&lt;/div&gt;
+  &lt;/div&gt;
 
-&lt;div class=&quot;text-media__image&quot;&gt;
-&lt;div&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+  &lt;div class=&quot;text-media__image&quot;&gt;
+    &lt;div&gt;
+      &lt;div class=&quot;text-media__background&quot;&gt;
+        &lt;picture&gt;
+          &lt;img src=&quot;&quot; alt=&quot;&quot; /&gt;
+        &lt;/picture&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
           </div>
@@ -883,16 +914,20 @@
           <div class="code">
             <pre class="language-markup">
 <code class="language-markup">
-&lt;div class=&quot;text-media&quot;&gt;
-&lt;div class=&quot;row-flex&quot;&gt;
-&lt;div class=&quot;text-media__text&quot;&gt;
-&lt;div&gt;&lt;/div&gt;
-&lt;/div&gt;
+&lt;div class=&quot;text-media text-media--offset text-media--offset-wide-text&quot;&gt;
+  &lt;div class=&quot;text-media__text&quot;&gt;
+    &lt;div&gt;&lt;/div&gt;
+  &lt;/div&gt;
 
-&lt;div class=&quot;text-media__image&quot;&gt;
-&lt;div&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+  &lt;div class=&quot;text-media__image&quot;&gt;
+    &lt;div&gt;
+      &lt;div class=&quot;text-media__background&quot;&gt;
+        &lt;picture&gt;
+          &lt;img src=&quot;&quot; alt=&quot;&quot; /&gt;
+        &lt;/picture&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
           </div>
@@ -931,16 +966,20 @@
           <div class="code">
             <pre class="language-markup">
 <code class="language-markup">
-&lt;div class=&quot;text-media&quot;&gt;
-&lt;div class=&quot;row-flex&quot;&gt;
-&lt;div class=&quot;text-media__text&quot;&gt;
-&lt;div&gt;&lt;/div&gt;
-&lt;/div&gt;
+&lt;div class=&quot;text-media text-media--offset text-media--offset-bottom&quot;&gt;
+  &lt;div class=&quot;text-media__image&quot;&gt;
+    &lt;div&gt;
+      &lt;div class=&quot;text-media__background&quot;&gt;
+        &lt;picture&gt;
+          &lt;img src=&quot;&quot; alt=&quot;&quot; /&gt;
+        &lt;/picture&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
 
-&lt;div class=&quot;text-media__image&quot;&gt;
-&lt;div&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+  &lt;div class=&quot;text-media__text&quot;&gt;
+    &lt;div&gt;&lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
           </div>
@@ -953,9 +992,7 @@
     <p></p>
     <h2>Resources</h2>
 
-    <div
-      class="text-media text-media--contain theme-white text-media--white-box"
-    >
+    <div class="text-media text-media--contain theme-light">
       <div class="align-middle text-media__text">
         <div>
           <div>

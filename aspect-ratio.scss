@@ -1,6 +1,6 @@
 /* Image aspect ratio – don't shift the page after loading the image */
 
-$selector: ".text-media .row-flex .n-aspect";
+$selector: ".n-aspect";
 
 @supports (--a: 1) {
   #{$selector} {
