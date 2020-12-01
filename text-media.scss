@@ -68,9 +68,6 @@ $breakpoint_tablet: 900px;
 
   > .align-center {
     text-align: center;
-    picture {
-      justify-content: center;
-    }
 
     ul {
       text-align: start;
@@ -79,10 +76,6 @@ $breakpoint_tablet: 900px;
 
   .align-right {
     text-align: end;
-
-    picture {
-      justify-content: flex-end;
-    }
   }
 
   @media (min-width: $breakpoint_mobile) {
@@ -288,12 +281,6 @@ $breakpoint_tablet: 900px;
 
     > .text-media__image > * > img {
       margin-left: 0;
-    }
-  }
-
-  &[class*="text-media--stick-to"] {
-    .text-media__image picture {
-      display: flex;
     }
   }
 

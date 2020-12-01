@@ -66,4 +66,8 @@ body pre[class*=language-] {
   padding-top: 0;
 }
 
+.text-media {
+  margin-top: 1em;
+}
+
 /*# sourceMappingURL=demo.css.map */

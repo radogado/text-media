@@ -104,17 +104,11 @@ _:-ms-lang(x),
 .text-media > .align-center {
   text-align: center;
 }
-.text-media > .align-center picture {
-  justify-content: center;
-}
 .text-media > .align-center ul {
   text-align: start;
 }
 .text-media .align-right {
   text-align: end;
-}
-.text-media .align-right picture {
-  justify-content: flex-end;
 }
 @media (min-width: 600px) {
   .text-media > .col3 {
@@ -267,9 +261,6 @@ _:-ms-lang(x),
 }
 .text-media.text-media--stick-to-left > .text-media__image > * > img {
   margin-left: 0;
-}
-.text-media[class*=text-media--stick-to] .text-media__image picture {
-  display: flex;
 }
 .text-media.text-media--purple-background, .text-media.text-media--purple-text-background .text-media__text, .text-media.theme-purple, .text-media.theme-purple .text-media__text {
   color: #fff;
