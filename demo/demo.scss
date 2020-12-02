@@ -1,5 +1,7 @@
 /* Demo style */
 
+$breakpoint_mobile: 600px;
+
 body {
   background: #111;
   margin: 0;
@@ -44,6 +46,10 @@ code[class*="language-"] {
   display: inline-block;
   max-width: 100%;
   overflow-y: hidden;
+
+  @media (max-width: $breakpoint_mobile) {
+    width: 100%;
+  }
 
   pre {
     padding: 1em;

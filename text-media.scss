@@ -37,6 +37,7 @@ $breakpoint_tablet: 900px;
   @media (max-width: $breakpoint_mobile) {
     > * {
       width: 100%;
+      text-align: center;
     }
   }
 
@@ -314,6 +315,9 @@ $breakpoint_tablet: 900px;
         width: auto;
         background-color: var(--bg);
         z-index: 2;
+
+        // Firefox bug
+        max-width: calc(100%);
 
         &:last-child {
           grid-column: -3/-1;

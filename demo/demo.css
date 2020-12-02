@@ -43,6 +43,11 @@ code[class*=language-] {
   max-width: 100%;
   overflow-y: hidden;
 }
+@media (max-width: 600px) {
+  .code {
+    width: 100%;
+  }
+}
 .code pre {
   padding: 1em;
   margin: 0.5em 0;
