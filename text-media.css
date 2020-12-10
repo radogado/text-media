@@ -63,7 +63,7 @@ _:-ms-lang(x),
   width: 1%;
   display: flex;
   flex-direction: column;
-  padding: 1em;
+  padding: var(--padding, 1em);
   position: relative;
   box-sizing: border-box;
 }
@@ -86,7 +86,7 @@ _:-ms-lang(x),
   padding: 0;
 }
 .text-media.no-padding > *.text-media__text > * > * {
-  padding: 1em;
+  padding: var(--padding, 1em);
 }
 .text-media img {
   max-width: 100%;
@@ -451,7 +451,7 @@ _:-ms-lang(x),
   display: inline-block;
   background: #fff;
   color: #333;
-  padding: 1.5em;
+  padding: calc(1.5 * var(--padding, 1em));
 }
 .text-media.text-media--white-box .text-media__text > * > :first-child {
   margin-top: 0;

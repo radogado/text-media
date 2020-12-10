@@ -18,7 +18,7 @@ $breakpoint_tablet: 900px;
     width: 1%;
     display: flex; // For vertical alignment
     flex-direction: column;
-    padding: 1em;
+    padding: var(--padding, 1em);
     position: relative;
     box-sizing: border-box;
 
@@ -45,7 +45,7 @@ $breakpoint_tablet: 900px;
     padding: 0;
 
     &.text-media__text > * > * {
-      padding: 1em;
+      padding: var(--padding, 1em);
     }
   }
 
@@ -535,7 +535,7 @@ $breakpoint_tablet: 900px;
     display: inline-block;
     background: #fff;
     color: #333;
-    padding: 1.5em;
+    padding: calc(1.5 * var(--padding, 1em));
 
     > :first-child {
       margin-top: 0;
