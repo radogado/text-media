@@ -549,6 +549,18 @@ _:-ms-lang(x),
   border-bottom: 2px solid;
   margin: 2em 0;
 }
+.text-media .text-media__image-placeholder picture:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: var(--placeholder, none);
+  background-size: contain;
+  filter: blur(10px);
+}
 
 .two-text-media .text-media, .two-text-media .text-media.theme-white, .two-text-media .text-media.theme-light, .two-text-media .text-media.theme-dark {
   background-color: transparent;

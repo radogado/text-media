@@ -169,8 +169,7 @@ $breakpoint_tablet: 900px;
     }
 
     > *:not(.text-media__transparent-circle-column),
-    > .text-media__transparent-circle-column
-      > :not(.text-media__transparent-circle) {
+    > .text-media__transparent-circle-column > :not(.text-media__transparent-circle) {
       background: var(--bg);
     }
 
@@ -451,11 +450,7 @@ $breakpoint_tablet: 900px;
           background-size: cover;
           background-position: center center;
           height: 100vh; // Mobile browser resize when hiding/showing toolbars
-          transform: translate3d(
-            0,
-            0,
-            0
-          ); // Force refresh while scrolling (iPad), fix missing image parts on (macOS Safari)
+          transform: translate3d(0, 0, 0); // Force refresh while scrolling (iPad), fix missing image parts on (macOS Safari)
         }
       }
     }
@@ -667,6 +662,21 @@ $breakpoint_tablet: 900px;
       max-width: 100%;
       border-bottom: 2px solid;
       margin: 2em 0;
+    }
+  }
+
+  .text-media__image-placeholder picture {
+    &:before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: var(--placeholder, none);
+      background-size: contain;
+      filter: blur(10px);
     }
   }
 }
