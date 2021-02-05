@@ -549,7 +549,7 @@ _:-ms-lang(x),
   border-bottom: 2px solid;
   margin: 2em 0;
 }
-.text-media .text-media__image-placeholder picture:before {
+.text-media picture.text-media__image-placeholder:after {
   content: "";
   position: absolute;
   z-index: -1;
