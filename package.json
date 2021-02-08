@@ -18,5 +18,8 @@
   "homepage": "https://github.com/radogado/text-media#readme",
   "dependencies": {
     "clean-css-cli": "^4.3.0"
+  },
+  "devDependencies": {
+    "terser": "^5.6.0-beta"
   }
 }

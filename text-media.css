@@ -129,6 +129,9 @@ _:-ms-lang(x),
     --color: var(--color-dark-mode);
     --bg: var(--bg-dark-mode);
   }
+  .text-media:not([class*=theme-]) a[href] {
+    color: var(--color);
+  }
 }
 .text-media.text-media--contain {
   max-width: var(--page-width, 1036px);
@@ -549,7 +552,7 @@ _:-ms-lang(x),
   border-bottom: 2px solid;
   margin: 2em 0;
 }
-.text-media picture.text-media__image-placeholder:after {
+.text-media picture.text-media__image-placeholder:not([data-loaded]):after {
   content: "";
   position: absolute;
   z-index: -1;
@@ -558,7 +561,7 @@ _:-ms-lang(x),
   bottom: 0;
   left: 0;
   background: var(--placeholder, none);
-  background-size: contain;
+  background-size: cover;
   filter: blur(10px);
 }
 

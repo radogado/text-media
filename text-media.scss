@@ -108,6 +108,9 @@ $breakpoint_tablet: 900px;
 		@media (prefers-color-scheme: dark) {
 			--color: var(--color-dark-mode);
 			--bg: var(--bg-dark-mode);
+			a[href] {
+				color: var(--color);
+			}
 		}
 	}
 
@@ -665,7 +668,7 @@ $breakpoint_tablet: 900px;
 		}
 	}
 
-	picture.text-media__image-placeholder {
+	picture.text-media__image-placeholder:not([data-loaded]) {
 		// JS adds this class if --placeholder exists. JS to remove it on image loaded, to avoid blurry placeholder visible through transparency.
 		&:after {
 			content: "";
@@ -676,7 +679,7 @@ $breakpoint_tablet: 900px;
 			bottom: 0;
 			left: 0;
 			background: var(--placeholder, none);
-			background-size: contain;
+			background-size: cover;
 			filter: blur(10px);
 		}
 	}
