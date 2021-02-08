@@ -569,4 +569,11 @@ _:-ms-lang(x),
   background-color: transparent;
 }
 
+@media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
+  .text-media.text-media--fixed-bg > .text-media__text,
+.text-media.text-media--fixed-bg > .text-media__image {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
 /*# sourceMappingURL=text-media.css.map */

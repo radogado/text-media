@@ -693,3 +693,14 @@ $breakpoint_tablet: 900px;
 		background-color: transparent;
 	}
 }
+
+// Chrome fix when content over fixed background sometimes becomes invisible
+
+@media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
+	.text-media.text-media--fixed-bg > {
+		.text-media__text,
+		.text-media__image {
+			transform: translate3d(0, 0, 0);
+		}
+	}
+}
