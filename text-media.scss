@@ -509,6 +509,7 @@ $breakpoint_tablet: 900px;
 			display: initial;
 			visibility: visible;
 			z-index: 0;
+			overflow: hidden; // Crop the blurred placeholder image bleed
 
 			img {
 				top: 0;

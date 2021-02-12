@@ -433,6 +433,7 @@ _:-ms-lang(x),
     display: initial;
     visibility: visible;
     z-index: 0;
+    overflow: hidden;
   }
   .text-media .text-media__background img {
     top: 0;
