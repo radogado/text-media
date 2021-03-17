@@ -234,6 +234,9 @@ _:-ms-lang(x),
 .text-media.text-media--transparent > .text-media__transparent-circle-column > *:not(.text-media__transparent-circle) {
   z-index: 1;
 }
+.text-media.text-media--transparent > :not(.text-media__background) {
+  z-index: 1;
+}
 .text-media:not(.text-media--fixed-bg).theme-white {
   --bg: #fff;
 }
