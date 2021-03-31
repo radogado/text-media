@@ -95,21 +95,15 @@ $breakpoint_tablet: 900px;
     display: none;
   }
 
-  --bg: #eee;
-  --color: #333;
-
-  --bg-dark-mode: #333;
-  --color-dark-mode: #eee;
-
-  background-color: var(--bg);
   color: var(--color);
+  background-color: var(--bg);
 
   &:not([class*="theme-"]) {
     @media (prefers-color-scheme: dark) {
-      --color: var(--color-dark-mode);
-      --bg: var(--bg-dark-mode);
+      color: var(--color-dark-mode);
+      background-color: var(--bg-dark-mode);
       a[href] {
-        color: var(--color);
+        color: var(--color-dark-mode);
       }
     }
   }
@@ -624,7 +618,7 @@ $breakpoint_tablet: 900px;
       margin: 3em 3%;
       width: calc(2 * var(--page-width) / 3);
       max-width: 94%;
-      box-shadow: 0 0 10px 5px var(--color-purple-30);
+      box-shadow: 0 0 10px 5px lightgray;
 
       iframe {
         width: 100% !important;
@@ -642,7 +636,7 @@ $breakpoint_tablet: 900px;
   .text-media__video-container {
     padding: 10%;
     background: rgba(128, 0, 128, 0.1);
-    color: var(--color-purple);
+    color: grey;
 
     .text-media__video {
       margin: 0 auto;

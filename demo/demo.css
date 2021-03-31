@@ -1,8 +1,8 @@
 /* Demo style */
 body {
+  color: #eee;
   background: #111;
   margin: 0;
-  color: #eee;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   min-height: 150vh;
 }
@@ -71,6 +71,10 @@ body pre[class*=language-] {
 
 .text-media {
   margin-top: 1em;
+  --bg: #eee;
+  --color: #333;
+  --bg-dark-mode: #333;
+  --color-dark-mode: #eee;
 }
 
 /*# sourceMappingURL=demo.css.map */

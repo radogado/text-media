@@ -50,12 +50,8 @@ _:-ms-lang(x),
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  --bg: #eee;
-  --color: #333;
-  --bg-dark-mode: #333;
-  --color-dark-mode: #eee;
-  background-color: var(--bg);
   color: var(--color);
+  background-color: var(--bg);
 }
 .text-media > * {
   flex-grow: 1;
@@ -126,11 +122,11 @@ _:-ms-lang(x),
 }
 @media (prefers-color-scheme: dark) {
   .text-media:not([class*=theme-]) {
-    --color: var(--color-dark-mode);
-    --bg: var(--bg-dark-mode);
+    color: var(--color-dark-mode);
+    background-color: var(--bg-dark-mode);
   }
   .text-media:not([class*=theme-]) a[href] {
-    color: var(--color);
+    color: var(--color-dark-mode);
   }
 }
 .text-media.text-media--contain {
@@ -516,7 +512,7 @@ _:-ms-lang(x),
   margin: 3em 3%;
   width: calc(2 * var(--page-width) / 3);
   max-width: 94%;
-  box-shadow: 0 0 10px 5px var(--color-purple-30);
+  box-shadow: 0 0 10px 5px lightgray;
 }
 .text-media .text-media__video > div iframe,
 .text-media .text-media__video.n-aspect > div iframe {
@@ -532,7 +528,7 @@ _:-ms-lang(x),
 .text-media .text-media__video-container {
   padding: 10%;
   background: rgba(128, 0, 128, 0.1);
-  color: var(--color-purple);
+  color: grey;
 }
 .text-media .text-media__video-container .text-media__video {
   margin: 0 auto;
