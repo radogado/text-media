@@ -20,10 +20,10 @@
   }
   .n-aspect:before {
     content: "";
-    padding-top: calc( 100% * 1 / (var(--width) / var(--height)) );
+    padding-top: calc(100% * 1 / (var(--width) / var(--height)));
   }
   .n-aspect[style*="--ratio"] {
-    width: calc( 1px * var(--width, 10000) );
+    width: calc(1px * var(--width, 10000));
     max-width: 100%;
   }
   .n-aspect[style*="--ratio"]:before {
