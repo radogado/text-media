@@ -80,4 +80,10 @@ body pre[class*="language-"] {
 
   --bg-dark-mode: #333;
   --color-dark-mode: #eee;
+
+  @media (max-width: $breakpoint_mobile) {
+    > * {
+      text-align: center;
+    }
+  }
 }
