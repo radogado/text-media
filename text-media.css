@@ -75,7 +75,6 @@ _:-ms-lang(x),
 @media (max-width: 600px) {
   .text-media > * {
     width: 100%;
-    text-align: center;
   }
 }
 .text-media.no-padding > * {

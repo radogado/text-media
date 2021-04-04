@@ -18,7 +18,7 @@
 	<body>
 		<br />
 
-		<h1>Text & Media (<a href="https://github.com/radogado/text-media">Source →</a>)</h1>
+		<h1>Text & Media (<a href="https://github.com/radogado/text-media">Source</a>)</h1>
 
 		<div class="text-media">
 			<div class="text-media__text">
@@ -292,7 +292,7 @@
 			</div>
 		</div>
 
-		<div class="text-media text-media--fixed-bg text-media--transparent text-media--contain- text-media--limit" style="--bg: coral">
+		<!-- <div class="text-media text-media--fixed-bg text-media--transparent text-media--contain- text-media--limit" style="--bg: coral">
 			<picture class="text-media__background">
 				<img src="images/DSC00839.jpg" alt="1" />
 			</picture>
@@ -340,7 +340,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 
 		<div class="text-media text-media--contain">
 			<div class="text-media__fixed-bg-image"></div>
@@ -393,7 +393,7 @@
 			</div>
 		</div>
 
-		<div class="text-media text-media--fixed-bg text-media--transparent text-media--contain" style="--bg: coral">
+		<!-- <div class="text-media text-media--fixed-bg text-media--transparent text-media--contain" style="--bg: coral">
 			<picture class="text-media__background">
 				<img src="images/DSC00839.jpg" alt="1" />
 			</picture>
@@ -464,7 +464,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 
 		<h2>Next 3 have checkerboard pattern (.text-media--checkerboard)</h2>
 
@@ -859,7 +859,7 @@
 		<p></p>
 		<h2>Resources</h2>
 
-		<div class="text-media text-media--contain theme-light">
+		<div class="text-media text-media--contain theme-light resources">
 			<div class="align-middle text-media__text">
 				<div>
 					<div>
@@ -870,7 +870,7 @@
 
 						<p>
 							Usage: add
-							<a href="text-media.min.css"><b>text-media.min.css</b></a> to your page or <a href="text-media.scss"><b>text-media.scss</b></a> to your project.
+							<a href="text-media.min.css"><b>text-media.min.css</b></a> and <a href="text-media.min.js"><b>text-media.min.js</b></a> to your page or <a href="text-media.scss"><b>text-media.scss</b></a> and <a href="text-media.js"><b>text-media.js</b></a> to your project.
 						</p>
 					</div>
 				</div>
@@ -895,6 +895,18 @@
 				el.insertAdjacentHTML("beforeend", "<button class='n-btn'>Copy</button>");
 				copyButton(el.querySelector("button"), el.querySelector("pre"));
 			});
+
+["css", "js"].forEach((el) => {
+	fetch(`text-media.min.${el}.size`)
+		.then((response) => response.text())
+		.then((text) => (document.querySelector(`.resources [href="text-media.min.${el}"]`).dataset.size = `${parseFloat(text / 1024).toFixed(1)} KB`));
+});
+
+fetch(`package.json`)
+	.then((response) => response.json())
+	.then((text) => {
+		document.querySelector("h1").dataset.version = text.version.split(".")[0] + "." + text.version.split(".")[1];
+	});
 
 		</script>
 	</body>
