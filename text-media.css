@@ -273,6 +273,7 @@ _:-ms-lang(x),
   }
 }
 .text-media.text-media--offset {
+  --color-dark-mode: var(--color);
   background: none;
 }
 .text-media.text-media--offset {
