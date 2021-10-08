@@ -2,68 +2,24 @@ $page-width: 1036px;
 $breakpoint_mobile: 600px;
 $breakpoint_tablet: 900px;
 
-// @import "aspect-ratio";
+.n-aspect {
+  display: inline-block;
+  vertical-align: middle; // Remove unwanted bottom space
+  width: calc(1px * var(--width, 100%));
+  max-width: 100%;
+  aspect-ratio: var(--ratio, calc(var(--width)/ var(--height)));
 
-/* Image aspect ratio – don't shift the page after loading the image */
-
-$selector: ".n-aspect";
-
-@supports (--a: 1) {
-  #{$selector} {
-    // aspect ratio is specified as this element's --ratio CSS variable
-
-    flex-direction: row;
-    align-items: flex-start;
-    overflow: hidden;
-    position: relative;
-    text-align: center;
-
-    display: inline-flex;
-    justify-content: center; // When aspect inside aspect, like an inline lightbox
-    vertical-align: top; // Lose the unwanted spacing at the bottom
-    width: calc(1px * var(--width, 100%)); // Number without 'px'
+  > img {
     max-width: 100%;
-
-    > img {
-      max-width: 100%;
-      height: auto;
-      margin: 0 auto;
-    }
-
-    &:before {
-      content: "";
-      padding-top: calc(100% * 1 / (var(--width) / var(--height))); // Number without 'px'
-    }
-
-    &[style*="--ratio"] {
-      width: calc(1px * var(--width, 10000)); // Magic number to achieve 100%, because max-width will kick in
-      max-width: 100%;
-
-      &:before {
-        // When ratio is specified with inline style, use it instead of width/height
-
-        padding-top: calc(100% * 1 / var(--ratio, 1.7778)); // Default 16:9
-      }
-    }
-
-    &.n-bottom > * {
-      align-self: flex-end;
-      vertical-align: bottom;
-    }
-
-    &.n-middle > * {
-      align-self: center;
-      vertical-align: middle;
-    }
+    height: auto;
+    margin: 0 auto;
+    display: block;
   }
-}
 
-_:-ms-lang(x),
-#{$selector} {
-  display: block;
+  // For the placeholder image
+  position: relative;
+  overflow: hidden;
 }
-
-// -
 
 .text-media {
   --page-width: 1280px;
@@ -162,6 +118,7 @@ _:-ms-lang(x),
     @media (prefers-color-scheme: dark) {
       color: var(--color-dark-mode);
       background-color: var(--bg-dark-mode);
+
       a[href] {
         color: var(--color-dark-mode);
       }
@@ -181,6 +138,7 @@ _:-ms-lang(x),
 
   &.text-media--stacked {
     display: block;
+
     > * {
       width: 100%;
     }
@@ -217,7 +175,6 @@ _:-ms-lang(x),
       bottom: 0;
       right: calc(50vw - var(--page-width) / 2);
       left: calc(50vw - var(--page-width) / 2);
-
       box-shadow: 0 0 0 50vw var(--bg);
     }
 
@@ -237,6 +194,7 @@ _:-ms-lang(x),
 
       .text-media__transparent-circle {
         z-index: 0;
+
         div {
           position: relative;
           // 					overflow: hidden;
@@ -254,7 +212,6 @@ _:-ms-lang(x),
             max-width: calc(70% - 2em);
             max-height: calc(70% - 2em);
             z-index: 1;
-
             position: absolute;
             top: 50%;
             left: 50%;
@@ -360,8 +317,8 @@ _:-ms-lang(x),
 
   &.text-media--offset {
     --color-dark-mode: var(--color);
-
     background: none;
+
     & {
       display: grid;
       grid-template: repeat(3, 1fr) / repeat(4, 1fr);
@@ -377,7 +334,6 @@ _:-ms-lang(x),
         width: auto;
         background-color: var(--bg);
         z-index: 2;
-
         // Firefox bug
         max-width: calc(100%);
 
@@ -429,6 +385,7 @@ _:-ms-lang(x),
 
   @media (max-width: $breakpoint_tablet) {
     &.text-media--offset {
+
       &,
       &.text-media--offset-wide-text {
         grid-template-rows: 1fr 2em 1fr;
@@ -458,8 +415,10 @@ _:-ms-lang(x),
       }
     }
   }
+
   @media (max-width: $breakpoint_mobile) {
     &.text-media--offset {
+
       &,
       &.text-media__offset-wide-text {
         grid-template-rows: 1fr 2em 1fr;
@@ -473,6 +432,7 @@ _:-ms-lang(x),
         }
       }
     }
+
     //     &.text-media--flush-image .text-media__image > div {
     //       picture {
     //         width: 100%;
@@ -484,6 +444,7 @@ _:-ms-lang(x),
     //       }
     //     }
   }
+
   @supports (clip: rect(auto, auto, auto, auto)) {
     &.text-media--fixed-bg {
       will-change: scroll;
@@ -529,6 +490,7 @@ _:-ms-lang(x),
     left: 0;
     width: 100%;
     padding: 0;
+
     img {
       position: absolute;
       top: 50%;
@@ -536,6 +498,7 @@ _:-ms-lang(x),
       transform: translate3d(-50%, -50%, 0);
     }
   }
+
   .text-media__fallback-background {
     position: absolute;
     top: 0;
@@ -546,6 +509,7 @@ _:-ms-lang(x),
     background-size: cover;
     background-position: center center;
   }
+
   @supports (object-fit: cover) {
     &.text-media--fixed-bg > .text-media__background {
       position: absolute;
@@ -605,59 +569,72 @@ _:-ms-lang(x),
     &.text-media--checkerboard {
       display: grid;
       grid-template-columns: 1fr 1fr;
+
       > * {
         width: auto;
         grid-row: 1;
       }
+
       ~ .text-media--checkerboard {
         > :last-child {
           grid-column: 1;
         }
+
         ~ .text-media--checkerboard {
           > :last-child {
             grid-column: initial;
           }
+
           ~ .text-media--checkerboard {
             > :last-child {
               grid-column: 1;
             }
+
             ~ .text-media--checkerboard {
               > :last-child {
                 grid-column: initial;
               }
+
               ~ .text-media--checkerboard {
                 > :last-child {
                   grid-column: 1;
                 }
+
                 ~ .text-media--checkerboard {
                   > :last-child {
                     grid-column: initial;
                   }
                 }
+
                 ~ .text-media--checkerboard {
                   > :last-child {
                     grid-column: 1;
                   }
+
                   ~ .text-media--checkerboard {
                     > :last-child {
                       grid-column: initial;
                     }
                   }
                 }
+
                 ~ .text-media--checkerboard {
                   > :last-child {
                     grid-column: 1;
                   }
+
                   ~ .text-media--checkerboard {
                     > :last-child {
                       grid-column: initial;
                     }
                   }
                 }
+
                 ~ .text-media--checkerboard {
                   > :last-child {
                     grid-column: 1;
                   }
+
                   ~ .text-media--checkerboard {
                     > :last-child {
                       grid-column: initial;
@@ -671,6 +648,7 @@ _:-ms-lang(x),
       }
     }
   }
+
   .text-media__video,
   .text-media__video.n-aspect {
     > div {
@@ -705,6 +683,7 @@ _:-ms-lang(x),
       margin-inline-start: -50%;
     }
   }
+
   &.text-media--video-offset {
     > :last-child {
       flex-grow: 2;
@@ -730,6 +709,7 @@ _:-ms-lang(x),
   }
 
   picture.text-media__image-placeholder:not([data-loaded]) {
+
     // JS adds this class if --placeholder exists. JS to remove it on image loaded, to avoid blurry placeholder visible through transparency.
     &:after {
       content: "";
@@ -747,6 +727,7 @@ _:-ms-lang(x),
 }
 
 .two-text-media .text-media {
+
   &,
   &.theme-white,
   &.theme-light,
@@ -756,12 +737,29 @@ _:-ms-lang(x),
 }
 
 // Chrome fix when content over fixed background sometimes becomes invisible
-
 @media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
   .text-media.text-media--fixed-bg > {
+
     .text-media__text,
     .text-media__image {
       transform: translate3d(0, 0, 0);
+    }
+  }
+}
+
+@media (orientation: landscape) {
+
+  // Notch support, requires <head> meta viewport key: viewport-fit=cover
+  .text-media {
+    -webkit-text-size-adjust: 100%;
+
+    > :first-child,
+    > :first-child:not(.text-media__text):not(.text-media__image) + div {
+      padding-inline-start: calc(env(safe-area-inset-left) + var(--padding, 1em));
+    }
+
+    > :last-child {
+      padding-inline-end: calc(env(safe-area-inset-right) + var(--padding, 1em));
     }
   }
 }

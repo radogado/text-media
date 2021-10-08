@@ -1,45 +1,16 @@
-@charset "UTF-8";
-/* Image aspect ratio – don't shift the page after loading the image */
-@supports (--a: 1) {
-  .n-aspect {
-    flex-direction: row;
-    align-items: flex-start;
-    overflow: hidden;
-    position: relative;
-    text-align: center;
-    display: inline-flex;
-    justify-content: center;
-    vertical-align: top;
-    width: calc(1px * var(--width, 100%));
-    max-width: 100%;
-  }
-  .n-aspect > img {
-    max-width: 100%;
-    height: auto;
-    margin: 0 auto;
-  }
-  .n-aspect:before {
-    content: "";
-    padding-top: calc(100% * 1 / (var(--width) / var(--height)));
-  }
-  .n-aspect[style*="--ratio"] {
-    width: calc(1px * var(--width, 10000));
-    max-width: 100%;
-  }
-  .n-aspect[style*="--ratio"]:before {
-    padding-top: calc(100% * 1 / var(--ratio, 1.7778));
-  }
-  .n-aspect.n-bottom > * {
-    align-self: flex-end;
-    vertical-align: bottom;
-  }
-  .n-aspect.n-middle > * {
-    align-self: center;
-    vertical-align: middle;
-  }
-}
-_:-ms-lang(x),
 .n-aspect {
+  display: inline-block;
+  vertical-align: middle;
+  width: calc(1px * var(--width, 100%));
+  max-width: 100%;
+  aspect-ratio: var(--ratio, calc(var(--width)/ var(--height)));
+  position: relative;
+  overflow: hidden;
+}
+.n-aspect > img {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
   display: block;
 }
 
@@ -573,6 +544,18 @@ _:-ms-lang(x),
   .text-media.text-media--fixed-bg > .text-media__text,
 .text-media.text-media--fixed-bg > .text-media__image {
     transform: translate3d(0, 0, 0);
+  }
+}
+@media (orientation: landscape) {
+  .text-media {
+    -webkit-text-size-adjust: 100%;
+  }
+  .text-media > :first-child,
+.text-media > :first-child:not(.text-media__text):not(.text-media__image) + div {
+    padding-inline-start: calc(env(safe-area-inset-left) + var(--padding, 1em));
+  }
+  .text-media > :last-child {
+    padding-inline-end: calc(env(safe-area-inset-right) + var(--padding, 1em));
   }
 }
 
