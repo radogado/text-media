@@ -551,7 +551,7 @@
 .text-media > :first-child:not(.text-media__text):not(.text-media__image) + div {
     padding-inline-start: calc(env(safe-area-inset-left) + var(--padding, 1em));
   }
-  .text-media > :last-child {
+  .text-media > :last-child:not(.text-media__background) {
     padding-inline-end: calc(env(safe-area-inset-right) + var(--padding, 1em));
   }
 }

@@ -754,7 +754,7 @@ $breakpoint_tablet: 900px;
       padding-inline-start: calc(env(safe-area-inset-left) + var(--padding, 1em));
     }
 
-    > :last-child {
+    > :last-child:not(.text-media__background) {
       padding-inline-end: calc(env(safe-area-inset-right) + var(--padding, 1em));
     }
   }
