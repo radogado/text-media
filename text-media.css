@@ -397,7 +397,7 @@
     transform: translate3d(0, 0, 0);
   }
   .text-media .text-media__background {
-    display: initial;
+    display: flex;
     visibility: visible;
     z-index: 0;
     overflow: hidden;

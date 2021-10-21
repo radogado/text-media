@@ -526,7 +526,7 @@ $breakpoint_tablet: 900px;
     }
 
     .text-media__background {
-      display: initial;
+      display: flex; // Auto center the image
       visibility: visible;
       z-index: 0;
       overflow: hidden; // Crop the blurred placeholder image bleed
