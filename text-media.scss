@@ -747,9 +747,9 @@ $breakpoint_tablet: 900px;
 
   // Notch support, requires <head> meta viewport key: viewport-fit=cover
   .text-media {
-    -webkit-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%; // Don't enlarge text on landscape iPhone
 
-    > :first-child,
+    > :first-child:not(.text-media__background),
     > :first-child:not(.text-media__text):not(.text-media__image) + div {
       padding-inline-start: calc(env(safe-area-inset-left) + var(--padding, 1em));
     }

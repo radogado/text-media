@@ -547,7 +547,7 @@
   .text-media {
     -webkit-text-size-adjust: 100%;
   }
-  .text-media > :first-child,
+  .text-media > :first-child:not(.text-media__background),
 .text-media > :first-child:not(.text-media__text):not(.text-media__image) + div {
     padding-inline-start: calc(env(safe-area-inset-left) + var(--padding, 1em));
   }
