@@ -1,7 +1,7 @@
 .n-aspect {
   display: inline-block;
   vertical-align: middle;
-  width: calc(1px * var(--width, 100%));
+  width: calc(1px * var(--width, 10000));
   max-width: 100%;
   aspect-ratio: var(--ratio, calc(var(--width) / var(--height)));
   position: relative;
