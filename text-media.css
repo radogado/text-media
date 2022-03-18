@@ -4,8 +4,6 @@
   width: calc(1px * var(--width, 10000));
   max-width: 100%;
   aspect-ratio: var(--ratio, calc(var(--width) / var(--height)));
-  position: relative;
-  overflow: hidden;
 }
 .n-aspect > img {
   max-width: 100%;
@@ -14,6 +12,11 @@
   display: block;
   object-fit: cover;
   height: 100%;
+}
+
+picture.n-aspect {
+  position: relative;
+  overflow: hidden;
 }
 
 .text-media {

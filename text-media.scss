@@ -14,14 +14,18 @@ $breakpoint_tablet: 900px;
     height: auto;
     margin: 0 auto;
     display: block;
-    
+
     object-fit: cover; // aspect-ratio sub pixel fix
     height: 100%;
   }
 
+}
+
+picture.n-aspect {
   // For the placeholder image
   position: relative;
   overflow: hidden;
+
 }
 
 .text-media {
