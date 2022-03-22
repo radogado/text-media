@@ -50,6 +50,11 @@ picture.n-aspect {
       max-width: 100%;
       z-index: 1;
       word-break: break-word;
+      
+      &.n-aspect {
+        max-width: none;
+        width: 100%;
+      }
     }
 
     > img {
