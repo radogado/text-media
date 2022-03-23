@@ -7,6 +7,7 @@ $breakpoint_tablet: 900px;
   vertical-align: middle; // Remove unwanted bottom space
   width: calc(1px * var(--width, 10000));
   max-width: 100%;
+  --ratio: initial; // Don't inherit ratio from ancestors
   aspect-ratio: var(--ratio, calc(var(--width)/ var(--height)));
 
   > img {
