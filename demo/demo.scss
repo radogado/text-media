@@ -3,11 +3,25 @@
 $breakpoint_mobile: 600px;
 
 body {
-	color: #eee;
-	background: #111;
+	@media (prefers-color-scheme: dark) {
+		color: #eee;
+		background: #111;
+	}
+
 	margin: 0;
 	line-height: 1.4;
-	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: system-ui,
+	-apple-system,
+	BlinkMacSystemFont,
+	"Segoe UI",
+	Roboto,
+	Oxygen,
+	Ubuntu,
+	Cantarell,
+	"Fira Sans",
+	"Droid Sans",
+	"Helvetica Neue",
+	sans-serif;
 
 	min-height: 150vh;
 }
@@ -30,9 +44,11 @@ a[href] {
 	padding: 0.5em 1em;
 	display: inline-block;
 }
+
 pre {
 	overflow: auto;
 }
+
 code[class*="language-"] {
 	font-family: monospace !important;
 	line-height: 1.9 !important;
@@ -90,6 +106,7 @@ body pre[class*="language-"] {
 }
 
 .resources {
+
 	[href="text-media.min.js"],
 	[href="text-media.min.css"] {
 		text-decoration: none;
@@ -115,6 +132,7 @@ body pre[class*="language-"] {
 		}
 	}
 }
+
 h1:after {
 	content: attr(data-version);
 	padding-inline-start: 1ch;

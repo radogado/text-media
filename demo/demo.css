@@ -1,11 +1,15 @@
 /* Demo style */
 body {
-  color: #eee;
-  background: #111;
   margin: 0;
   line-height: 1.4;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   min-height: 150vh;
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #eee;
+    background: #111;
+  }
 }
 
 body > h1,
