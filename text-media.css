@@ -127,20 +127,6 @@ picture.n-aspect {
 .text-media.text-media--small {
   font-size: small;
 }
-.text-media .text-media__video > div {
-  padding-top: 56.25%;
-  position: relative;
-}
-.text-media .text-media__video > div > * {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100% !important;
-  height: 100% !important;
-  border: 0;
-}
 .text-media.text-media--transparent {
   background-color: transparent;
   overflow: hidden;
@@ -439,53 +425,6 @@ picture.n-aspect {
     grid-column: initial;
   }
 }
-.text-media .text-media__video > div,
-.text-media .text-media__video.n-aspect > div {
-  --width: 1920;
-  --height: 1080;
-  margin: 3em 3%;
-  width: calc(2 * var(--page-width) / 3);
-  max-width: 94%;
-  box-shadow: 0 0 10px 5px lightgray;
-}
-.text-media .text-media__video > div iframe,
-.text-media .text-media__video.n-aspect > div iframe {
-  width: 100% !important;
-  height: 100% !important;
-  position: absolute;
-  border: none;
-}
-.text-media .text-media__video > div .text-media__video-preview,
-.text-media .text-media__video.n-aspect > div .text-media__video-preview {
-  padding: 1px;
-}
-.text-media .text-media__video-container {
-  padding: 10%;
-  background: rgba(128, 0, 128, 0.1);
-  color: grey;
-}
-.text-media .text-media__video-container .text-media__video {
-  margin: 0 auto;
-  margin-inline-start: -50%;
-}
-.text-media.text-media--video-offset > :last-child {
-  flex-grow: 2;
-}
-.text-media.text-media--video-offset > :last-child {
-  flex-grow: 0.5;
-}
-.text-media.text-media--video-offset ul {
-  padding: 0;
-  list-style: none;
-}
-.text-media.text-media--video-offset li:not(:last-child):after {
-  content: "";
-  display: inline-block;
-  width: 5em;
-  max-width: 100%;
-  border-bottom: 2px solid;
-  margin: 2em 0;
-}
 .text-media picture.text-media__image-placeholder:not([data-loaded]):after {
   content: "";
   position: absolute;
@@ -497,6 +436,15 @@ picture.n-aspect {
   background: var(--placeholder, none);
   background-size: cover;
   filter: blur(10px);
+}
+.text-media video,
+.text-media iframe {
+  max-width: 100%;
+  border: none;
+}
+.text-media__image video,
+.text-media__image iframe {
+  width: 100%;
 }
 
 .text-media--fixed-bg {

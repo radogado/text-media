@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 	<head>
 		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5,user-scalable=yes,viewport-fit=cover" />
 
@@ -10,7 +11,7 @@
 		<link rel="styleSheet" href="text-media.css" type="text/css" media="screen" />
 		<link rel="styleSheet" href="demo/demo.css" type="text/css" media="screen" />
 		<link rel="styleSheet" href="demo/prism.min.css" type="text/css" media="screen" />
-    <script src="text-media.js" type="module"></script>
+		<script src="text-media.js" type="module"></script>
 		<script src="demo/prism.js" defer></script>
 
 	</head>
@@ -619,16 +620,9 @@
 
 		<div class="text-media theme-dark text-media--contain">
 
-			<div class="text-media__video align-middle align-center">
+			<div class="text-media__image align-middle align-center">
 				<div>
-					<iframe
-						width="560"
-						height="315"
-						src="https://www.youtube-nocookie.com/embed/E9yrF-tZ6Ns"
-						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-						allowfullscreen
-						loading="lazy"
-					></iframe>
+					<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/E9yrF-tZ6Ns" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 				</div>
 			</div>
 
@@ -640,7 +634,7 @@
 						<pre class="language-markup">
 <code class="language-markup">
 &lt;div class=&quot;text-media&quot;&gt;
-  &lt;div class=&quot;text-media__video&quot;&gt;
+  &lt;div class=&quot;text-media__image&quot;&gt;
     &lt;div&gt;
       &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube-nocookie.com/embed/E9yrF-tZ6Ns&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt;
     &lt;/div&gt;
@@ -651,6 +645,36 @@
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="text-media theme-dark text-media--contain">
+
+			<div class="text-media__image align-middle align-center">
+				<div>
+					<video src="demo/video.mov" controls></video>
+				</div>
+			</div>
+
+			<div class="align-middle text-media__text">
+				<div>
+					<h2>Video embed</h2>
+
+					<div class="code">
+						<pre class="language-markup">
+		<code class="language-markup">&lt;div class=&quot;text-media&quot;&gt;
+  &lt;div class=&quot;text-media__image&quot;&gt;
+	&lt;div&gt;
+	  &lt;video src=&quot;demo/video.mov&quot; controls&gt;&lt;/video&gt;
+	&lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;div class=&quot;text-media__text&quot;&gt;
+	&lt;div&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
 					</div>
 				</div>
 			</div>
@@ -701,14 +725,14 @@
 		</div>
 
 		<div class="text-media theme-dark text-media--limit">
-					<div class="text-media__background">
-						<img src="images/DSC00839.jpg" alt="1" />
-					</div>
-		
-					<div class="text-media__text align-middle align-center">
-						<div>
-							<div class="code">
-								<pre class="language-markup">
+			<div class="text-media__background">
+				<img src="images/DSC00839.jpg" alt="1" />
+			</div>
+
+			<div class="text-media__text align-middle align-center">
+				<div>
+					<div class="code">
+						<pre class="language-markup">
 <code class="language-markup">
 &lt;div class=&quot;text-media&quot;&gt;
   &lt;div class=&quot;text-media__text&quot;&gt;
@@ -727,23 +751,23 @@
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-							</div>
-						</div>
-					</div>
-		
-					<div class="text-media__text align-center text-media--fixed-bg">
-						<div>
-							<h2>Fixed background per column</h2>
-							<picture class="n-aspect" style="--width: 423; --height: 597"> <img src="images/mobile-app-iphone-1.png" alt="1" /> </picture><br />
-						</div>
-						<div class="text-media__background">
-							<picture>
-								<img src="images/DSC00557.jpg" alt="Image" />
-							</picture>
-						</div>
 					</div>
 				</div>
-		
+			</div>
+
+			<div class="text-media__text align-center text-media--fixed-bg">
+				<div>
+					<h2>Fixed background per column</h2>
+					<picture class="n-aspect" style="--width: 423; --height: 597"> <img src="images/mobile-app-iphone-1.png" alt="1" /> </picture><br />
+				</div>
+				<div class="text-media__background">
+					<picture>
+						<img src="images/DSC00557.jpg" alt="Image" />
+					</picture>
+				</div>
+			</div>
+		</div>
+
 		<div class="text-media text-media--contain text-media--offset">
 			<div class="text-media__text">
 				<div>
@@ -858,13 +882,13 @@
 			</div>
 		</div>
 
-<div class="text-media  text-media--limit">
-  <div class="text-media__text">
-    <div>
-      <h2>Placeholder image</h2>
-      <p>Blurred micro version of the image, displayed while it is loading. Requires <a href="text-media.js">text-media.js</a> or <a href="text-media.min.js">text-media.min.js</a> if the image has transparency.</p>
-      <div class="code">
-        <pre class="language-markup">
+		<div class="text-media  text-media--limit">
+			<div class="text-media__text">
+				<div>
+					<h2>Placeholder image</h2>
+					<p>Blurred micro version of the image, displayed while it is loading. Requires <a href="text-media.js">text-media.js</a> or <a href="text-media.min.js">text-media.min.js</a> if the image has transparency.</p>
+					<div class="code">
+						<pre class="language-markup">
 <code class="language-markup">
 &lt;div class=&quot;text-media&quot;&gt;
   &lt;div class=&quot;text-media__text&quot;&gt;
@@ -880,19 +904,19 @@
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-      </div>
-      <p>Same &lt;picture&gt; class and inline style for background images with placeholder.</p>
-    </div>
-  </div>
+					</div>
+					<p>Same &lt;picture&gt; class and inline style for background images with placeholder.</p>
+				</div>
+			</div>
 
-  <div class="text-media__image align-center align-middle">
-    <div>
-      <picture class="n-aspect text-media__image-placeholder-" style="--width: 3072; --height: 1728; --placeholder: url('images/DSC00557-.jpg')">
-        <img src="images/DSC00557.jpg" alt="1" />
-      </picture>
-    </div>
-  </div>
-</div>
+			<div class="text-media__image align-center align-middle">
+				<div>
+					<picture class="n-aspect text-media__image-placeholder-" style="--width: 3072; --height: 1728; --placeholder: url('images/DSC00557-.jpg')">
+						<img src="images/DSC00557.jpg" alt="1" />
+					</picture>
+				</div>
+			</div>
+		</div>
 
 		<p><br /><br /></p>
 		<p></p>
@@ -931,23 +955,23 @@
 				});
 			}
 
-			document.querySelectorAll(".code").forEach(function (el) {
+			document.querySelectorAll(".code").forEach(function(el) {
 				el.insertAdjacentHTML("beforeend", "<button class='n-btn'>Copy</button>");
 				copyButton(el.querySelector("button"), el.querySelector("pre"));
 			});
 
-["css", "js"].forEach((el) => {
-	fetch(`text-media.min.${el}.size`)
-		.then((response) => response.text())
-		.then((text) => (document.querySelector(`.resources [href="text-media.min.${el}"]`).dataset.size = `${parseFloat(text / 1024).toFixed(1)} KB`));
-});
+			["css", "js"].forEach((el) => {
+				fetch(`text-media.min.${el}.size`)
+					.then((response) => response.text())
+					.then((text) => (document.querySelector(`.resources [href="text-media.min.${el}"]`).dataset.size = `${parseFloat(text / 1024).toFixed(1)} KB`));
+			});
 
-fetch(`package.json`)
-	.then((response) => response.json())
-	.then((text) => {
-		document.querySelector("h1").dataset.version = text.version.split(".")[0] + "." + text.version.split(".")[1];
-	});
-
+			fetch(`package.json`)
+				.then((response) => response.json())
+				.then((text) => {
+					document.querySelector("h1").dataset.version = text.version.split(".")[0] + "." + text.version.split(".")[1];
+				});
 		</script>
 	</body>
+
 </html>
