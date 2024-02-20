@@ -55,7 +55,7 @@ picture.n-aspect {
   display: block;
   margin: 0 auto;
 }
-@media (max-width: 600px) {
+@media not screen and (min-width: 600px) {
   .text-media > * {
     width: 100%;
   }
@@ -288,7 +288,7 @@ picture.n-aspect {
 .text-media.text-media--offset.text-media--offset-wide-text > .text-media__image:first-child {
   grid-column: 1/3;
 }
-@media (max-width: 900px) {
+@media not screen and (min-width: 900px) {
   .text-media.text-media--offset, .text-media.text-media--offset.text-media--offset-wide-text {
     grid-template-rows: 1fr 2em 1fr;
   }
@@ -311,7 +311,7 @@ picture.n-aspect {
     grid-row: 1/3;
   }
 }
-@media (max-width: 600px) {
+@media not screen and (min-width: 600px) {
   .text-media.text-media--offset, .text-media.text-media--offset.text-media__offset-wide-text {
     grid-template-rows: 1fr 2em 1fr;
   }

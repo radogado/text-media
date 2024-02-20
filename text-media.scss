@@ -66,7 +66,7 @@ picture.n-aspect {
     }
   }
 
-  @media (max-width: $breakpoint_mobile) {
+  @media not screen and (min-width: $breakpoint_mobile) {
     > * {
       width: 100%;
     }
@@ -395,7 +395,7 @@ picture.n-aspect {
     }
   }
 
-  @media (max-width: $breakpoint_tablet) {
+  @media not screen and (min-width: $breakpoint_tablet) {
     &.text-media--offset {
 
       &,
@@ -428,7 +428,7 @@ picture.n-aspect {
     }
   }
 
-  @media (max-width: $breakpoint_mobile) {
+  @media not screen and (min-width: $breakpoint_mobile) {
     &.text-media--offset {
 
       &,
