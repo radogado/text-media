@@ -144,7 +144,7 @@ $breakpoint_tablet: 900px;
   }
 
   &.text-media--contain {
-    max-width: var(--page-width, $page-width);
+    max-width: min(var(--page-width, $page-width), 100%);
     margin-left: auto;
     margin-right: auto;
   }

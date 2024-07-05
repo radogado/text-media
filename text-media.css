@@ -116,7 +116,7 @@
   }
 }
 .text-media.text-media--contain {
-  max-width: var(--page-width, 1036px);
+  max-width: min(var(--page-width, 1036px), 100%);
   margin-left: auto;
   margin-right: auto;
 }
