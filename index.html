@@ -14,6 +14,7 @@
     <link rel="styleSheet" href="demo/demo.css" type="text/css" media="screen" />
     <link rel="styleSheet" href="demo/prism.min.css" type="text/css" media="screen" />
     <script src="text-media.js" type="module"></script>
+    <script src="demo/demo.js" type="module"></script>
     <script src="demo/prism.js" defer></script>
   </head>
 
@@ -22,7 +23,7 @@
 
     <h1>Text & Media (<a href="https://github.com/radogado/text-media">Source</a>)</h1>
 
-    <div class="text-media">
+    <section class="text-media">
       <div class="text-media__text">
         <h2>Default</h2>
         <div class="code">
@@ -39,7 +40,8 @@
 &lt;/div&gt;
 </code></pre>
         </div>
-        <p>&lt;figure&gt;&lt;picture&gt;&lt;img&gt;&lt;figcaption&gt; also supported.</p>
+        <pre>&lt;figure&gt;&lt;picture&gt;&lt;img&gt;&lt;figcaption&gt;</pre>
+        also supported.
       </div>
 
       <div class="text-media__image">
@@ -50,9 +52,9 @@
           <figcaption>Caption</figcaption>
         </figure>
       </div>
-    </div>
+    </section>
 
-    <div class="text-media text-media--limit">
+    <section class="text-media text-media--limit">
       <div class="text-media__text">
         <p>
           To align content, use one of the following classes on the
@@ -64,9 +66,9 @@
         <p>Horizontal: <b>.align-center</b>, <b>.align-right</b>.</p>
         <p>Vertical: <b>.align-middle</b>, <b>.align-bottom</b>.</p>
       </div>
-    </div>
+    </section>
 
-    <div class="text-media text-media--limit">
+    <section class="text-media text-media--limit">
       <div class="text-media__text">
         <p>Color options by CSS variables:</p>
         <div class="code">
@@ -86,9 +88,9 @@
         <p>Optionally, padding can be specified by <b>--padding</b>.</p>
         <p>Aspect ratio with <b>.n-aspect</b> and either <b>--ratio</b> or <b>--width/--height</b>.</p>
       </div>
-    </div>
+    </section>
 
-    <div class="text-media theme-dark">
+    <section class="text-media theme-dark" id="background">
       <div class="text-media__background">
         <picture>
           <img src="images/DSC00839.jpg" alt="1" />
@@ -123,9 +125,9 @@
           <img src="images/mobile-app-iphone-1.webp" alt="1" width="480" height="677.5" />
         </picture>
       </div>
-    </div>
+    </section>
 
-    <div class="text-media theme-dark text-media--contain">
+    <section class="text-media theme-dark text-media--contain" id="contain">
       <div class="text-media__background">
         <picture><img src="images/DSC00839.jpg" alt="1" /></picture>
       </div>
@@ -154,15 +156,15 @@
           <img src="images/mobile-app-iphone-1.webp" alt="1" width="480" height="677.5" />
         </picture>
       </div>
-    </div>
+    </section>
 
-    <div class="text-media text-media--contain">
+    <section class="text-media text-media--contain">
       <div class="align-middle text-media__text">
         <p>Container width specified by <b>--page-width</b>.</p>
       </div>
-    </div>
+    </section>
 
-    <div class="text-media theme-dark text-media--limit">
+    <section class="text-media theme-dark text-media--limit" id="limit">
       <div class="text-media__background">
         <img src="images/DSC00839.jpg" alt="1" />
       </div>
@@ -191,15 +193,15 @@
           <img src="images/mobile-app-iphone-1.webp" alt="1" width="480" height="677.5" />
         </picture>
       </div>
-    </div>
+    </section>
 
-    <div class="text-media text-media--contain">
+    <section class="text-media text-media--contain">
       <div class="align-middle text-media__text">
         <p>Content width limit specified by <b>--page-width</b>.</p>
       </div>
-    </div>
+    </section>
 
-    <div class="text-media text-media--fixed-bg theme-dark">
+    <section class="text-media text-media--fixed-bg theme-dark" id="fixed-bg">
       <picture class="text-media__background">
         <source srcset="images/DSC00557-1024px.webp" media="(max-width: 600px)" />
 
@@ -232,9 +234,9 @@
 </code></pre>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="text-media theme-dark text-media--contain text-media--white-box">
+    <section class="text-media theme-dark text-media--contain text-media--white-box" id="white-box">
       <div class="align-middle align-center text-media__image">
         <picture>
           <img src="images/mobile-app-iphone-1.webp" alt="Image" width="480" height="677.5" />
@@ -261,9 +263,9 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="text-media text-media--contain">
+    <section class="text-media text-media--contain" id="multi">
       <div class="align-center text-media__image">
         <picture>
           <img src="images/mobile-app-iphone-1.webp" alt="Image" width="480" height="677.5" />
@@ -306,11 +308,11 @@
 </code></pre>
         </div>
       </div>
-    </div>
+    </section>
 
     <h2>The next trio has checkerboard pattern (.text-media--checkerboard)</h2>
 
-    <div class="text-media text-media--contain text-media--small text-media--checkerboard theme-white">
+    <section class="text-media text-media--contain text-media--small text-media--checkerboard theme-white" id="small">
       <div class="align-middle align-center text-media__image">
         <picture>
           <img src="images/mobile-app-iphone-1.webp" alt="Image" width="480" height="677.5" />
@@ -335,9 +337,9 @@
 </code></pre>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="text-media theme-light text-media--contain text-media--checkerboard">
+    <section class="text-media theme-light text-media--contain text-media--checkerboard" id="light">
       <div class="align-middle align-center text-media__image">
         <picture>
           <img src="images/mobile-app-iphone-1.webp" alt="Image" width="480" height="677.5" />
@@ -362,9 +364,9 @@
 </code></pre>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="text-media theme-dark text-media--contain text-media--checkerboard">
+    <section class="text-media theme-dark text-media--contain text-media--checkerboard" id="dark">
       <div class="align-middle align-center text-media__image">
         <picture>
           <img src="images/mobile-app-iphone-1.webp" alt="Image" width="480" height="677.5" />
@@ -389,9 +391,9 @@
 </code></pre>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="text-media theme-dark text-media--contain text-media--stacked">
+    <section class="text-media theme-dark text-media--contain text-media--stacked" id="stacked">
       <div class="align-center text-media__text">
         <h2>Stacked</h2>
 
@@ -415,9 +417,9 @@
           <img src="images/mobile-app-iphone-1.webp" alt="Image" width="480" height="677.5" />
         </picture>
       </div>
-    </div>
+    </section>
 
-    <div class="text-media theme-dark text-media--contain text-media--stick-to-bottom">
+    <section class="text-media theme-dark text-media--contain text-media--stick-to-bottom" id="stick">
       <div class="align-middle text-media__text">
         <h2>Stick image to top/right/bottom/left</h2>
 
@@ -445,9 +447,9 @@
           <img src="images/mobile-app-iphone-1-crop.webp" alt="1" width="480" height="677.5" />
         </picture>
       </div>
-    </div>
+    </section>
 
-    <div class="text-media theme-dark text-media--contain">
+    <section class="text-media theme-dark text-media--contain" id="video-iframe">
       <div class="text-media__image align-middle align-center">
         <iframe
           width="560"
@@ -479,9 +481,9 @@
 </code></pre>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="text-media theme-dark text-media--contain">
+    <section class="text-media theme-dark text-media--contain" id="video">
       <div class="text-media__image align-middle align-center">
         <video src="demo/video.mov" controls></video>
       </div>
@@ -504,9 +506,9 @@
 &lt;/div&gt;</code></pre>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="text-media theme-dark text-media--fixed-bg text-media--limit">
+    <section class="text-media theme-dark text-media--fixed-bg text-media--limit" id="background-per-column">
       <div class="text-media__background">
         <picture><img src="images/DSC00839.jpg" alt="1" /></picture>
       </div>
@@ -547,9 +549,9 @@
           </picture>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="text-media theme-dark text-media--limit">
+    <section class="text-media theme-dark text-media--limit" id="fixed-bg-per-column">
       <div class="text-media__background">
         <picture><img src="images/DSC00839.jpg" alt="1" /></picture>
       </div>
@@ -587,9 +589,9 @@
           </picture>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="text-media text-media--contain text-media--offset">
+    <section class="text-media text-media--contain text-media--offset" id="offset">
       <div class="text-media__text">
         <h2>Offset</h2>
 
@@ -621,9 +623,9 @@
           </picture>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="text-media text-media--contain text-media--offset text-media--offset-wide-text theme-light">
+    <section class="text-media text-media--contain text-media--offset text-media--offset-wide-text theme-light" id="offset-wide-text">
       <div class="text-media__text">
         <div>
           <h2>Offset (wide text)</h2>
@@ -657,9 +659,9 @@
           </picture>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="text-media text-media--contain text-media--offset text-media--offset-bottom theme-dark">
+    <section class="text-media text-media--contain text-media--offset text-media--offset-bottom theme-dark" id="offset-bottom">
       <div class="text-media__image">
         <div class="text-media__background">
           <picture>
@@ -691,9 +693,9 @@
 </code></pre>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="text-media text-media--limit">
+    <section class="text-media text-media--limit" id="placeholder">
       <div class="text-media__text">
         <h2>Placeholder image</h2>
         <p>
@@ -727,14 +729,14 @@
           <img src="images/DSC00557.webp" alt="1" width="3072" height="1728" />
         </picture>
       </div>
-    </div>
+    </section>
 
     <p><br /><br /></p>
     <p></p>
     <p></p>
     <h2>Resources</h2>
 
-    <div class="text-media text-media--contain theme-light resources">
+    <section class="text-media text-media--contain theme-light resources" id="resources">
       <div class="align-middle text-media__text">
         <div>
           <div>
@@ -753,43 +755,6 @@
           </div>
         </div>
       </div>
-    </div>
-
-    <script>
-      function copyButton(el, target, echo) {
-        el.addEventListener("click", (event) => {
-          window.getSelection().removeAllRanges(); // Clear previous clipboard
-          var range = document.createRange();
-          range.selectNode(target);
-          window.getSelection().addRange(range);
-
-          try {
-            document.execCommand("copy");
-          } catch (err) {}
-        });
-      }
-
-      document.querySelectorAll(".code").forEach(function (el) {
-        el.insertAdjacentHTML("beforeend", "<button class='n-btn'>Copy</button>");
-        copyButton(el.querySelector("button"), el.querySelector("pre"));
-      });
-
-      ["css", "js"].forEach((el) => {
-        fetch(`text-media.min.${el}.size`)
-          .then((response) => response.text())
-          .then(
-            (text) =>
-              (document.querySelector(`.resources [href="text-media.min.${el}"]`).dataset.size = `${parseFloat(
-                text / 1024
-              ).toFixed(1)} KB`)
-          );
-      });
-
-      fetch(`package.json`)
-        .then((response) => response.json())
-        .then((text) => {
-          document.querySelector("h1").dataset.version = text.version.split(".")[0] + "." + text.version.split(".")[1];
-        });
-    </script>
+    </section>
   </body>
 </html>
