@@ -42,7 +42,6 @@ $breakpoint_tablet: 900px;
     > * {
       max-width: 100%;
       z-index: 1;
-      position: relative;
       word-break: break-word;
 
       &.n-aspect {
@@ -152,6 +151,10 @@ $breakpoint_tablet: 900px;
   &.text-media--limit {
     padding-left: calc(50vw - var(--page-width) / 2);
     padding-right: calc(50vw - var(--page-width) / 2);
+    .text-media {
+      padding-left: unset;
+      padding-right: unset;
+    }
   }
 
   &.text-media--stacked {
@@ -241,38 +244,31 @@ $breakpoint_tablet: 900px;
     --color-dark-mode: var(--color);
     background: none;
 
-    & {
-      display: grid;
-      grid-template: repeat(3, 1fr) / repeat(4, 1fr);
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(4, 1fr);
 
-      &:before,
-      &:after {
-        display: none;
+    > .text-media__text {
+      grid-column: 1/3;
+      grid-row: 1/3;
+      width: auto;
+      background-color: var(--bg);
+      z-index: 2;
+      // Firefox bug
+      max-width: calc(100%);
+
+      &:last-child {
+        grid-column: -3/-1;
       }
+    }
 
-      > .text-media__text {
-        grid-column: 1/3;
-        grid-row: 1/3;
-        width: auto;
-        background-color: var(--bg);
-        z-index: 2;
-        // Firefox bug
-        max-width: calc(100%);
+    > .text-media__image {
+      grid-column: -4/-1;
+      grid-row: -3/-1;
+      width: auto;
+      max-width: 100%;
 
-        &:last-child {
-          grid-column: -3/-1;
-        }
-      }
-
-      > .text-media__image {
-        grid-column: -4/-1;
-        grid-row: -3/-1;
-        width: auto;
-        max-width: 100%;
-
-        &:first-child {
-          grid-column: 1/4;
-        }
+      &:first-child {
+        grid-column: 1/4;
       }
     }
 
@@ -390,7 +386,7 @@ $breakpoint_tablet: 900px;
   }
 
   @media (min-width: $breakpoint_mobile) {
-    &.text-media--checkerboard {
+    &.text-media--checkerboard:not(.text-media--offset) {
       display: grid;
       grid-template-columns: 1fr 1fr;
 
@@ -466,7 +462,7 @@ $breakpoint_tablet: 900px;
   }
 }
 
-:nth-child(2n of .text-media--checkerboard) > :last-child {
+:nth-child(2n of .text-media--checkerboard:not(.text-media--offset)) > :last-child {
   grid-column: 1;
 }
 

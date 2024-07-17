@@ -38,7 +38,6 @@
 .text-media > * > * {
   max-width: 100%;
   z-index: 1;
-  position: relative;
   word-break: break-word;
 }
 .text-media > * > *.n-aspect {
@@ -124,6 +123,10 @@
   padding-left: calc(50vw - var(--page-width) / 2);
   padding-right: calc(50vw - var(--page-width) / 2);
 }
+.text-media.text-media--limit .text-media {
+  padding-left: unset;
+  padding-right: unset;
+}
 .text-media.text-media--stacked {
   display: block;
 }
@@ -179,13 +182,8 @@
 .text-media.text-media--offset {
   --color-dark-mode: var(--color);
   background: none;
-}
-.text-media.text-media--offset {
   display: grid;
   grid-template: repeat(3, 1fr)/repeat(4, 1fr);
-}
-.text-media.text-media--offset:before, .text-media.text-media--offset:after {
-  display: none;
 }
 .text-media.text-media--offset > .text-media__text {
   grid-column: 1/3;
@@ -290,11 +288,11 @@
   margin-top: 0;
 }
 @media (min-width: 600px) {
-  .text-media.text-media--checkerboard {
+  .text-media.text-media--checkerboard:not(.text-media--offset) {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
-  .text-media.text-media--checkerboard > * {
+  .text-media.text-media--checkerboard:not(.text-media--offset) > * {
     width: auto;
     grid-row: 1;
   }
@@ -351,7 +349,7 @@
   }
 }
 
-:nth-child(2n of .text-media--checkerboard) > :last-child {
+:nth-child(2n of .text-media--checkerboard:not(.text-media--offset)) > :last-child {
   grid-column: 1;
 }
 
