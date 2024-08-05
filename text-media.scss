@@ -42,6 +42,7 @@ $breakpoint_tablet: 900px;
     > * {
       max-width: 100%;
       z-index: 1;
+      position: relative; // Enable the z-index
       word-break: break-word;
 
       &.n-aspect {

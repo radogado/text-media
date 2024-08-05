@@ -38,6 +38,7 @@
 .text-media > * > * {
   max-width: 100%;
   z-index: 1;
+  position: relative;
   word-break: break-word;
 }
 .text-media > * > *.n-aspect {
