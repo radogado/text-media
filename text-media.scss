@@ -404,12 +404,11 @@ $breakpoint_tablet: 900px;
     // JS adds this class if --placeholder exists. JS to remove it on image loaded, to avoid blurry placeholder visible through transparency.
     &:after {
       content: "";
-      grid-row: 1 / 1;
-      grid-column: 1 / 1;
-      background: var(--placeholder, none);
-      background-size: cover;
+      background: var(--placeholder, none) center / cover;
       filter: blur(10px);
       mask: linear-gradient(red, red);
+      position: absolute;
+      inset: 0;
     }
   }
 
@@ -443,11 +442,12 @@ $breakpoint_tablet: 900px;
       left: 0;
       right: 0;
 
-      img {
+      img, &.text-media__image-placeholder:not([data-loaded]):after, picture.text-media__image-placeholder:not([data-loaded]):after {
         position: fixed;
         transform: translate3d(0, 0, 0); // iOS Safari
       }
     }
+    
   }
 
   @media (orientation: landscape) {

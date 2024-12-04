@@ -302,12 +302,11 @@
 }
 .text-media picture.text-media__image-placeholder:not([data-loaded]):after {
   content: "";
-  grid-row: 1/1;
-  grid-column: 1/1;
-  background: var(--placeholder, none);
-  background-size: cover;
+  background: var(--placeholder, none) center/cover;
   filter: blur(10px);
   mask: linear-gradient(red, red);
+  position: absolute;
+  inset: 0;
 }
 .text-media video,
 .text-media iframe {
@@ -335,7 +334,7 @@
   left: 0;
   right: 0;
 }
-.text-media--fixed-bg > .text-media__background img {
+.text-media--fixed-bg > .text-media__background img, .text-media--fixed-bg > .text-media__background.text-media__image-placeholder:not([data-loaded]):after, .text-media--fixed-bg > .text-media__background picture.text-media__image-placeholder:not([data-loaded]):after {
   position: fixed;
   transform: translate3d(0, 0, 0);
 }
