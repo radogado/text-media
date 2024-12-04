@@ -33,9 +33,12 @@ $breakpoint_tablet: 900px;
   color: var(--color, #333);
   background-color: var(--bg, white);
 
+  > :not([class*="col-"]) {
+    width: 1%;
+  }
+
   > * {
     flex-grow: 1;
-    width: 1%;
     flex-direction: column;
     padding: var(--padding, 1em);
     position: relative;
@@ -136,7 +139,7 @@ $breakpoint_tablet: 900px;
       color: var(--color-dark-mode, white);
       background-color: var(--bg-dark-mode, #333);
 
-      a[href] {
+      a[href]:not(.btn) {
         color: var(--color-dark-mode, blue);
       }
     }

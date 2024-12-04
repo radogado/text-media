@@ -27,9 +27,11 @@
   color: var(--color, #333);
   background-color: var(--bg, white);
 }
+.text-media > :not([class*=col-]) {
+  width: 1%;
+}
 .text-media > * {
   flex-grow: 1;
-  width: 1%;
   flex-direction: column;
   padding: var(--padding, 1em);
   position: relative;
@@ -111,7 +113,7 @@
     color: var(--color-dark-mode, white);
     background-color: var(--bg-dark-mode, #333);
   }
-  .text-media:not([class*=theme-]) a[href] {
+  .text-media:not([class*=theme-]) a[href]:not(.btn) {
     color: var(--color-dark-mode, blue);
   }
 }
