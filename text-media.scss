@@ -450,19 +450,19 @@ $breakpoint_tablet: 900px;
     
   }
 
-  @media (orientation: landscape) {
-    // Notch support, requires <head> meta viewport key: viewport-fit=cover
-    -webkit-text-size-adjust: 100%; // Don't enlarge text on landscape iPhone
-
-    > :first-child:not(.text-media__background),
-    > :first-child:not(.text-media__text):not(.text-media__image) + div {
-      padding-inline-start: calc(env(safe-area-inset-left) + var(--padding, 1em));
-    }
-
-    > :last-child:not(.text-media__background) {
-      padding-inline-end: calc(env(safe-area-inset-right) + var(--padding, 1em));
-    }
-  }
+//   @media (orientation: landscape) { // Also applies on desktop hence disabled
+//     // Notch support, requires <head> meta viewport key: viewport-fit=cover
+//     -webkit-text-size-adjust: 100%; // Don't enlarge text on landscape iPhone
+// 
+//     > :first-child:not(.text-media__background),
+//     > :first-child:not(.text-media__text):not(.text-media__image) + div {
+//       padding-inline-start: calc(env(safe-area-inset-left) + var(--padding, 1em));
+//     }
+// 
+//     > :last-child:not(.text-media__background) {
+//       padding-inline-end: calc(env(safe-area-inset-right) + var(--padding, 1em));
+//     }
+//   }
 }
 
 :nth-child(2n of .text-media--checkerboard:not(.text-media--offset)) > :last-child {
