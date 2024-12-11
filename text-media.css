@@ -33,7 +33,7 @@
 .text-media > * {
   flex-grow: 1;
   flex-direction: column;
-  padding: var(--padding, 1em);
+  padding: var(--padding-y, 1em) var(--padding-x, 1em);
   position: relative;
   box-sizing: border-box;
 }
@@ -64,7 +64,7 @@
   padding: 0;
 }
 .text-media.no-padding > *.text-media__text > * > * {
-  padding: var(--padding, 1em);
+  padding: var(--padding-y, 1em) var(--padding-x, 1em);
 }
 .text-media img {
   max-width: 100%;
@@ -285,7 +285,7 @@
   display: inline-block;
   background: #fff;
   color: #333;
-  padding: calc(1.5 * var(--padding, 1em));
+  padding: calc(1.5 * var(--padding-y, 1em)) calc(1.5 * var(--padding-x, 1em));
 }
 .text-media.text-media--white-box .text-media__text > * > :first-child {
   margin-top: 0;
