@@ -52,7 +52,7 @@
   margin: 0 auto;
 }
 @media not screen and (min-width: 600px) {
-  .text-media > * {
+  .text-media > *, .text-media > :not([class*=col-]) {
     width: 100%;
   }
 }

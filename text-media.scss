@@ -63,7 +63,7 @@ $breakpoint_tablet: 900px;
   }
 
   @media not screen and (min-width: $breakpoint_mobile) {
-    > * {
+    > *, > :not([class*=col-]) {
       width: 100%;
     }
   }
