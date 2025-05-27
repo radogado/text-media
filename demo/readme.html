@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text & Media - Documentation</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    h1 {
+      color: #2563eb;
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 0.5rem;
+    }
+    h2 {
+      color: #1e40af;
+      margin-top: 2rem;
+    }
+    h3 {
+      color: #1e40af;
+      margin-top: 1.5rem;
+    }
+    code {
+      background: #f3f4f6;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    }
+    pre {
+      background: #f3f4f6;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+    pre code {
+      background: none;
+      padding: 0;
+    }
+    ul {
+      padding-left: 1.5rem;
+    }
+    li {
+      margin: 0.5rem 0;
+    }
+    a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .badge {
+      display: inline-block;
+      background: #2563eb;
+      color: white;
+      padding: 0.2rem 0.6rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      margin-left: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Text & Media Layout Component <span class="badge">2.5KB gzipped</span></h1>
+  
+  <p>A lightweight, responsive component for combining text and media content with various layout options.</p>
+
+  <h2>Features</h2>
+  <ul>
+    <li>Responsive design</li>
+    <li>Multiple layout options</li>
+    <li>Support for images and videos</li>
+    <li>Customizable themes</li>
+    <li>Lightweight (2.5KB gzipped)</li>
+    <li>No dependencies</li>
+    <li>React version available</li>
+  </ul>
+
+  <h2>Installation</h2>
+  <pre><code>npm install text-media</code></pre>
+
+  <h2>Usage</h2>
+
+  <h3>Basic Usage</h3>
+  <pre><code>&lt;div class="text-media"&gt;
+  &lt;div class="text-media__text"&gt;
+    &lt;h2&gt;Your Title&lt;/h2&gt;
+    &lt;p&gt;Your content goes here.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="text-media__image"&gt;
+    &lt;picture&gt;
+      &lt;img src="your-image.jpg" alt="Description"&gt;
+    &lt;/picture&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+  <h3>React Version</h3>
+  <p>The component is also available as a React component. You can use it in your React applications:</p>
+  <pre><code>import { TextMedia } from 'text-media-react';
+
+function MyComponent() {
+  return (
+    &lt;TextMedia&gt;
+      &lt;TextMedia.Text&gt;
+        &lt;h2&gt;Your Title&lt;/h2&gt;
+        &lt;p&gt;Your content goes here.&lt;/p&gt;
+      &lt;/TextMedia.Text&gt;
+      &lt;TextMedia.Image&gt;
+        &lt;picture&gt;
+          &lt;img src="your-image.jpg" alt="Description" /&gt;
+        &lt;/picture&gt;
+      &lt;/TextMedia.Image&gt;
+    &lt;/TextMedia&gt;
+  );
+}</code></pre>
+
+  <h3>Live Demo</h3>
+  <p>Check out the live demo at <a href="https://example.com/demo">https://example.com/demo</a></p>
+
+  <h3>React Demo</h3>
+  <p>A React version of the demo is available in the <code>demo</code> directory. To run it:</p>
+  <ol>
+    <li>Start a local server:
+      <pre><code>python3 -m http.server 8000</code></pre>
+    </li>
+    <li>Open <a href="../demo/react-demo.html">react-demo.html</a></li>
+  </ol>
+
+  <p>The React demo showcases:</p>
+  <ul>
+    <li>Component integration with React</li>
+    <li>Responsive layout</li>
+    <li>Image handling</li>
+    <li>Custom styling</li>
+  </ul>
+
+  <h2>Options</h2>
+
+  <h3>Layout Options</h3>
+  <ul>
+    <li><code>text-media--reverse</code>: Reverses the order of text and media</li>
+    <li><code>text-media--stack</code>: Stacks text and media vertically</li>
+    <li><code>text-media--center</code>: Centers content vertically</li>
+  </ul>
+
+  <h3>Theme Options</h3>
+  <ul>
+    <li><code>text-media--light</code>: Light theme</li>
+    <li><code>text-media--dark</code>: Dark theme</li>
+    <li><code>text-media--purple-background</code>: Purple background theme</li>
+  </ul>
+
+  <h2>Development</h2>
+  <ol>
+    <li>Clone the repository</li>
+    <li>Install dependencies: <code>npm install</code></li>
+    <li>Run tests: <code>npm test</code></li>
+    <li>Build: <code>npm run build</code></li>
+  </ol>
+
+  <h2>License</h2>
+  <p>MIT</p>
+</body>
+</html> 

@@ -3,11 +3,6 @@
 $breakpoint_mobile: 600px;
 
 body {
-	@media (prefers-color-scheme: dark) {
-		color: #eee;
-		background: #111;
-	}
-
 	margin: 0;
 	line-height: 1.4;
 	font-family: system-ui,
@@ -24,6 +19,11 @@ body {
 	sans-serif;
 
 	min-height: 150vh;
+
+	@media (prefers-color-scheme: dark) {
+		color: #eee;
+		background: #111;
+	}
 }
 
 body > h1,
