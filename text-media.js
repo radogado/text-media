@@ -16,6 +16,9 @@
     document.querySelectorAll(".text-media picture[style*='--placeholder']").forEach((el) => {
       el.classList.add("text-media__image-placeholder");
     });
+    document.querySelectorAll(".text-media picture > img.text-media__image-placeholder-image").forEach((el) => {
+      el.parentNode.classList.add("text-media__image-placeholder");
+    });
   };
 
   if (document.readyState !== "loading") {
@@ -23,4 +26,14 @@
   } else {
     document.addEventListener("DOMContentLoaded", placeholderImages);
   }
+
+  document.querySelectorAll('.text-media picture > img').forEach(img => {
+    const picture = img.parentNode;
+    const placeholderImg = picture.querySelector('.text-media__image-placeholder-image');
+    if (placeholderImg) {
+      img.addEventListener('load', () => {
+        picture.dataset.loaded = true;
+      });
+    }
+  });
 })();
