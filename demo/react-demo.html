@@ -2,13 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5,user-scalable=yes,viewport-fit=cover">
   <title>React Demo - Text & Media Component</title>
   <!-- Development only - Use precompiled scripts in production -->
   <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
   <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <script src="https://unpkg.com/prop-types@15.7.2/prop-types.min.js"></script>
   <link rel="stylesheet" href="../text-media.min.css">
+  <link rel="stylesheet" href="prism.min.css">
+  <script src="prism.js" defer></script>
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -42,184 +45,871 @@
       height: auto;
       display: block;
     }
+    .demo-nav {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .demo-nav a {
+      display: block;
+      margin: 0.5rem 0;
+      color: #2563eb;
+      text-decoration: none;
+    }
+    .demo-nav a:hover {
+      text-decoration: underline;
+    }
+    .code {
+      margin: 1rem 0;
+      background: #f8fafc;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .code pre {
+      margin: 0;
+      padding: 1rem;
+    }
   </style>
 </head>
 <body>
   <div id="root"></div>
   <script type="text/babel">
+    // Text & Media Components
+    const TextMedia = ({ 
+      className = '', 
+      children, 
+      background,
+      fixedBackground,
+      theme = 'light'
+    }) => {
+      const classes = [
+        'text-media',
+        className,
+        theme === 'dark' ? 'theme-dark' : '',
+        fixedBackground ? 'text-media--fixed-bg' : ''
+      ].filter(Boolean).join(' ');
+
+      return (
+        <div className={classes}>
+          {background && (
+            <div className="text-media__background">
+              <picture style={{'--placeholder': background.placeholder}}>
+                <img src={background.src} alt={background.alt} />
+              </picture>
+            </div>
+          )}
+          {children}
+        </div>
+      );
+    };
+
+    const TextMediaText = ({ 
+      className = '', 
+      children,
+      align = 'left'
+    }) => {
+      const classes = [
+        'text-media__text',
+        `align-${align}`,
+        className
+      ].filter(Boolean).join(' ');
+
+      return <div className={classes}>{children}</div>;
+    };
+
+    const TextMediaImage = ({ 
+      className = '', 
+      src,
+      placeholder,
+      alt,
+      width,
+      height,
+      align = 'left'
+    }) => {
+      const classes = [
+        'text-media__image',
+        `align-${align}`,
+        className
+      ].filter(Boolean).join(' ');
+
+      return (
+        <div className={classes}>
+          <picture style={{'--placeholder': placeholder}}>
+            <img 
+              src={src} 
+              alt={alt} 
+              width={width}
+              height={height}
+            />
+          </picture>
+        </div>
+      );
+    };
+
+    // Demo Components
+    const CodeExample = ({ children }) => (
+      <div className="code">
+        <pre className="language-jsx">
+          <code className="language-jsx">{children}</code>
+        </pre>
+      </div>
+    );
+
+    const DemoSection = ({ id, title, code, children }) => (
+      <div id={id} className="demo-section">
+        <h2>{title}</h2>
+        <CodeExample>{code}</CodeExample>
+        {children}
+      </div>
+    );
+
     const ReactDemo = () => {
       return (
         <div>
           <h1>React Demo for Text & Media Component</h1>
           
-          {/* Basic Example */}
-          <div className="demo-section">
-            <h2>Basic Example</h2>
-            <div className="text-media">
-              <div className="text-media__text">
+          <nav className="demo-nav">
+            <a href="#basic">Basic Example</a>
+            <a href="#stacked">Stacked Layout</a>
+            <a href="#dark">Dark Theme</a>
+            <a href="#background">Background Image</a>
+            <a href="#fixed-bg">Fixed Background</a>
+            <a href="#contained">Contained Width</a>
+            <a href="#white-box">White Box</a>
+            <a href="#checkerboard">Checkerboard Pattern</a>
+          </nav>
+
+          <DemoSection 
+            id="basic" 
+            title="Basic Example"
+            code={`import { TextMedia, TextMediaText, TextMediaImage } from './text-media';
+
+function MyComponent() {
+  return (
+    <TextMedia>
+      <TextMediaText>
+        <h2>Welcome to Text & Media</h2>
+        <p>This is a basic example of the Text & Media component.</p>
+      </TextMediaText>
+      <TextMediaImage
+        src="image.webp"
+        placeholder="url(placeholder.png)"
+        alt="Basic Example"
+        width={800}
+        height={600}
+      />
+    </TextMedia>
+  );
+}`}
+          >
+            <TextMedia>
+              <TextMediaText>
                 <h2>Welcome to Text & Media</h2>
                 <p>This is a basic example of the Text & Media component. It combines text content with media elements in a responsive layout.</p>
-              </div>
-              <div className="text-media__image">
-                <picture>
-                  <img 
-                    src="https://placehold.co/800x600/2563eb/ffffff?text=Basic+Example" 
-                    alt="Basic Example" 
-                    width="800"
-                    height="600"
-                  />
-                </picture>
-              </div>
-            </div>
-          </div>
+              </TextMediaText>
+              <TextMediaImage
+                src="https://placehold.co/800x600/2563eb/ffffff?text=Basic+Example"
+                placeholder="url(https://placehold.co/10x10/2563eb/ffffff)"
+                alt="Basic Example"
+                width={800}
+                height={600}
+              />
+            </TextMedia>
+          </DemoSection>
 
-          {/* Stacked Layout */}
-          <div className="demo-section">
-            <h2>Stacked Layout</h2>
-            <div className="text-media text-media--stacked">
-              <div className="text-media__text">
+          <DemoSection 
+            id="stacked" 
+            title="Stacked Layout"
+            code={`import { TextMedia, TextMediaText, TextMediaImage } from './text-media';
+
+function MyComponent() {
+  return (
+    <TextMedia className="text-media--stacked">
+      <TextMediaText>
+        <h2>Stacked Layout</h2>
+        <p>The text-media--stacked class arranges content vertically.</p>
+      </TextMediaText>
+      <TextMediaImage
+        src="image.webp"
+        placeholder="url(placeholder.png)"
+        alt="Stacked Layout"
+        width={800}
+        height={600}
+      />
+    </TextMedia>
+  );
+}`}
+          >
+            <TextMedia className="text-media--stacked">
+              <TextMediaText>
                 <h2>Stacked Layout</h2>
                 <p>The text-media--stacked class arranges content vertically, with text above the media on larger screens.</p>
-              </div>
-              <div className="text-media__image">
-                <picture>
-                  <img 
-                    src="https://placehold.co/800x600/3b82f6/ffffff?text=Stacked+Layout" 
-                    alt="Stacked Layout" 
-                    width="800"
-                    height="600"
-                  />
-                </picture>
-              </div>
-            </div>
-          </div>
+              </TextMediaText>
+              <TextMediaImage
+                src="https://placehold.co/800x600/3b82f6/ffffff?text=Stacked+Layout"
+                placeholder="url(https://placehold.co/10x10/3b82f6/ffffff)"
+                alt="Stacked Layout"
+                width={800}
+                height={600}
+              />
+            </TextMedia>
+          </DemoSection>
 
-          {/* Dark Theme */}
-          <div className="demo-section">
-            <h2>Dark Theme</h2>
-            <div className="text-media theme-dark">
-              <div className="text-media__text">
+          <DemoSection 
+            id="dark" 
+            title="Dark Theme"
+            code={`import { TextMedia, TextMediaText, TextMediaImage } from './text-media';
+
+function MyComponent() {
+  return (
+    <TextMedia theme="dark">
+      <TextMediaText>
+        <h2>Dark Theme</h2>
+        <p>The theme-dark class applies a dark color scheme.</p>
+      </TextMediaText>
+      <TextMediaImage
+        src="image.webp"
+        placeholder="url(placeholder.png)"
+        alt="Dark Theme"
+        width={800}
+        height={600}
+      />
+    </TextMedia>
+  );
+}`}
+          >
+            <TextMedia theme="dark">
+              <TextMediaText>
                 <h2>Dark Theme</h2>
                 <p>The theme-dark class applies a dark color scheme to the component.</p>
-              </div>
-              <div className="text-media__image">
-                <picture>
-                  <img 
-                    src="https://placehold.co/800x600/1f2937/ffffff?text=Dark+Theme" 
-                    alt="Dark Theme" 
-                    width="800"
-                    height="600"
-                  />
-                </picture>
-              </div>
-            </div>
-          </div>
+              </TextMediaText>
+              <TextMediaImage
+                src="https://placehold.co/800x600/1f2937/ffffff?text=Dark+Theme"
+                placeholder="url(https://placehold.co/10x10/1f2937/ffffff)"
+                alt="Dark Theme"
+                width={800}
+                height={600}
+              />
+            </TextMedia>
+          </DemoSection>
 
-          {/* Purple Background */}
-          <div className="demo-section">
-            <h2>Purple Background</h2>
-            <div className="text-media text-media--purple-background">
-              <div className="text-media__text">
-                <h2>Purple Background</h2>
-                <p>The text-media--purple-background class adds a purple background to the component.</p>
-              </div>
-              <div className="text-media__image">
-                <picture>
-                  <img 
-                    src="https://placehold.co/800x600/7c3aed/ffffff?text=Purple+Background" 
-                    alt="Purple Background" 
-                    width="800"
-                    height="600"
-                  />
-                </picture>
-              </div>
-            </div>
-          </div>
+          <DemoSection 
+            id="background" 
+            title="Background Image"
+            code={`import { TextMedia, TextMediaText, TextMediaImage } from './text-media';
 
-          {/* Contained Width */}
-          <div className="demo-section">
-            <h2>Contained Width</h2>
-            <div className="text-media text-media--contain">
-              <div className="text-media__text">
+function MyComponent() {
+  return (
+    <TextMedia 
+      theme="dark"
+      background={{
+        src: 'background.webp',
+        placeholder: 'url(placeholder.png)',
+        alt: 'Background'
+      }}
+    >
+      <TextMediaText align="middle">
+        <h2>Background Image</h2>
+        <p>The text-media__background class sets a full-width background.</p>
+      </TextMediaText>
+      <TextMediaImage
+        src="image.webp"
+        placeholder="url(placeholder.png)"
+        alt="Overlay"
+        width={800}
+        height={600}
+        align="middle"
+      />
+    </TextMedia>
+  );
+}`}
+          >
+            <TextMedia 
+              theme="dark"
+              background={{
+                src: 'https://placehold.co/1920x1080/4f46e5/ffffff?text=Background',
+                placeholder: 'url(https://placehold.co/10x10/4f46e5/ffffff)',
+                alt: 'Background'
+              }}
+            >
+              <TextMediaText align="middle">
+                <h2>Background Image</h2>
+                <p>The text-media__background class allows you to set a full-width background image behind your content.</p>
+              </TextMediaText>
+              <TextMediaImage
+                src="https://placehold.co/800x600/3b82f6/ffffff?text=Overlay"
+                placeholder="url(https://placehold.co/10x10/3b82f6/ffffff)"
+                alt="Overlay"
+                width={800}
+                height={600}
+                align="middle"
+              />
+            </TextMedia>
+          </DemoSection>
+
+          <DemoSection 
+            id="fixed-bg" 
+            title="Fixed Background"
+            code={`import { TextMedia, TextMediaText, TextMediaImage } from './text-media';
+
+function MyComponent() {
+  return (
+    <TextMedia 
+      theme="dark"
+      fixedBackground
+      background={{
+        src: 'background.webp',
+        placeholder: 'url(placeholder.png)',
+        alt: 'Fixed Background'
+      }}
+    >
+      <TextMediaText align="middle">
+        <h2>Fixed Background</h2>
+        <p>The text-media--fixed-bg class creates a parallax effect.</p>
+      </TextMediaText>
+      <TextMediaImage
+        src="image.webp"
+        placeholder="url(placeholder.png)"
+        alt="Content"
+        width={800}
+        height={600}
+        align="middle"
+      />
+    </TextMedia>
+  );
+}`}
+          >
+            <TextMedia 
+              theme="dark"
+              fixedBackground
+              background={{
+                src: 'https://placehold.co/1920x1080/1e40af/ffffff?text=Fixed+Background',
+                placeholder: 'url(https://placehold.co/10x10/1e40af/ffffff)',
+                alt: 'Fixed Background'
+              }}
+            >
+              <TextMediaText align="middle">
+                <h2>Fixed Background</h2>
+                <p>The text-media--fixed-bg class creates a parallax-like effect with the background image.</p>
+              </TextMediaText>
+              <TextMediaImage
+                src="https://placehold.co/800x600/3b82f6/ffffff?text=Content"
+                placeholder="url(https://placehold.co/10x10/3b82f6/ffffff)"
+                alt="Content"
+                width={800}
+                height={600}
+                align="middle"
+              />
+            </TextMedia>
+          </DemoSection>
+
+          <DemoSection 
+            id="contained" 
+            title="Contained Width"
+            code={`import { TextMedia, TextMediaText, TextMediaImage } from './text-media';
+
+function MyComponent() {
+  return (
+    <TextMedia className="text-media--contain">
+      <TextMediaText>
+        <h2>Contained Width</h2>
+        <p>The text-media--contain class limits the width.</p>
+      </TextMediaText>
+      <TextMediaImage
+        src="image.webp"
+        placeholder="url(placeholder.png)"
+        alt="Contained Width"
+        width={800}
+        height={600}
+      />
+    </TextMedia>
+  );
+}`}
+          >
+            <TextMedia className="text-media--contain">
+              <TextMediaText>
                 <h2>Contained Width</h2>
                 <p>The text-media--contain class limits the width of the component to the page width.</p>
-              </div>
-              <div className="text-media__image">
-                <picture>
-                  <img 
-                    src="https://placehold.co/800x600/4f46e5/ffffff?text=Contained+Width" 
-                    alt="Contained Width" 
-                    width="800"
-                    height="600"
-                  />
-                </picture>
-              </div>
-            </div>
-          </div>
+              </TextMediaText>
+              <TextMediaImage
+                src="https://placehold.co/800x600/4f46e5/ffffff?text=Contained+Width"
+                placeholder="url(https://placehold.co/10x10/4f46e5/ffffff)"
+                alt="Contained Width"
+                width={800}
+                height={600}
+              />
+            </TextMedia>
+          </DemoSection>
 
-          {/* Two Columns Text */}
-          <div className="demo-section">
-            <h2>Two Columns Text</h2>
-            <div className="text-media text-media--two-columns">
-              <div className="text-media__text">
-                <h2>Two Columns Text</h2>
-                <p>The text-media--two-columns class arranges text content in two columns on larger screens. This is useful for longer text content that needs to be more readable.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-              </div>
-              <div className="text-media__image">
-                <picture>
-                  <img 
-                    src="https://placehold.co/800x600/2563eb/ffffff?text=Two+Columns" 
-                    alt="Two Columns" 
-                    width="800"
-                    height="600"
-                  />
-                </picture>
-              </div>
-            </div>
-          </div>
+          <DemoSection 
+            id="white-box" 
+            title="White Box"
+            code={`import { TextMedia, TextMediaText, TextMediaImage } from './text-media';
 
-          {/* White Box */}
-          <div className="demo-section">
-            <h2>White Box</h2>
-            <div className="text-media text-media--white-box">
-              <div className="text-media__text">
+function MyComponent() {
+  return (
+    <TextMedia 
+      className="text-media--white-box"
+      theme="dark"
+    >
+      <TextMediaText>
+        <h2>White Box</h2>
+        <p>The text-media--white-box class adds a white background.</p>
+      </TextMediaText>
+      <TextMediaImage
+        src="image.webp"
+        placeholder="url(placeholder.png)"
+        alt="White Box"
+        width={800}
+        height={600}
+      />
+    </TextMedia>
+  );
+}`}
+          >
+            <TextMedia 
+              className="text-media--white-box"
+              theme="dark"
+            >
+              <TextMediaText>
                 <h2>White Box</h2>
                 <p>The text-media--white-box class adds a white background to the text content, making it stand out against any background.</p>
-              </div>
-              <div className="text-media__image">
-                <picture>
-                  <img 
-                    src="https://placehold.co/800x600/1e40af/ffffff?text=White+Box" 
-                    alt="White Box" 
-                    width="800"
-                    height="600"
-                  />
-                </picture>
-              </div>
-            </div>
-          </div>
+              </TextMediaText>
+              <TextMediaImage
+                src="https://placehold.co/800x600/1e40af/ffffff?text=White+Box"
+                placeholder="url(https://placehold.co/10x10/1e40af/ffffff)"
+                alt="White Box"
+                width={800}
+                height={600}
+              />
+            </TextMedia>
+          </DemoSection>
 
-          {/* Checkerboard Pattern */}
-          <div className="demo-section">
-            <h2>Checkerboard Pattern</h2>
-            <div className="text-media text-media--checkerboard">
-              <div className="text-media__text">
+          <DemoSection 
+            id="checkerboard" 
+            title="Checkerboard Pattern"
+            code={`import { TextMedia, TextMediaText, TextMediaImage } from './text-media';
+
+function MyComponent() {
+  return (
+    <TextMedia className="text-media--checkerboard">
+      <TextMediaText>
+        <h2>Checkerboard Pattern</h2>
+        <p>The text-media--checkerboard class creates an alternating pattern.</p>
+      </TextMediaText>
+      <TextMediaImage
+        src="image.webp"
+        placeholder="url(placeholder.png)"
+        alt="Checkerboard"
+        width={800}
+        height={600}
+      />
+    </TextMedia>
+  );
+}`}
+          >
+            <TextMedia className="text-media--checkerboard">
+              <TextMediaText>
                 <h2>Checkerboard Pattern</h2>
                 <p>The text-media--checkerboard class creates an alternating pattern of text and media sections.</p>
+              </TextMediaText>
+              <TextMediaImage
+                src="https://placehold.co/800x600/3b82f6/ffffff?text=Checkerboard"
+                placeholder="url(https://placehold.co/10x10/3b82f6/ffffff)"
+                alt="Checkerboard"
+                width={800}
+                height={600}
+              />
+            </TextMedia>
+          </DemoSection>
+
+          <DemoSection 
+            id="video-iframe" 
+            title="Video iframe embed"
+            code={`import { TextMedia, TextMediaText } from './text-media';
+
+function MyComponent() {
+  return (
+    <TextMedia theme="dark">
+      <div className="text-media__image align-middle align-center">
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube-nocookie.com/embed/E9yrF-tZ6Ns"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          loading="lazy"
+        />
+      </div>
+      <TextMediaText align="middle">
+        <h2>Video iframe embed</h2>
+        <p>You can embed video iframes directly in the text-media__image container.</p>
+      </TextMediaText>
+    </TextMedia>
+  );
+}`}
+          >
+            <TextMedia theme="dark">
+              <div className="text-media__image align-middle align-center">
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube-nocookie.com/embed/E9yrF-tZ6Ns"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  loading="lazy"
+                />
               </div>
-              <div className="text-media__image">
-                <picture>
-                  <img 
-                    src="https://placehold.co/800x600/3b82f6/ffffff?text=Checkerboard" 
-                    alt="Checkerboard" 
-                    width="800"
-                    height="600"
-                  />
+              <TextMediaText align="middle">
+                <h2>Video iframe embed</h2>
+                <p>You can embed video iframes directly in the text-media__image container.</p>
+              </TextMediaText>
+            </TextMedia>
+          </DemoSection>
+
+          <DemoSection 
+            id="video" 
+            title="Video embed"
+            code={`import { TextMedia, TextMediaText } from './text-media';
+
+function MyComponent() {
+  return (
+    <TextMedia theme="dark">
+      <div className="text-media__image align-middle align-center">
+        <video src="demo/video.mov" controls />
+      </div>
+      <TextMediaText align="middle">
+        <h2>Video embed</h2>
+        <p>You can embed video elements directly in the text-media__image container.</p>
+      </TextMediaText>
+    </TextMedia>
+  );
+}`}
+          >
+            <TextMedia theme="dark">
+              <div className="text-media__image align-middle align-center">
+                <video src="demo/video.mov" controls />
+              </div>
+              <TextMediaText align="middle">
+                <h2>Video embed</h2>
+                <p>You can embed video elements directly in the text-media__image container.</p>
+              </TextMediaText>
+            </TextMedia>
+          </DemoSection>
+
+          <DemoSection 
+            id="background-per-column" 
+            title="Background per column"
+            code={`import { TextMedia, TextMediaText, TextMediaImage } from './text-media';
+
+function MyComponent() {
+  return (
+    <TextMedia theme="dark" className="text-media--fixed-bg text-media--limit">
+      <div className="text-media__background">
+        <picture style={{'--placeholder': 'url(placeholder.jpg)'}}>
+          <img src="background.jpg" alt="Background" />
+        </picture>
+      </div>
+      <TextMediaText align="middle center">
+        <h2>Background per column</h2>
+        <p>You can add background images to individual columns.</p>
+      </TextMediaText>
+      <TextMediaText align="center">
+        <div className="text-media__background">
+          <picture style={{'--placeholder': 'url(placeholder.jpg)'}}>
+            <img src="column-background.jpg" alt="Column Background" />
+          </picture>
+        </div>
+        <h2>Column with background</h2>
+        <TextMediaImage
+          src="image.webp"
+          placeholder="url(placeholder.png)"
+          alt="Content"
+          width={800}
+          height={600}
+        />
+      </TextMediaText>
+    </TextMedia>
+  );
+}`}
+          >
+            <TextMedia theme="dark" className="text-media--fixed-bg text-media--limit">
+              <div className="text-media__background">
+                <picture style={{'--placeholder': 'url(https://placehold.co/10x10/1e40af/ffffff)'}}>
+                  <img src="https://placehold.co/1920x1080/1e40af/ffffff?text=Background" alt="Background" />
                 </picture>
               </div>
-            </div>
-          </div>
+              <TextMediaText align="middle center">
+                <h2>Background per column</h2>
+                <p>You can add background images to individual columns.</p>
+              </TextMediaText>
+              <TextMediaText align="center">
+                <div className="text-media__background">
+                  <picture style={{'--placeholder': 'url(https://placehold.co/10x10/4f46e5/ffffff)'}}>
+                    <img src="https://placehold.co/1920x1080/4f46e5/ffffff?text=Column+Background" alt="Column Background" />
+                  </picture>
+                </div>
+                <h2>Column with background</h2>
+                <TextMediaImage
+                  src="https://placehold.co/800x600/3b82f6/ffffff?text=Content"
+                  placeholder="url(https://placehold.co/10x10/3b82f6/ffffff)"
+                  alt="Content"
+                  width={800}
+                  height={600}
+                />
+              </TextMediaText>
+            </TextMedia>
+          </DemoSection>
+
+          <DemoSection 
+            id="fixed-bg-per-column" 
+            title="Fixed background per column"
+            code={`import { TextMedia, TextMediaText, TextMediaImage } from './text-media';
+
+function MyComponent() {
+  return (
+    <TextMedia theme="dark" className="text-media--limit">
+      <div className="text-media__background">
+        <picture style={{'--placeholder': 'url(placeholder.jpg)'}}>
+          <img src="background.jpg" alt="Background" />
+        </picture>
+      </div>
+      <TextMediaText align="middle center">
+        <h2>Fixed background per column</h2>
+        <p>You can add fixed background images to individual columns.</p>
+      </TextMediaText>
+      <TextMediaText align="center" className="text-media--fixed-bg">
+        <div className="text-media__background">
+          <picture style={{'--placeholder': 'url(placeholder.jpg)'}}>
+            <img src="column-background.jpg" alt="Column Background" />
+          </picture>
+        </div>
+        <h2>Column with fixed background</h2>
+        <TextMediaImage
+          src="image.webp"
+          placeholder="url(placeholder.png)"
+          alt="Content"
+          width={800}
+          height={600}
+        />
+      </TextMediaText>
+    </TextMedia>
+  );
+}`}
+          >
+            <TextMedia theme="dark" className="text-media--limit">
+              <div className="text-media__background">
+                <picture style={{'--placeholder': 'url(https://placehold.co/10x10/1e40af/ffffff)'}}>
+                  <img src="https://placehold.co/1920x1080/1e40af/ffffff?text=Background" alt="Background" />
+                </picture>
+              </div>
+              <TextMediaText align="middle center">
+                <h2>Fixed background per column</h2>
+                <p>You can add fixed background images to individual columns.</p>
+              </TextMediaText>
+              <TextMediaText align="center" className="text-media--fixed-bg">
+                <div className="text-media__background">
+                  <picture style={{'--placeholder': 'url(https://placehold.co/10x10/4f46e5/ffffff)'}}>
+                    <img src="https://placehold.co/1920x1080/4f46e5/ffffff?text=Column+Background" alt="Column Background" />
+                  </picture>
+                </div>
+                <h2>Column with fixed background</h2>
+                <TextMediaImage
+                  src="https://placehold.co/800x600/3b82f6/ffffff?text=Content"
+                  placeholder="url(https://placehold.co/10x10/3b82f6/ffffff)"
+                  alt="Content"
+                  width={800}
+                  height={600}
+                />
+              </TextMediaText>
+            </TextMedia>
+          </DemoSection>
+
+          <DemoSection 
+            id="offset" 
+            title="Offset"
+            code={`import { TextMedia, TextMediaText } from './text-media';
+
+function MyComponent() {
+  return (
+    <TextMedia className="text-media--contain text-media--offset">
+      <TextMediaText>
+        <h2>Offset</h2>
+        <p>The text-media--offset class creates an offset layout.</p>
+      </TextMediaText>
+      <div className="text-media__image">
+        <div className="text-media__background">
+          <picture style={{'--placeholder': 'url(placeholder.jpg)'}}>
+            <img src="background.jpg" alt="Background" />
+          </picture>
+        </div>
+      </div>
+    </TextMedia>
+  );
+}`}
+          >
+            <TextMedia className="text-media--contain text-media--offset">
+              <TextMediaText>
+                <h2>Offset</h2>
+                <p>The text-media--offset class creates an offset layout with the background image.</p>
+              </TextMediaText>
+              <div className="text-media__image">
+                <div className="text-media__background">
+                  <picture style={{'--placeholder': 'url(https://placehold.co/10x10/4f46e5/ffffff)'}}>
+                    <img src="https://placehold.co/1920x1080/4f46e5/ffffff?text=Offset+Background" alt="Background" />
+                  </picture>
+                </div>
+              </div>
+            </TextMedia>
+          </DemoSection>
+
+          <DemoSection 
+            id="offset-wide-text" 
+            title="Offset (wide text)"
+            code={`import { TextMedia, TextMediaText } from './text-media';
+
+function MyComponent() {
+  return (
+    <TextMedia className="text-media--contain text-media--offset text-media--offset-wide-text theme-light">
+      <TextMediaText>
+        <h2>Offset (wide text)</h2>
+        <p>The text-media--offset-wide-text class creates a wider text area in the offset layout.</p>
+      </TextMediaText>
+      <div className="text-media__image">
+        <div className="text-media__background">
+          <picture style={{'--placeholder': 'url(placeholder.jpg)'}}>
+            <img src="background.jpg" alt="Background" />
+          </picture>
+        </div>
+      </div>
+    </TextMedia>
+  );
+}`}
+          >
+            <TextMedia className="text-media--contain text-media--offset text-media--offset-wide-text theme-light">
+              <TextMediaText>
+                <h2>Offset (wide text)</h2>
+                <p>The text-media--offset-wide-text class creates a wider text area in the offset layout.</p>
+              </TextMediaText>
+              <div className="text-media__image">
+                <div className="text-media__background">
+                  <picture style={{'--placeholder': 'url(https://placehold.co/10x10/4f46e5/ffffff)'}}>
+                    <img src="https://placehold.co/1920x1080/4f46e5/ffffff?text=Offset+Wide+Text" alt="Background" />
+                  </picture>
+                </div>
+              </div>
+            </TextMedia>
+          </DemoSection>
+
+          <DemoSection 
+            id="offset-bottom" 
+            title="Offset (bottom text)"
+            code={`import { TextMedia, TextMediaText } from './text-media';
+
+function MyComponent() {
+  return (
+    <TextMedia className="text-media--contain text-media--offset text-media--offset-bottom theme-dark">
+      <div className="text-media__image">
+        <div className="text-media__background">
+          <picture style={{'--placeholder': 'url(placeholder.jpg)'}}>
+            <img src="background.jpg" alt="Background" />
+          </picture>
+        </div>
+      </div>
+      <TextMediaText>
+        <h2>Offset (bottom text)</h2>
+        <p>The text-media--offset-bottom class places the text at the bottom of the offset layout.</p>
+      </TextMediaText>
+    </TextMedia>
+  );
+}`}
+          >
+            <TextMedia className="text-media--contain text-media--offset text-media--offset-bottom theme-dark">
+              <div className="text-media__image">
+                <div className="text-media__background">
+                  <picture style={{'--placeholder': 'url(https://placehold.co/10x10/4f46e5/ffffff)'}}>
+                    <img src="https://placehold.co/1920x1080/4f46e5/ffffff?text=Offset+Bottom" alt="Background" />
+                  </picture>
+                </div>
+              </div>
+              <TextMediaText>
+                <h2>Offset (bottom text)</h2>
+                <p>The text-media--offset-bottom class places the text at the bottom of the offset layout.</p>
+              </TextMediaText>
+            </TextMedia>
+          </DemoSection>
+
+          <DemoSection 
+            id="multi" 
+            title="Multiple columns"
+            code={`import { TextMedia, TextMediaText, TextMediaImage } from './text-media';
+
+function MyComponent() {
+  return (
+    <TextMedia className="text-media--contain">
+      <div className="text-media__image align-center">
+        <TextMediaImage
+          src="image1.webp"
+          placeholder="url(placeholder.png)"
+          alt="First Image"
+          width={800}
+          height={600}
+        />
+      </div>
+      <TextMediaText>
+        <h2>Multiple columns</h2>
+        <p>You can add multiple text and image columns.</p>
+      </TextMediaText>
+      <div className="text-media__image align-center">
+        <TextMediaImage
+          src="image2.webp"
+          placeholder="url(placeholder.png)"
+          alt="Second Image"
+          width={800}
+          height={600}
+        />
+      </div>
+      <TextMediaText>
+        <h2>Multiple columns</h2>
+        <p>The layout will adjust automatically for multiple columns.</p>
+      </TextMediaText>
+    </TextMedia>
+  );
+}`}
+          >
+            <TextMedia className="text-media--contain">
+              <div className="text-media__image align-center">
+                <TextMediaImage
+                  src="https://placehold.co/800x600/3b82f6/ffffff?text=First+Image"
+                  placeholder="url(https://placehold.co/10x10/3b82f6/ffffff)"
+                  alt="First Image"
+                  width={800}
+                  height={600}
+                />
+              </div>
+              <TextMediaText>
+                <h2>Multiple columns</h2>
+                <p>You can add multiple text and image columns.</p>
+              </TextMediaText>
+              <div className="text-media__image align-center">
+                <TextMediaImage
+                  src="https://placehold.co/800x600/4f46e5/ffffff?text=Second+Image"
+                  placeholder="url(https://placehold.co/10x10/4f46e5/ffffff)"
+                  alt="Second Image"
+                  width={800}
+                  height={600}
+                />
+              </div>
+              <TextMediaText>
+                <h2>Multiple columns</h2>
+                <p>The layout will adjust automatically for multiple columns.</p>
+              </TextMediaText>
+            </TextMedia>
+          </DemoSection>
         </div>
       );
     };
