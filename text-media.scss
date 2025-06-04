@@ -110,6 +110,7 @@ $breakpoint_tablet: 900px;
       mask: linear-gradient(red, red);
       grid-row: 1 / 2;
       grid-column: 1 / 2;
+      z-index: 0;
     }
   }
 
