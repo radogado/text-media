@@ -36,10 +36,6 @@
       }
     });
 
-    // Handle placeholder images
-    document.querySelectorAll(".text-media picture > img.text-media__image-placeholder-image").forEach((el) => {
-      el.parentNode.classList.add("text-media__image-placeholder");
-    });
   };
 
   if (document.readyState !== "loading") {
@@ -47,14 +43,4 @@
   } else {
     document.addEventListener("DOMContentLoaded", placeholderImages);
   }
-
-  // Handle image loading for all pictures
-  document.querySelectorAll('.text-media picture').forEach(picture => {
-    const img = picture.querySelector('img');
-    if (img) {
-      img.addEventListener('load', () => {
-        picture.dataset.loaded = true;
-      });
-    }
-  });
 })();
