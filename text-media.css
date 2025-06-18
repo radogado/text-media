@@ -59,6 +59,7 @@
 }
 .text-media picture {
   display: inline-grid;
+  grid-template-rows: 1fr;
   position: static;
 }
 .text-media.no-padding > * {
@@ -92,9 +93,6 @@
   grid-row: 1/2;
   grid-column: 1/2;
   z-index: 0;
-}
-.text-media picture.text-media__image-placeholder:not([data-loaded=true]) source[data-placeholder] {
-  --placeholder: var(--placeholder);
 }
 .text-media > .col1 {
   width: 100%;

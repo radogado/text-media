@@ -71,6 +71,7 @@ $breakpoint_tablet: 900px;
 
   picture {
     display: inline-grid; // To position the placeholder behind it without absolute positioning
+    grid-template-rows: 1fr;
     position: static;
   }
 
